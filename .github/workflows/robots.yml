@@ -1,7 +1,7 @@
 # Fait tourner les robots Vigie 24 h/24 sur les serveurs de GitHub (argent fictif, aucun ordre reel).
 # Lancement toutes les 5 minutes (GitHub peut retarder certains lancements de quelques minutes).
 # L'etat des robots est stocke sur la branche "donnees", reecrite a chaque passage (sans historique,
-# pour que le depot ne grossisse pas). Les fichiers d'avis des agents y sont preserves.
+# pour que le depot ne grossisse pas). Les avis des agents (branche "claude/avis") y sont recopies.
 name: Robots Vigie
 
 on:
@@ -35,6 +35,12 @@ jobs:
           else
             mkdir donnees
           fi
+          # Avis des agents Technique et Marches, publies par les agents cloud sur la branche "claude/avis".
+          if git ls-remote --exit-code --heads "$DEPOT" claude/avis > /dev/null; then
+            git clone -q --depth 1 --branch claude/avis "$DEPOT" avis
+            cp -f avis/orientations*.json donnees/ 2>/dev/null || true
+            rm -rf avis
+          fi
 
       - name: Faire tourner les robots
         shell: pwsh
@@ -49,7 +55,7 @@ jobs:
           git config user.email "robots-vigie@users.noreply.github.com"
           git remote add origin "$DEPOT"
           # Recupere les derniers avis publies par les agents pendant ce passage.
-          if git fetch -q --depth 1 origin donnees; then
+          if git fetch -q --depth 1 origin claude/avis; then
             for f in orientations.json orientations-marches.json; do
               git show FETCH_HEAD:"$f" > "$f.tmp" 2>/dev/null && mv "$f.tmp" "$f" || rm -f "$f.tmp"
             done
