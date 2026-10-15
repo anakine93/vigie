@@ -1,91 +1,91 @@
 {
- "maj": "2026-10-15T17:41:00",
+ "maj": "2026-10-15T19:10:00",
  "regime": "normal",
- "commentaire": "BTC autour de 82 200 USDT, +0,9% sur 1 h, sans signe de stress ; la tendance 4 h n'a pas pu etre verifiee (donnees Binance inaccessibles). Aucun delisting, piratage ni deverrouillage majeur ne concerne les actifs suivis (ARB, ZRO, AXS le 16-20 oct. hors liste).",
+ "commentaire": "Bitcoin tient autour de 82 400 USDT (+0,7 % sur 1 h) sans signe de stress, mais les données Binance 1 h/4 h étaient inaccessibles : analyse limitée aux données du robot. Beaucoup d'altcoins en surachat (RSI > 70) : privilégier la sélectivité.",
  "avis": [
   {
-   "symbole": "DASH",
-   "avis": "neutre",
-   "confiance": "faible",
-   "raison": "Bougies 1 h Binance inaccessibles (proxy), tendance non confirmee ; signal 15 min correct (RSI 70), aucun signal d'alerte trouve.",
-   "expire": "2026-10-15T23:45:00"
-  },
-  {
-   "symbole": "QNT",
-   "avis": "neutre",
-   "confiance": "faible",
-   "raison": "Bougies 1 h Binance inaccessibles (proxy), tendance non confirmee ; forte hausse de ~30% fin septembre sans cause claire (Pluang, 29/09) et mouvements de portefeuilles lies au fondateur : prudence.",
-   "expire": "2026-10-15T23:45:00"
-  },
-  {
-   "symbole": "PEPE",
-   "avis": "neutre",
-   "confiance": "faible",
-   "raison": "Bougies 1 h Binance inaccessibles (proxy), tendance non confirmee ; memecoin liquide, RSI 69, pas de catalyseur, aucun drapeau rouge.",
-   "expire": "2026-10-15T23:45:00"
-  },
-  {
-   "symbole": "BCH",
-   "avis": "neutre",
-   "confiance": "faible",
-   "raison": "Bougies 1 h Binance inaccessibles (proxy), tendance non confirmee ; grande capitalisation, hausse reguliere, aucun drapeau rouge.",
-   "expire": "2026-10-15T23:45:00"
-  },
-  {
-   "symbole": "LINK",
-   "avis": "neutre",
-   "confiance": "faible",
-   "raison": "Bougies 1 h Binance inaccessibles (proxy), tendance non confirmee ; grande capitalisation, volume x4, RSI 68, rien d'anormal.",
-   "expire": "2026-10-15T23:45:00"
-  },
-  {
-   "symbole": "EIGEN",
-   "avis": "neutre",
-   "confiance": "faible",
-   "raison": "Bougies 1 h Binance inaccessibles (proxy), tendance non confirmee ; RSI 77 deja surachete apres +7,6% en 4 h, sans actualite trouvee.",
-   "expire": "2026-10-15T23:45:00"
-  },
-  {
-   "symbole": "ZEN",
-   "avis": "neutre",
-   "confiance": "faible",
-   "raison": "Bougies 1 h Binance inaccessibles (proxy), tendance non confirmee ; petit volume (3 M$), pas de nouvelle trouvee.",
-   "expire": "2026-10-15T23:45:00"
-  },
-  {
-   "symbole": "OPEN",
+   "symbole": "STRK",
    "avis": "defavorable",
-   "confiance": "faible",
-   "raison": "Volume x73 pour un prix quasi stable, petite capitalisation sans explication : signal isole peu fiable.",
-   "expire": "2026-10-15T23:45:00"
-  },
-  {
-   "symbole": "ONDO",
-   "avis": "neutre",
-   "confiance": "faible",
-   "raison": "Bougies 1 h Binance inaccessibles (proxy), tendance non confirmee ; RSI 76 surachete, pas de drapeau rouge.",
-   "expire": "2026-10-15T23:45:00"
-  },
-  {
-   "symbole": "BAT",
-   "avis": "neutre",
-   "confiance": "faible",
-   "raison": "Bougies 1 h Binance inaccessibles (proxy), tendance non confirmee ; petite capitalisation, hausse sans actualite.",
-   "expire": "2026-10-15T23:45:00"
+   "confiance": "elevee",
+   "raison": "Hausse de +21 % en 24 h, RSI 78 et déblocage de 127 M STRK prévu le 15/10 (sources : CoinDesk/Bitrue/CoinDCX) : risque de prise de bénéfices.",
+   "expire": "2026-10-16T01:10:00"
   },
   {
    "symbole": "RLC",
    "avis": "defavorable",
    "confiance": "moyenne",
-   "raison": "Pic a 0,97 puis repli de 3,5% en 1 h apres +8% : pump de petite capitalisation sans nouvelle.",
-   "expire": "2026-10-15T23:45:00"
+   "raison": "Petite capitalisation en recul de -4 % sur 1 h après un pic sans actualité identifiée, signal isolé.",
+   "expire": "2026-10-16T01:10:00"
+  },
+  {
+   "symbole": "HYPE",
+   "avis": "favorable",
+   "confiance": "moyenne",
+   "raison": "Cassure du plus haut 12 h avec volume x2,5 et tendance 1 h régulière ; le déblocage du 6/10 est passé, pas d'alerte trouvée.",
+   "expire": "2026-10-16T01:10:00"
+  },
+  {
+   "symbole": "QNT",
+   "avis": "neutre",
+   "confiance": "moyenne",
+   "raison": "Pic brutal sur la dernière heure (+5 % en 1 h) sans actualité trouvée, tendance de fond correcte.",
+   "expire": "2026-10-16T01:10:00"
+  },
+  {
+   "symbole": "DASH",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Tendance haussière mais RSI 72 et pas de catalyseur identifié.",
+   "expire": "2026-10-16T01:10:00"
+  },
+  {
+   "symbole": "PEPE",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Mouvement porté par le volume sur une memecoin, sans catalyseur ni signal d'alerte.",
+   "expire": "2026-10-16T01:10:00"
+  },
+  {
+   "symbole": "BCH",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Position ouverte, tendance haussière mais RSI 69 et pas de confirmation 1 h disponible.",
+   "expire": "2026-10-16T01:10:00"
+  },
+  {
+   "symbole": "AAVE",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "RSI 78 en surachat, volume modéré : risque de repli.",
+   "expire": "2026-10-16T01:10:00"
+  },
+  {
+   "symbole": "CRCLB",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Hausse de +10 % sur 4 h avec RSI 78, produit dérivé peu liquide : prudence.",
+   "expire": "2026-10-16T01:10:00"
   },
   {
    "symbole": "FET",
    "avis": "neutre",
    "confiance": "faible",
-   "raison": "Bougies 1 h Binance inaccessibles (proxy), tendance non confirmee ; RSI 74 proche de la limite, aucune alerte trouvee.",
-   "expire": "2026-10-15T23:45:00"
+   "raison": "Hausse régulière mais RSI 75, sans actualité trouvée.",
+   "expire": "2026-10-16T01:10:00"
+  },
+  {
+   "symbole": "POL",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Tendance haussière modérée, volume correct, sans catalyseur identifié.",
+   "expire": "2026-10-16T01:10:00"
+  },
+  {
+   "symbole": "VIRTUAL",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Cassure à faible volume, RSI 74, pas de confirmation.",
+   "expire": "2026-10-16T01:10:00"
   }
  ]
 }
