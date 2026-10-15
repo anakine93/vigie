@@ -1,0 +1,91 @@
+{
+ "maj": "2026-10-15T17:41:00",
+ "regime": "normal",
+ "commentaire": "BTC autour de 82 200 USDT, +0,9% sur 1 h, sans signe de stress ; la tendance 4 h n'a pas pu etre verifiee (donnees Binance inaccessibles). Aucun delisting, piratage ni deverrouillage majeur ne concerne les actifs suivis (ARB, ZRO, AXS le 16-20 oct. hors liste).",
+ "avis": [
+  {
+   "symbole": "DASH",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Bougies 1 h Binance inaccessibles (proxy), tendance non confirmee ; signal 15 min correct (RSI 70), aucun signal d'alerte trouve.",
+   "expire": "2026-10-15T23:45:00"
+  },
+  {
+   "symbole": "QNT",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Bougies 1 h Binance inaccessibles (proxy), tendance non confirmee ; forte hausse de ~30% fin septembre sans cause claire (Pluang, 29/09) et mouvements de portefeuilles lies au fondateur : prudence.",
+   "expire": "2026-10-15T23:45:00"
+  },
+  {
+   "symbole": "PEPE",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Bougies 1 h Binance inaccessibles (proxy), tendance non confirmee ; memecoin liquide, RSI 69, pas de catalyseur, aucun drapeau rouge.",
+   "expire": "2026-10-15T23:45:00"
+  },
+  {
+   "symbole": "BCH",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Bougies 1 h Binance inaccessibles (proxy), tendance non confirmee ; grande capitalisation, hausse reguliere, aucun drapeau rouge.",
+   "expire": "2026-10-15T23:45:00"
+  },
+  {
+   "symbole": "LINK",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Bougies 1 h Binance inaccessibles (proxy), tendance non confirmee ; grande capitalisation, volume x4, RSI 68, rien d'anormal.",
+   "expire": "2026-10-15T23:45:00"
+  },
+  {
+   "symbole": "EIGEN",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Bougies 1 h Binance inaccessibles (proxy), tendance non confirmee ; RSI 77 deja surachete apres +7,6% en 4 h, sans actualite trouvee.",
+   "expire": "2026-10-15T23:45:00"
+  },
+  {
+   "symbole": "ZEN",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Bougies 1 h Binance inaccessibles (proxy), tendance non confirmee ; petit volume (3 M$), pas de nouvelle trouvee.",
+   "expire": "2026-10-15T23:45:00"
+  },
+  {
+   "symbole": "OPEN",
+   "avis": "defavorable",
+   "confiance": "faible",
+   "raison": "Volume x73 pour un prix quasi stable, petite capitalisation sans explication : signal isole peu fiable.",
+   "expire": "2026-10-15T23:45:00"
+  },
+  {
+   "symbole": "ONDO",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Bougies 1 h Binance inaccessibles (proxy), tendance non confirmee ; RSI 76 surachete, pas de drapeau rouge.",
+   "expire": "2026-10-15T23:45:00"
+  },
+  {
+   "symbole": "BAT",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Bougies 1 h Binance inaccessibles (proxy), tendance non confirmee ; petite capitalisation, hausse sans actualite.",
+   "expire": "2026-10-15T23:45:00"
+  },
+  {
+   "symbole": "RLC",
+   "avis": "defavorable",
+   "confiance": "moyenne",
+   "raison": "Pic a 0,97 puis repli de 3,5% en 1 h apres +8% : pump de petite capitalisation sans nouvelle.",
+   "expire": "2026-10-15T23:45:00"
+  },
+  {
+   "symbole": "FET",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Bougies 1 h Binance inaccessibles (proxy), tendance non confirmee ; RSI 74 proche de la limite, aucune alerte trouvee.",
+   "expire": "2026-10-15T23:45:00"
+  }
+ ]
+}
