@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vigie Crypto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: bandeau marché → signaux → (liste de suivi + tableau) | briefing des agents */
+:root{
+  --bg:#f3f4f7; --panel:#ffffff; --line:#dde0e8; --fg:#161a25; --muted:#5d6475;
+  --accent:#2f4fd8; --up:#0f8a55; --down:#c8383a; --warn:#b26b00; --chip:#eaedf5;
+  --f-display:"Bricolage Grotesque",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f121a; --panel:#171b26; --line:#2a3040; --fg:#e7e9f0; --muted:#9097a8;
+  --accent:#7d93ff; --up:#3ccf8a; --down:#ff6b6d; --warn:#f0b04a; --chip:#222838; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f121a; --panel:#171b26; --line:#2a3040; --fg:#e7e9f0; --muted:#9097a8;
+  --accent:#7d93ff; --up:#3ccf8a; --down:#ff6b6d; --warn:#f0b04a; --chip:#222838; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 var(--f-body);padding:20px 16px 40px}
+.wrap{max-width:1400px;margin:0 auto;display:grid;gap:16px}
+header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px}
+h1{font:700 30px/1.1 var(--f-display);margin:0;letter-spacing:-.01em}
+h1 small{display:block;font:500 13px var(--f-body);color:var(--muted);letter-spacing:0;margin-top:4px}
+h2{font:700 17px var(--f-display);margin:0 0 10px}
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+button,select,input{font:inherit;color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:6px 10px}
+button{cursor:pointer}
+button:hover{border-color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.status{font:12px var(--f-mono);color:var(--muted)}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--up);margin-right:6px;vertical-align:middle}
+.dot.err{background:var(--down)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;min-width:0}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.kpi .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.kpi .val{font:500 22px var(--f-mono);font-variant-numeric:tabular-nums;margin-top:2px}
+.kpi .sub{font:12px var(--f-mono)}
+.fg-bar{height:6px;border-radius:3px;background:linear-gradient(90deg,var(--down),var(--warn),var(--up));position:relative;margin-top:8px}
+.fg-bar i{position:absolute;top:-3px;width:3px;height:12px;background:var(--fg);border-radius:2px}
+.up{color:var(--up)} .down{color:var(--down)}
+.signals{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.sig h3{font:600 13px var(--f-body);margin:0 0 8px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.sig ol{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.sig li{display:flex;justify-content:space-between;gap:8px;font-variant-numeric:tabular-nums}
+.sig li span:last-child{font-family:var(--f-mono)}
+.main{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:16px;align-items:start}
+@media (max-width:1100px){.main{grid-template-columns:minmax(0,1fr)}}
+.tablebar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-bottom:10px}
+.tabs{display:flex;gap:4px}
+.tabs button[aria-pressed="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+th,td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th{font:600 11px var(--f-body);text-transform:uppercase;letter-spacing:.05em;color:var(--muted);cursor:pointer;user-select:none}
+th:nth-child(-n+3),td:nth-child(-n+3){text-align:left}
+td.num{font-family:var(--f-mono);font-size:13px}
+.coin{display:flex;align-items:center;gap:8px}
+.coin img{width:20px;height:20px;border-radius:50%}
+.coin b{font-weight:600}.coin em{font-style:normal;color:var(--muted);font-size:12px}
+.star{background:none;border:none;padding:2px 4px;font-size:16px;color:var(--muted)}
+.star[aria-pressed="true"]{color:var(--warn)}
+tr.hot td{background:color-mix(in srgb,var(--warn) 7%,transparent)}
+.tag{display:inline-block;font:500 10px var(--f-body);text-transform:uppercase;letter-spacing:.05em;padding:1px 6px;border-radius:99px;background:var(--chip);color:var(--muted);margin-left:6px}
+.empty{color:var(--muted);padding:20px 0;text-align:center}
+/* Briefing */
+.brief{display:grid;gap:12px}
+.brief .meta{font:12px var(--f-mono);color:var(--muted)}
+.synth{border-left:3px solid var(--accent);padding-left:12px}
+.scen{display:grid;gap:8px;margin-top:8px}
+.scen div{padding:8px 10px;border-radius:8px;background:var(--chip)}
+.scen b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+details.agent{border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+details.agent summary{cursor:pointer;display:flex;justify-content:space-between;gap:8px;font-weight:600;list-style:none}
+details.agent summary::-webkit-details-marker{display:none}
+details.agent summary::after{content:"＋";color:var(--muted)}
+details.agent[open] summary::after{content:"－"}
+.conf{font:500 11px var(--f-body);padding:1px 8px;border-radius:99px;background:var(--chip);color:var(--muted);white-space:nowrap}
+.agent p{margin:8px 0 0;color:var(--muted)}
+.agent ul{margin:8px 0 0;padding-left:18px;display:grid;gap:6px}
+.agent a{color:var(--accent);word-break:break-all}
+.challenge{margin-top:8px;padding:8px 10px;border-radius:8px;border:1px dashed var(--down);font-size:13px}
+.challenge b{color:var(--down)}
+.test{display:grid;gap:14px}
+.test-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:8px}
+.test-head h2{margin:0}
+.meta{font:12px var(--f-mono);color:var(--muted)}
+.badge{font:500 11px var(--f-body);text-transform:uppercase;letter-spacing:.05em;padding:3px 10px;border-radius:99px;border:1px solid var(--warn);color:var(--warn)}
+.test-grid{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:16px}
+@media (max-width:900px){.test-grid{grid-template-columns:minmax(0,1fr)}}
+.sub-h{font:600 13px var(--f-body);margin:0 0 8px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.test table td,.test table th{text-align:left}
+.test td.r,.test th.r{text-align:right}
+.st{display:inline-block;font:500 11px var(--f-body);padding:1px 8px;border-radius:99px;background:var(--chip)}
+.st.ok{color:var(--up)} .st.ko{color:var(--down)} .st.wait{color:var(--muted)}
+.legend{display:flex;gap:14px;font-size:12px;color:var(--muted);margin-top:4px}
+.legend i{display:inline-block;width:14px;height:3px;border-radius:2px;vertical-align:middle;margin-right:5px}
+.rules{font-size:12px;color:var(--muted);margin:0;max-width:110ch}
+.disclaimer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Vigie Crypto<small>Marché en direct · briefing de 5 agents de recherche</small></h1>
+    <div class="controls">
+      <span class="status" id="status"><span class="dot"></span>Chargement…</span>
+      <select id="cur" aria-label="Devise"><option value="eur">EUR €</option><option value="usd">USD $</option></select>
+      <button id="refresh" type="button">Actualiser</button>
+    </div>
+  </header>
+
+  <section class="panel kpis" id="kpis" aria-label="Vue d'ensemble du marché">
+    <div class="kpi"><div class="lbl">Capitalisation totale</div><div class="val" id="k-mcap">—</div><div class="sub" id="k-mcapch"></div></div>
+    <div class="kpi"><div class="lbl">Volume 24 h (top 100)</div><div class="val" id="k-vol">—</div></div>
+    <div class="kpi"><div class="lbl">Dominance Bitcoin</div><div class="val" id="k-dom">—</div><div class="sub" id="k-dometh"></div></div>
+    <div class="kpi"><div class="lbl">Peur &amp; avidité</div><div class="val" id="k-fg">—</div><div class="fg-bar"><i id="k-fgi" style="left:50%"></i></div></div>
+  </section>
+
+  <section class="signals" aria-label="Signaux de marché">
+    <div class="panel sig"><h3>Plus fortes hausses 24 h</h3><ol id="s-up"></ol></div>
+    <div class="panel sig"><h3>Plus fortes baisses 24 h</h3><ol id="s-down"></ol></div>
+    <div class="panel sig"><h3>Volume inhabituel</h3><ol id="s-vol"></ol></div>
+  </section>
+
+  <div class="main">
+    <section class="panel" aria-label="Cryptomonnaies">
+      <div class="tablebar">
+        <div class="tabs">
+          <button type="button" id="t-all" aria-pressed="true">Top 100</button>
+          <button type="button" id="t-watch" aria-pressed="false">Ma liste ☆ <span id="wcount">0</span></button>
+        </div>
+        <input id="q" type="search" placeholder="Rechercher (BTC, solana…)" aria-label="Rechercher">
+      </div>
+      <div class="scroll">
+        <table>
+          <thead><tr>
+            <th data-k="star" aria-label="Suivre"></th><th data-k="market_cap_rank">#</th><th data-k="name">Actif</th>
+            <th data-k="current_price">Prix</th><th data-k="p1h">1 h</th><th data-k="p24h">24 h</th><th data-k="p7d">7 j</th>
+            <th data-k="total_volume">Volume 24 h</th><th data-k="market_cap">Capitalisation</th><th>7 jours</th>
+          </tr></thead>
+          <tbody id="rows"><tr><td colspan="10" class="empty">Chargement des cours…</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <aside class="panel brief" id="brief" aria-label="Briefing des agents"></aside>
+  </div>
+
+  <section class="panel test" id="robot" aria-label="Robot de micro-transactions">
+    <div class="test-head">
+      <div><h2>Robot de micro-transactions · portefeuille virtuel n° 2</h2><div class="meta" id="rb-meta"></div></div>
+      <span class="badge">Argent fictif · aucun ordre réel</span>
+    </div>
+    <div class="kpis" id="rb-kpis"></div>
+    <div id="rb-alerte"></div>
+    <div class="test-grid">
+      <div><h3 class="sub-h">Valeur du robot et Bitcoin conservé</h3><div id="rb-chart"></div></div>
+      <div><h3 class="sub-h">Activité récente</h3><div class="scroll" id="rb-journal" style="max-height:260px;overflow-y:auto"></div></div>
+    </div>
+    <h3 class="sub-h">Positions ouvertes</h3><div class="scroll" id="rb-pos"></div>
+    <h3 class="sub-h">Meilleurs signaux du scanner</h3><div class="scroll" id="rb-sig"></div>
+    <h3 class="sub-h">Dernières transactions clôturées</h3><div class="scroll" id="rb-trades"></div>
+    <p class="rules">Règles : toutes les 5 minutes, le robot scanne les paires USDT les plus liquides de Binance (bougies de 15 minutes). Il achète si le score technique atteint 5 sur 8 (tendance, cassure, volume, élan, RSI), sauf si un agent a un avis défavorable, si BTC chute de plus de 1 % en 1 h ou si l'agent Technique suspend les achats. Taille : 2 % du portefeuille, 3 % avec un avis favorable d'un agent, 15 positions au maximum. Vente : stop-loss à −3 %, prise de gain à +5 %, tendance cassée, avis défavorable ou 24 h écoulées. Frais simulés : 0,1 % par ordre, plus 0,05 % à 0,4 % de glissement selon la liquidité de l'actif.</p>
+  </section>
+
+  <section class="panel test" id="test" aria-label="Test des agents">
+    <div class="test-head">
+      <div><h2>Test des agents · portefeuille virtuel</h2><div class="meta" id="pf-meta"></div></div>
+      <span class="badge">Argent fictif · aucun ordre réel</span>
+    </div>
+    <div class="kpis" id="pf-kpis"></div>
+    <div class="test-grid">
+      <div><h3 class="sub-h">Valeur du portefeuille et Bitcoin conservé</h3><div id="pf-chart"></div></div>
+      <div><h3 class="sub-h">Taux de réussite par agent</h3><div class="scroll" id="pf-score"></div></div>
+    </div>
+    <h3 class="sub-h">Positions ouvertes</h3><div class="scroll" id="pf-pos"></div>
+    <h3 class="sub-h">Journal des prédictions</h3><div class="scroll" id="pf-journal"></div>
+    <p class="rules">Règles : achat uniquement (pas de vente à découvert). Une prédiction de hausse en confiance élevée ouvre une position de 10 % du portefeuille, en confiance moyenne 5 %. Les prédictions de baisse ou en confiance faible sont notées mais pas tradées. Chaque position est revendue à l'échéance de sa prédiction. Frais simulés : 0,1 % par ordre et 0,05 % de glissement. Une prédiction est juste si le cours en EUR à l'échéance va dans le sens annoncé.</p>
+  </section>
+
+  <p class="disclaimer">Données : CoinGecko (cours, actualisés toutes les 60 s) et alternative.me (indice peur &amp; avidité). Le briefing est produit par des agents IA à partir de recherches web ; il peut contenir des erreurs, vérifiez les sources. Rien sur cette page n'est un conseil en investissement : ce sont des observations de marché, la décision vous appartient. La crypto est très volatile ; n'investissez que ce que vous pouvez vous permettre de perdre.</p>
+</div>
+
+<script src="briefing.js"></script>
+<script src="portefeuille.js"></script>
+<script src="robot.js"></script>
+<script>
+const $=s=>document.querySelector(s);
+const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch{return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}};
+let coins=[],view="all",sortK="market_cap_rank",sortDir=1,cur=store.get("cur","eur");
+let watch=new Set(store.get("watch",["bitcoin","ethereum","solana"]));
+$("#cur").value=cur;
+
+const sym=()=>cur==="eur"?"€":"$";
+const nf=(v,d)=>v.toLocaleString("fr-FR",{minimumFractionDigits:d,maximumFractionDigits:d});
+function money(v){if(v==null)return"—";const a=Math.abs(v);
+  if(a>=1e9)return nf(v/1e9,a>=1e11?0:1)+" Md"+sym();if(a>=1e6)return nf(v/1e6,1)+" M"+sym();
+  const d=a>=100?2:a>=1?3:a>=0.01?4:8;return v.toLocaleString("fr-FR",{minimumFractionDigits:Math.min(d,2),maximumFractionDigits:d})+" "+sym()}
+function pct(v){if(v==null)return'<span>—</span>';const c=v>=0?"up":"down";return`<span class="${c}">${v>=0?"+":""}${nf(v,2)} %</span>`}
+function spark(arr,up){if(!arr||arr.length<2)return"";const step=Math.max(1,Math.floor(arr.length/48));const p=arr.filter((_,i)=>i%step===0);
+  const mn=Math.min(...p),mx=Math.max(...p),w=100,h=28;const pts=p.map((v,i)=>`${(i/(p.length-1)*w).toFixed(1)},${(h-((v-mn)/((mx-mn)||1))*(h-4)-2).toFixed(1)}`).join(" ");
+  return`<svg width="100" height="28" viewBox="0 0 100 28" aria-hidden="true"><polyline fill="none" stroke="var(${up?"--up":"--down"})" stroke-width="1.5" points="${pts}"/></svg>`}
+function esc(s){return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+
+function setStatus(ok,msg){$("#status").innerHTML=`<span class="dot ${ok?"":"err"}"></span>${esc(msg)}`}
+
+async function load(){
+  try{
+    const u=`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${cur}&order=market_cap_desc&per_page=100&page=1&sparkline=true&price_change_percentage=1h,24h,7d`;
+    const r=await fetch(u);if(!r.ok)throw new Error(r.status===429?"limite d'appels atteinte, nouvel essai dans 60 s":"erreur "+r.status);
+    coins=(await r.json()).map(c=>({...c,p1h:c.price_change_percentage_1h_in_currency,p24h:c.price_change_percentage_24h_in_currency,p7d:c.price_change_percentage_7d_in_currency,vr:c.market_cap?c.total_volume/c.market_cap:0}));
+    render();renderSignals();renderTest();renderRobot();
+    setStatus(true,"En direct · "+new Date().toLocaleTimeString("fr-FR"));
+  }catch(e){setStatus(false,"Cours indisponibles : "+e.message)}
+  loadGlobal();loadFG();
+}
+async function loadGlobal(){try{const g=(await (await fetch("https://api.coingecko.com/api/v3/global")).json()).data;
+  $("#k-mcap").textContent=money(g.total_market_cap[cur]);$("#k-mcapch").innerHTML=pct(g.market_cap_change_percentage_24h_usd)+" sur 24 h";
+  $("#k-vol").textContent=money(coins.reduce((s,c)=>s+(c.total_volume||0),0));$("#k-dom").textContent=nf(g.market_cap_percentage.btc,1)+" %";
+  $("#k-dometh").textContent="ETH "+nf(g.market_cap_percentage.eth,1)+" %"}catch{}}
+async function loadFG(){try{const d=(await (await fetch("https://api.alternative.me/fng/?limit=1")).json()).data[0];
+  const fr={"Extreme Fear":"Peur extrême","Fear":"Peur","Neutral":"Neutre","Greed":"Avidité","Extreme Greed":"Avidité extrême"};
+  $("#k-fg").textContent=d.value+" · "+(fr[d.value_classification]||d.value_classification);$("#k-fgi").style.left=`calc(${d.value}% - 1px)`}catch{$("#k-fg").textContent="indisponible"}}
+
+function renderSignals(){
+  const li=c=>`<li><span>${esc(c.name)} <em class="tag">${esc(c.symbol)}</em></span>`;
+  const by=k=>[...coins].filter(c=>c[k]!=null);
+  $("#s-up").innerHTML=by("p24h").sort((a,b)=>b.p24h-a.p24h).slice(0,5).map(c=>li(c)+pct(c.p24h)+"</li>").join("");
+  $("#s-down").innerHTML=by("p24h").sort((a,b)=>a.p24h-b.p24h).slice(0,5).map(c=>li(c)+pct(c.p24h)+"</li>").join("");
+  $("#s-vol").innerHTML=coins.filter(c=>!/usd|eur|dai/i.test(c.symbol)).sort((a,b)=>b.vr-a.vr).slice(0,5)
+    .map(c=>li(c)+`<span title="volume 24 h / capitalisation">${(c.vr*100).toFixed(0)} % de la cap.</span></li>`).join("");
+}
+function render(){
+  const q=$("#q").value.trim().toLowerCase();
+  let list=coins.filter(c=>(view==="all"||watch.has(c.id))&&(!q||c.name.toLowerCase().includes(q)||c.symbol.toLowerCase().includes(q)));
+  list.sort((a,b)=>{const x=sortK==="star"?+watch.has(a.id):a[sortK],y=sortK==="star"?+watch.has(b.id):b[sortK];
+    return (typeof x==="string"?x.localeCompare(y):(x??-Infinity)-(y??-Infinity))*sortDir});
+  $("#wcount").textContent=watch.size;
+  if(!list.length){$("#rows").innerHTML=`<tr><td colspan="10" class="empty">${view==="watch"?"Votre liste est vide. Cliquez sur ☆ dans le Top 100 pour suivre un actif.":"Aucun résultat."}</td></tr>`;return}
+  $("#rows").innerHTML=list.map(c=>`<tr class="${Math.abs(c.p24h||0)>=10?"hot":""}">
+    <td><button class="star" type="button" data-id="${c.id}" aria-pressed="${watch.has(c.id)}" aria-label="Suivre ${esc(c.name)}">${watch.has(c.id)?"★":"☆"}</button></td>
+    <td class="num">${c.market_cap_rank??""}</td>
+    <td><span class="coin"><img src="${esc(c.image)}" alt="" loading="lazy"><b>${esc(c.name)}</b><em>${esc(c.symbol.toUpperCase())}</em></span></td>
+    <td class="num">${money(c.current_price)}</td><td class="num">${pct(c.p1h)}</td><td class="num">${pct(c.p24h)}</td><td class="num">${pct(c.p7d)}</td>
+    <td class="num">${money(c.total_volume)}</td><td class="num">${money(c.market_cap)}</td><td>${spark(c.sparkline_in_7d?.price,(c.p7d||0)>=0)}</td></tr>`).join("");
+}
+
+function renderBrief(){
+  const b=window.BRIEFING;const el=$("#brief");
+  if(!b||!b.agents?.length){el.innerHTML=`<h2>Briefing des agents</h2><p class="empty">Les agents n'ont pas encore rendu leur rapport. Demandez à Claude de lancer le briefing.</p>`;return}
+  el.innerHTML=`<div><h2>Briefing des agents</h2><div class="meta">Mis à jour le ${esc(b.date)}</div></div>
+   <div class="synth"><b>Synthèse</b><p style="margin:6px 0 0">${esc(b.synthese)}</p>
+    <div class="scen">${(b.scenarios||[]).map(s=>`<div><b class="${s.ton||""}">${esc(s.nom)}</b>${esc(s.texte)}</div>`).join("")}</div>
+    ${b.surveiller?.length?`<p style="margin:10px 0 0"><b>À surveiller</b></p><ul style="margin:4px 0 0;padding-left:18px">${b.surveiller.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:""}</div>
+   ${b.agents.map((a,i)=>`<details class="agent" ${i===0?"open":""}><summary><span>${esc(a.nom)}</span><span class="conf">Confiance ${esc(a.confiance)}</span></summary>
+     <p>${esc(a.resume)}</p><ul>${(a.points||[]).map(p=>`<li>${esc(p.texte)}${p.url?` <a href="${esc(p.url)}" target="_blank" rel="noopener">source</a>`:""}</li>`).join("")}</ul>
+     ${a.contestation?`<div class="challenge"><b>Objection de l'agent Risques :</b> ${esc(a.contestation)}</div>`:""}</details>`).join("")}`;
+}
+
+$("#rows").addEventListener("click",e=>{const b=e.target.closest(".star");if(!b)return;const id=b.dataset.id;watch.has(id)?watch.delete(id):watch.add(id);store.set("watch",[...watch]);render()});
+document.querySelectorAll("th[data-k]").forEach(th=>th.addEventListener("click",()=>{const k=th.dataset.k;sortDir=sortK===k?-sortDir:(k==="market_cap_rank"||k==="name"?1:-1);sortK=k;render()}));
+$("#t-all").onclick=()=>{view="all";$("#t-all").setAttribute("aria-pressed","true");$("#t-watch").setAttribute("aria-pressed","false");render()};
+$("#t-watch").onclick=()=>{view="watch";$("#t-watch").setAttribute("aria-pressed","true");$("#t-all").setAttribute("aria-pressed","false");render()};
+$("#q").oninput=render;
+$("#cur").onchange=e=>{cur=e.target.value;store.set("cur",cur);load()};
+$("#refresh").onclick=load;
+const eur=v=>v==null?"—":nf(v,2)+" €";
+const fdate=s=>s?new Date(s).toLocaleDateString("fr-FR",{day:"2-digit",month:"2-digit"})+" "+new Date(s).toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"}):"—";
+function nomActif(id){const c=coins.find(x=>x.id===id);return c?`${esc(c.name)} <em class="tag">${esc(c.symbol)}</em>`:esc(id)}
+function prixLiveEur(id){if(cur!=="eur")return null;const c=coins.find(x=>x.id===id);return c?c.current_price:null}
+function chartPf(pts,cap,nom="Portefeuille des agents",intraday=false){
+  if(!pts.length)return'<p class="empty">Aucun point pour l\'instant.</p>';
+  const W=640,H=200,L=58,R=12,T=12,B=26,vals=pts.flatMap(p=>[p.valeur,p.btcRef]);
+  let mn=Math.min(cap,...vals),mx=Math.max(cap,...vals);const pad=(mx-mn)*0.15||cap*0.02;mn-=pad;mx+=pad;
+  const x=i=>pts.length===1?(L+W-R)/2:L+i*(W-L-R)/(pts.length-1),y=v=>T+(mx-v)*(H-T-B)/(mx-mn);
+  const line=(k,col)=>pts.length>1?`<polyline fill="none" stroke="var(${col})" stroke-width="2" points="${pts.map((p,i)=>x(i)+","+y(p[k])).join(" ")}"/>`:"";
+  const dot=(k,col)=>{const i=pts.length-1;return`<circle cx="${x(i)}" cy="${y(pts[i][k])}" r="4" fill="var(${col})"/>`};
+  const ticks=[mx-pad,cap,mn+pad].filter((v,i,a)=>a.findIndex(w=>Math.abs(w-v)<(mx-mn)*0.08)===i);
+  const grid=ticks.map(v=>`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)" ${v===cap?'stroke-dasharray="4 4"':""}/><text x="${L-6}" y="${y(v)+4}" text-anchor="end" font-size="11" fill="var(--muted)" font-family="var(--f-mono)">${nf(v,0)} €</text>`).join("");
+  const lbl=[0,pts.length-1].filter((v,i,a)=>a.indexOf(v)===i).map(i=>`<text x="${x(i)}" y="${H-6}" text-anchor="middle" font-size="11" fill="var(--muted)">${intraday?fdate(pts[i].date):new Date(pts[i].date).toLocaleDateString("fr-FR",{day:"2-digit",month:"2-digit"})}</text>`).join("");
+  return`<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Évolution du portefeuille">${grid}${line("btcRef","--muted")}${line("valeur","--accent")}${dot("btcRef","--muted")}${dot("valeur","--accent")}${lbl}</svg>
+   <div class="legend"><span><i style="background:var(--accent)"></i>${nom}</span><span><i style="background:var(--muted)"></i>${nf(cap,0)} € gardés en Bitcoin</span>${pts.length<2?`<span>La courbe se remplit ${intraday?"toutes les 5 minutes":"à chaque briefing du matin"}.</span>`:""}</div>`;
+}
+function renderTest(){
+  const P=window.PORTEFEUILLE;
+  if(!P){$("#test").innerHTML=`<h2>Test des agents · portefeuille virtuel</h2><p class="empty">Le portefeuille virtuel n'a pas encore démarré. Il sera créé au prochain briefing du matin.</p>`;return}
+  const cap=P.config.capitalInitial,pos=P.positions||[],preds=P.predictions||[],clos=P.cloturees||[];
+  let valPos=0,live=true;pos.forEach(p=>{const px=prixLiveEur(p.actif);if(px==null)live=false;valPos+=p.quantite*(px??p.prixEntree)});
+  const total=P.liquidites+valPos,perf=100*(total-cap)/cap,last=(P.courbe||[]).slice(-1)[0];
+  const btcPx=prixLiveEur("bitcoin"),btcRef=btcPx?cap*btcPx/P.btcInitial:last?.btcRef;
+  const notees=preds.filter(p=>p.statut!=="en cours"),justes=notees.filter(p=>p.statut==="juste").length;
+  $("#pf-meta").textContent=`Démarré le ${new Date(P.debut).toLocaleDateString("fr-FR")} avec ${eur(cap)} · dernier passage du simulateur : ${fdate(P.derniereExecution)}`;
+  $("#pf-kpis").innerHTML=`
+   <div class="kpi"><div class="lbl">Valeur ${live&&pos.length?"(cours en direct)":""}</div><div class="val">${eur(total)}</div><div class="sub">${pct(perf)} depuis le départ</div></div>
+   <div class="kpi"><div class="lbl">Référence : Bitcoin conservé</div><div class="val">${eur(btcRef)}</div><div class="sub">${btcRef?pct(100*(btcRef-cap)/cap):""}</div></div>
+   <div class="kpi"><div class="lbl">Liquidités / investi</div><div class="val">${eur(P.liquidites)}</div><div class="sub">${pos.length} position${pos.length>1?"s":""} ouverte${pos.length>1?"s":""}</div></div>
+   <div class="kpi"><div class="lbl">Prédictions justes</div><div class="val">${notees.length?nf(100*justes/notees.length,0)+" %":"—"}</div><div class="sub">${justes}/${notees.length} notées · ${preds.length-notees.length} en cours</div></div>`;
+  $("#pf-chart").innerHTML=chartPf(P.courbe||[],cap);
+  const agents=[...new Set(preds.map(p=>p.agent))];
+  $("#pf-score").innerHTML=agents.length?`<table><thead><tr><th>Agent</th><th class="r">Prédictions</th><th class="r">Notées</th><th class="r">Justes</th><th class="r">Gains réalisés</th></tr></thead><tbody>${agents.map(a=>{
+    const ps=preds.filter(p=>p.agent===a),n=ps.filter(p=>p.statut!=="en cours"),j=n.filter(p=>p.statut==="juste").length,g=clos.filter(c=>c.agent===a).reduce((s,c)=>s+c.pnl,0);
+    return`<tr><td>${esc(a)}</td><td class="r num">${ps.length}</td><td class="r num">${n.length}</td><td class="r num">${n.length?`${j} (${nf(100*j/n.length,0)} %)`:"—"}</td><td class="r num">${clos.some(c=>c.agent===a)?`<span class="${g>=0?"up":"down"}">${g>=0?"+":""}${eur(g)}</span>`:"—"}</td></tr>`}).join("")}</tbody></table>`:'<p class="empty">Aucune prédiction.</p>';
+  $("#pf-pos").innerHTML=pos.length?`<table><thead><tr><th>Actif</th><th>Agent</th><th class="r">Montant</th><th class="r">Prix d'entrée</th><th class="r">Cours</th><th class="r">Résultat latent</th><th>Échéance</th></tr></thead><tbody>${pos.map(p=>{
+    const px=prixLiveEur(p.actif),v=px?p.quantite*px:null;return`<tr><td><span class="coin">${nomActif(p.actif)}</span></td><td>${esc(p.agent)}</td><td class="r num">${eur(p.montant)}</td><td class="r num">${eur(p.prixEntree)}</td><td class="r num">${eur(px)}</td><td class="r num">${v!=null?pct(100*(v-p.montant)/p.montant):"—"}</td><td class="num">${fdate(p.echeance)}</td></tr>`}).join("")}</tbody></table>`
+    :'<p class="empty" style="text-align:left">Aucune position ouverte : le portefeuille est entièrement en liquidités.</p>';
+  $("#pf-journal").innerHTML=preds.length?`<table><thead><tr><th>Date</th><th>Agent</th><th>Actif</th><th>Prédiction</th><th>Confiance</th><th class="r">Cours de départ</th><th>Échéance</th><th>Résultat</th><th>Position</th></tr></thead><tbody>${[...preds].reverse().map(p=>{
+    const px=p.statut==="en cours"?prixLiveEur(p.actif):p.prixFinal,v=px?100*(px-p.prixRef)/p.prixRef:null;
+    const st=p.statut==="juste"?'<span class="st ok">Juste</span>':p.statut==="fausse"?'<span class="st ko">Fausse</span>':'<span class="st wait">En cours</span>';
+    return`<tr title="${esc(p.raison)}"><td class="num">${fdate(p.date)}</td><td>${esc(p.agent)}</td><td><span class="coin">${nomActif(p.actif)}</span></td><td>${p.sens==="hausse"?'<span class="up">▲ Hausse</span>':'<span class="down">▼ Baisse</span>'} · ${p.horizonJours} j</td><td>${esc(p.confiance)}</td><td class="r num">${eur(p.prixRef)}</td><td class="num">${fdate(p.echeance)}</td><td>${st} ${v!=null?`<span class="num" style="font-size:12px">${pct(v)}</span>`:""}</td><td style="white-space:normal;min-width:180px;font-size:12px;color:var(--muted)">${esc(p.position)}</td></tr>`}).join("")}</tbody></table>`:'<p class="empty">Aucune prédiction.</p>';
+}
+const usd=(v)=>v==null?"—":(v>=1?nf(v,v>=100?2:4):v.toPrecision(4))+" $";
+function sparkRaw(arr){if(!arr||arr.length<2)return"";const up=arr[arr.length-1]>=arr[0];return spark(arr,up)}
+function renderRobot(){
+  const R=window.ROBOT;
+  if(!R){$("#robot").innerHTML=`<h2>Robot de micro-transactions</h2><p class="empty">Le robot n'a pas encore démarré. Double-cliquez sur « Lancer le robot.bat » dans le dossier Vigie Crypto.</p>`;return}
+  const cap=R.config.capitalInitial,pos=R.positions||[],tr=R.trades||[],st=R.stats,fx=R.marche?.eurusdt||1;
+  const valPos=pos.reduce((s,p)=>s+p.quantite*(p.prixActuelUsdt||p.prixEntreeUsdt)/fx,0),total=R.liquidites+valPos;
+  const last=(R.courbe||[]).slice(-1)[0],age=(Date.now()-new Date(R.derniereExecution))/60000;
+  const P=window.PORTEFEUILLE,pfVal=P?.courbe?.slice(-1)[0]?.valeur;
+  $("#rb-meta").innerHTML=`Démarré le ${new Date(R.debut).toLocaleDateString("fr-FR")} avec ${eur(cap)} · dernier cycle : ${fdate(R.derniereExecution)} · ${R.marche?.analyses||0} paires analysées${age>12?' · <b class="down">robot arrêté ? (aucun cycle depuis '+Math.round(age)+' min)</b>':""}`;
+  $("#rb-kpis").innerHTML=`
+   <div class="kpi"><div class="lbl">Valeur du robot</div><div class="val">${eur(total)}</div><div class="sub">${pct(100*(total-cap)/cap)} depuis le départ</div></div>
+   <div class="kpi"><div class="lbl">Référence : Bitcoin conservé</div><div class="val">${eur(last?.btcRef)}</div><div class="sub">${last?pct(100*(last.btcRef-cap)/cap):""}</div></div>
+   <div class="kpi"><div class="lbl">Portefeuille des agents seuls</div><div class="val">${eur(pfVal)}</div><div class="sub">${pfVal?pct(100*(pfVal-cap)/cap):""}</div></div>
+   <div class="kpi"><div class="lbl">Transactions clôturées</div><div class="val">${st.nbTrades}</div><div class="sub">${st.nbTrades?nf(100*st.gagnants/st.nbTrades,0)+" % gagnantes · ":""}frais ${eur(st.frais)}</div></div>`;
+  const m=R.marche||{};
+  $("#rb-alerte").innerHTML=m.achatsBloques?`<div class="challenge"><b>Achats suspendus :</b> ${esc(m.achatsBloques)}</div>`:R.regime==="prudent"?`<div class="challenge"><b>Mode prudent :</b> l'agent Technique a réduit la taille des positions de moitié.</div>`:"";
+  const c=R.courbe||[],step=Math.max(1,Math.ceil(c.length/300));
+  $("#rb-chart").innerHTML=chartPf(c.filter((_,i)=>i%step===0||i===c.length-1).map(p=>({date:p.t,valeur:p.valeur,btcRef:p.btcRef})),cap,"Robot de micro-transactions",true);
+  $("#rb-journal").innerHTML=(R.journal||[]).length?`<table><tbody>${[...R.journal].reverse().slice(0,60).map(j=>`<tr><td class="num" style="width:1%">${fdate(j.t)}</td><td style="white-space:normal">${esc(j.texte)}</td></tr>`).join("")}</tbody></table>`:'<p class="empty" style="text-align:left">Aucune transaction pour l\'instant : aucun signal n\'a encore atteint le score minimum.</p>';
+  $("#rb-pos").innerHTML=pos.length?`<table><thead><tr><th>Actif</th><th class="r">Montant</th><th class="r">Entrée</th><th class="r">Cours</th><th class="r">Résultat latent</th><th>Ouvert</th><th>Pourquoi</th><th>Avis agent</th></tr></thead><tbody>${pos.map(p=>{const v=p.prixActuelUsdt?100*(p.prixActuelUsdt/p.prixEntreeUsdt-1):null;
+    return`<tr><td><b>${esc(p.base)}</b></td><td class="r num">${eur(p.montant)}</td><td class="r num">${usd(p.prixEntreeUsdt)}</td><td class="r num">${usd(p.prixActuelUsdt)}</td><td class="r num">${v!=null?pct(v):"—"}</td><td class="num">${fdate(p.ouvertLe)}</td><td style="white-space:normal;min-width:200px;font-size:12px;color:var(--muted)">${esc(p.motif)}</td><td style="font-size:12px">${esc(p.avis)}</td></tr>`}).join("")}</tbody></table>`:'<p class="empty" style="text-align:left">Aucune position ouverte.</p>';
+  $("#rb-sig").innerHTML=`<table><thead><tr><th>Actif</th><th class="r">Score</th><th class="r">1 h</th><th class="r">4 h</th><th class="r">24 h</th><th class="r">RSI</th><th class="r">Volume</th><th>12 h</th><th>Détail</th><th>Avis agent</th></tr></thead><tbody>${(R.signaux||[]).slice(0,15).map(s=>`<tr><td><b>${esc(s.base)}</b></td><td class="r num"><span class="st ${s.score>=5?"ok":"wait"}">${s.score}/8</span></td><td class="r num">${pct(s.r1h)}</td><td class="r num">${pct(s.r4h)}</td><td class="r num">${pct(s.r24h)}</td><td class="r num">${nf(s.rsi,0)}</td><td class="r num">x${nf(s.volRatio,1)}</td><td>${sparkRaw(s.spark)}</td><td style="white-space:normal;min-width:200px;font-size:12px;color:var(--muted)">${esc(s.raisons)}</td><td style="font-size:12px">${esc(s.avis)||"—"}</td></tr>`).join("")}</tbody></table>`;
+  $("#rb-trades").innerHTML=tr.length?`<table><thead><tr><th>Actif</th><th class="r">Montant</th><th class="r">Résultat</th><th>Ouvert</th><th>Fermé</th><th>Sortie</th></tr></thead><tbody>${[...tr].reverse().slice(0,30).map(t=>`<tr><td><b>${esc(t.base)}</b></td><td class="r num">${eur(t.montant)}</td><td class="r num"><span class="${t.pnl>=0?"up":"down"}">${t.pnl>=0?"+":""}${eur(t.pnl)}</span> ${pct(t.pnlPct)}</td><td class="num">${fdate(t.ouvertLe)}</td><td class="num">${fdate(t.fermeLe)}</td><td>${esc(t.motifSortie)}</td></tr>`).join("")}</tbody></table>`:'<p class="empty" style="text-align:left">Aucune transaction clôturée.</p>';
+}
+// Recharge les fichiers écrits par le robot et le simulateur sans recharger la page.
+function recharger(src,apres){const s=document.createElement("script");s.src=src+"?t="+Date.now();s.onload=()=>{s.remove();apres()};s.onerror=()=>s.remove();document.body.appendChild(s)}
+renderBrief();renderTest();renderRobot();load();setInterval(load,60000);
+setInterval(()=>{recharger("robot.js",renderRobot);recharger("portefeuille.js",renderTest);recharger("briefing.js",renderBrief)},60000);
+</script>
+</body>
+</html>

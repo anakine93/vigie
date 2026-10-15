@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Micro-transactions</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Une seule page, deux robots : résultats globaux → positions en cours (filtrables par marché) → courbes et activité → historique */
+:root{
+  --bg:#f3f4f7; --panel:#fff; --line:#dde0e8; --fg:#161a25; --muted:#5d6475; --accent:#2f4fd8; --accent2:#a3479b;
+  --up:#0f8a55; --down:#c8383a; --warn:#b26b00; --chip:#eaedf5;
+  --f-display:"Bricolage Grotesque",system-ui,sans-serif; --f-body:"IBM Plex Sans",system-ui,sans-serif; --f-mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f121a;--panel:#171b26;--line:#2a3040;--fg:#e7e9f0;--muted:#9097a8;--accent:#7d93ff;--accent2:#e08ad6;--up:#3ccf8a;--down:#ff6b6d;--warn:#f0b04a;--chip:#222838;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f121a;--panel:#171b26;--line:#2a3040;--fg:#e7e9f0;--muted:#9097a8;--accent:#7d93ff;--accent2:#e08ad6;--up:#3ccf8a;--down:#ff6b6d;--warn:#f0b04a;--chip:#222838;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 var(--f-body);padding:20px 16px 40px}
+.wrap{max-width:1280px;margin:0 auto;display:grid;gap:16px}
+header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:10px}
+h1{font:700 30px/1.1 var(--f-display);margin:0}
+.state{font:12px var(--f-mono);color:var(--muted);margin-top:4px}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle;background:var(--up)}
+.dot.off{background:var(--down)}
+.badge{font:500 11px var(--f-body);text-transform:uppercase;letter-spacing:.05em;padding:3px 10px;border-radius:99px;border:1px solid var(--warn);color:var(--warn)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;min-width:0}
+h2{font:600 13px var(--f-body);margin:0 0 10px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.kpi .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.kpi .val{font:500 24px var(--f-mono);font-variant-numeric:tabular-nums}
+.kpi .sub{font:12px var(--f-mono);color:var(--muted)}
+.robots{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.robots b{font-weight:600}
+.robots div{font-size:13px;font-variant-numeric:tabular-nums}
+.up{color:var(--up)} .down{color:var(--down)}
+.alert{padding:10px 12px;border-radius:10px;border:1px dashed var(--warn);font-size:13px}
+.grid2{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:16px}
+@media (max-width:900px){.grid2{grid-template-columns:minmax(0,1fr)}}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+th,td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+th{font:600 11px var(--f-body);text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.r{text-align:right} .num{font-family:var(--f-mono);font-size:13px}
+.why{white-space:normal;min-width:200px;font-size:12px;color:var(--muted)}
+.mk{display:inline-block;font:500 10px var(--f-body);text-transform:uppercase;letter-spacing:.05em;padding:1px 7px;border-radius:99px;background:var(--chip);color:var(--muted)}
+.bar{height:6px;border-radius:3px;background:var(--chip);position:relative;min-width:90px}
+.bar i{position:absolute;top:0;bottom:0;border-radius:3px}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.filters button{font:inherit;font-size:12px;color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:3px 12px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.empty{color:var(--muted);padding:12px 0}
+.journal{max-height:420px;overflow-y:auto}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--muted);margin-top:4px}
+.legend i{display:inline-block;width:14px;height:3px;border-radius:2px;vertical-align:middle;margin-right:5px}
+.chart-t{font-size:12px;font-weight:600;margin:4px 0}
+.rules{font-size:12px;color:var(--muted);margin:0;max-width:120ch}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div><h1>Micro-transactions</h1><div class="state" id="state-c">Chargement…</div><div class="state" id="state-m"></div></div>
+    <span class="badge">Argent fictif · aucun ordre réel</span>
+  </header>
+  <section class="panel" aria-label="Résultats"><div class="kpis" id="kpis"></div><div class="robots" id="robots"></div></section>
+  <div id="alert"></div>
+  <section class="panel" aria-label="Positions en cours">
+    <h2 id="pos-title">Positions en cours</h2>
+    <div class="filters" id="filters" role="group" aria-label="Filtrer par marché"></div>
+    <div class="scroll" id="pos"></div>
+  </section>
+  <div class="grid2">
+    <section class="panel" aria-label="Courbes"><h2>Évolution des deux robots</h2><div id="charts"></div></section>
+    <section class="panel" aria-label="Activité"><h2>Activité en direct</h2><div class="journal" id="journal"></div></section>
+  </div>
+  <section class="panel" aria-label="Transactions clôturées"><h2>Transactions clôturées</h2><div class="scroll" id="trades"></div></section>
+  <p class="rules" id="rules"></p>
+</div>
+<script src="crypto-dashboard/robot.js"></script>
+<script src="crypto-dashboard/robot-marches.js"></script>
+<script src="crypto-dashboard/caisse.js"></script>
+<script>
+const $=s=>document.querySelector(s);
+const nf=(v,d)=>v.toLocaleString("fr-FR",{minimumFractionDigits:d,maximumFractionDigits:d});
+const eur=v=>v==null?"—":nf(v,2)+" €";
+const SYM={USD:"$",EUR:"€",GBP:"£",JPY:"¥",CHF:"CHF",CAD:"CA$",AUD:"A$",HKD:"HK$",USDT:"$",USX:"cents $",GBp:"pence"};
+const prix=(v,dev)=>v==null?"—":(v>=1?nf(v,v>=100?2:4):v.toPrecision(4))+" "+(SYM[dev]||dev||"");
+const pct=v=>v==null?"—":`<span class="${v>=0?"up":"down"}">${v>=0?"+":""}${nf(v,2)} %</span>`;
+const euro=v=>v==null?"—":`<span class="${v>=0?"up":"down"}">${v>=0?"+":"−"}${eur(Math.abs(v))}</span>`;
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fdate=s=>s?new Date(s).toLocaleDateString("fr-FR",{day:"2-digit",month:"2-digit"})+" "+new Date(s).toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"}):"—";
+const duree=m=>m<60?m+" min":Math.floor(m/60)+" h "+String(m%60).padStart(2,"0");
+const depuis=s=>duree(Math.round((Date.now()-new Date(s))/60000));
+const MK={crypto:"Crypto",actions:"Actions",indices:"Indices",matieres:"Matières",devises:"Devises"};
+let filtre="tout";
+try{filtre=localStorage.getItem("mt-filtre")||"tout"}catch{}
+
+// Cours en direct des positions crypto, lus sur Binance toutes les 5 secondes (affichage seulement).
+let live={},liveAt=null,liveErr=false;
+async function majLive(){
+  const pos=window.ROBOT?.positions||[];if(!pos.length){live={};liveAt=null;return}
+  const syms=[...new Set([...pos.map(p=>p.paire),"EURUSDT"])];
+  try{const r=await fetch("https://api.binance.com/api/v3/ticker/price?symbols="+encodeURIComponent(JSON.stringify(syms)));
+    if(!r.ok)throw 0;const d=await r.json();live={};d.forEach(t=>live[t.symbol]=+t.price);liveAt=Date.now();liveErr=false}
+  catch{liveErr=true}
+  render();
+}
+
+// Ramène les positions et transactions des deux robots à un même format.
+function positionsCrypto(R){
+  if(!R)return[];const C=R.config,fx=live.EURUSDT||R.marche?.eurusdt||1;
+  const gl=v=>v>=100e6?0.0005:v>=20e6?0.0015:0.004;
+  return(R.positions||[]).map(p=>{const cours=live[p.paire]||p.prixActuelUsdt||p.prixEntreeUsdt,net=1-C.frais-gl(p.volUsdt||20e6);
+    const stop=p.stopSuiveur||p.prixEntreeUsdt*(1-C.stopLoss);
+    return{marche:"crypto",nom:p.base,montant:p.montant,entree:p.prixEntreeUsdt,cours,devise:"USDT",valeur:p.quantite*cours/fx,
+      gainMax:p.quantite*p.prixEntreeUsdt*(1+C.priseGain)/fx*net-p.montant,perteMax:p.quantite*stop/fx*net-p.montant,
+      sl:C.stopLoss,tp:C.priseGain,suiveur:p.stopSuiveur?p.stopSuiveur/p.prixEntreeUsdt-1:null,ouvertLe:p.ouvertLe,motif:p.motif,avis:p.avis}})
+}
+function positionsMarches(M){
+  if(!M)return[];const K={actions:[0.001,0.0005],indices:[0.0005,0.0002],matieres:[0.0005,0.0005],devises:[0.0001,0.0001]};
+  return(M.positions||[]).map(p=>{const[f,g]=K[p.classe]||K.actions,cours=p.prixActuel||p.prixEntree,net=(1-g)*(1-f);
+    const stop=p.stopSuiveur?p.stopSuiveur/p.prixEntree:1-p.slPct;
+    return{marche:p.classe,nom:p.nom,montant:p.montant,entree:p.prixEntree,cours,devise:p.devise,valeur:p.investiNet*cours/p.prixEntree,
+      gainMax:p.investiNet*(1+p.tpPct)*net-p.montant,perteMax:p.investiNet*stop*net-p.montant,
+      sl:p.slPct,tp:p.tpPct,suiveur:p.stopSuiveur?p.stopSuiveur/p.prixEntree-1:null,ouvertLe:p.ouvertLe,motif:p.motif,avis:p.avis}})
+}
+
+function chart(pts,cap,nom,ref,col){
+  if(!pts.length)return'<p class="empty">Aucun point pour l\'instant.</p>';
+  const W=640,H=170,L=58,R=12,T=10,B=24,vals=pts.flatMap(p=>[p.valeur,p.ref]);
+  let mn=Math.min(cap,...vals),mx=Math.max(cap,...vals);const pad=(mx-mn)*0.15||cap*0.01;mn-=pad;mx+=pad;
+  const x=i=>pts.length===1?(L+W-R)/2:L+i*(W-L-R)/(pts.length-1),y=v=>T+(mx-v)*(H-T-B)/(mx-mn);
+  const line=(k,c)=>pts.length>1?`<polyline fill="none" stroke="var(${c})" stroke-width="2" points="${pts.map((p,i)=>x(i)+","+y(p[k])).join(" ")}"/>`:"";
+  const dot=(k,c)=>`<circle cx="${x(pts.length-1)}" cy="${y(pts[pts.length-1][k])}" r="4" fill="var(${c})"/>`;
+  const ticks=[mx-pad,cap,mn+pad].filter((v,i,a)=>a.findIndex(w=>Math.abs(w-v)<(mx-mn)*0.1)===i);
+  const grid=ticks.map(v=>`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)" ${v===cap?'stroke-dasharray="4 4"':""}/><text x="${L-6}" y="${y(v)+4}" text-anchor="end" font-size="11" fill="var(--muted)" font-family="var(--f-mono)">${nf(v,0)} €</text>`).join("");
+  const lbl=[0,pts.length-1].filter((v,i,a)=>a.indexOf(v)===i).map(i=>`<text x="${x(i)}" y="${H-5}" text-anchor="${pts.length>1?(i?"end":"start"):"middle"}" font-size="11" fill="var(--muted)">${fdate(pts[i].t)}</text>`).join("");
+  return`<div class="chart-t">${nom}</div><svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="${nom}">${grid}${line("ref","--muted")}${line("valeur",col)}${dot("ref","--muted")}${dot("valeur",col)}${lbl}</svg>
+  <div class="legend"><span><i style="background:var(${col})"></i>Valeur totale (caisse commune)</span><span><i style="background:var(--muted)"></i>${ref}</span></div>`;
+}
+// Position du cours entre le stop-loss et la prise de gain.
+function barre(v,sl,tp){const p=Math.max(0,Math.min(1,(v+sl)/(sl+tp))),z=sl/(sl+tp);
+  return`<div class="bar" title="Stop-loss −${nf(100*sl,1)} % · prise de gain +${nf(100*tp,1)} %"><i style="left:${Math.min(p,z)*100}%;width:${Math.abs(p-z)*100}%;background:var(${v>=0?"--up":"--down"})"></i><i style="left:calc(${z*100}% - 1px);width:2px;background:var(--fg)"></i></div>`}
+function etat(R,nom,detail){
+  const relance=enLigne?"vérifiez l'onglet Actions du dépôt GitHub":"relancez « Lancer le robot.bat »";
+  if(!R)return`<span class="dot off"></span>${nom} : pas encore démarré, ${relance}`;
+  // Dans le cloud, GitHub peut retarder certains lancements : on tolère plus de retard avant d'alerter.
+  const age=(Date.now()-new Date(R.derniereExecution))/60000,lim=nom.includes("Crypto")?(enLigne?25:12):(enLigne?35:25);
+  return`<span class="dot ${age<lim?"":"off"}"></span>${nom} : ${age<lim?"actif":"arrêté ? "+relance} · ${detail}`;
+}
+
+function render(){
+  const R=window.ROBOT,M=window.ROBOT_MARCHES;
+  const regimes={normal:"normal",prudent:"prudent",stop:"achats suspendus"};
+  $("#state-c").innerHTML=etat(R,"Robot Crypto",R?`scan toutes les 5 min (dernier ${fdate(R.derniereExecution)}, ${R.marche?.analyses||0} paires), stops vérifiés toutes les 30 s · seuil ${R.config.scoreMin}/8 · régime ${regimes[R.regime]||R.regime}`:"");
+  const ouv=M?.marche?.ouverts||{};
+  $("#state-m").innerHTML=etat(M,"Robot Marchés",M?`scan toutes les 10 min (dernier ${fdate(M.derniereExecution)}, ${M.marche?.analyses||0} actifs dont ${Object.values(ouv).reduce((a,b)=>a+b,0)} cotés en ce moment), stops vérifiés toutes les 60 s · seuil ${M.config.scoreMin}/8 · régime ${regimes[M.regime]||M.regime}`:"");
+
+  // Une seule caisse de 1 000 € partagée : valeur totale = liquidités communes + positions des deux robots.
+  const pc=positionsCrypto(R),pm=positionsMarches(M),tous=[...pc,...pm],K=window.CAISSE;
+  const cap=K?.capitalInitial||1000,liq=K?K.liquidites:cap;
+  const valC=pc.reduce((s,p)=>s+p.valeur,0),valM=pm.reduce((s,p)=>s+p.valeur,0);
+  const investi=valC+valM,total=liq+investi,latent=tous.reduce((s,p)=>s+p.valeur-p.montant,0);
+  const stC=R?.stats||{nbTrades:0,gagnants:0,frais:0,pnl:0},stM=M?.stats||{nbTrades:0,gagnants:0,frais:0,pnl:0};
+  const nb=stC.nbTrades+stM.nbTrades,gagn=stC.gagnants+stM.gagnants,real=stC.pnl+stM.pnl;
+  $("#kpis").innerHTML=`
+   <div class="kpi"><div class="lbl">Valeur totale</div><div class="val">${eur(total)}</div><div class="sub">${pct(100*(total-cap)/cap)} depuis le départ (${eur(cap)})</div></div>
+   <div class="kpi"><div class="lbl">Investi en ce moment</div><div class="val">${eur(investi)}</div><div class="sub">${tous.length} position${tous.length>1?"s":""} · latent ${euro(latent)} · liquidités ${eur(liq)}</div></div>
+   <div class="kpi"><div class="lbl">Gains réalisés</div><div class="val ${real>=0?"up":"down"}">${real>=0?"+":""}${eur(real)}</div><div class="sub">${nb} clôturée${nb>1?"s":""}${nb?" · "+nf(100*gagn/nb,0)+" % gagnantes":""}</div></div>
+   <div class="kpi"><div class="lbl">Si tout atteint l'objectif / touche le stop</div><div class="val" style="font-size:18px">${euro(tous.reduce((s,p)=>s+p.gainMax,0))} / ${euro(tous.reduce((s,p)=>s+p.perteMax,0))}</div><div class="sub">frais payés ${eur(stC.frais+stM.frais)}</div></div>`;
+  const lc=R?.courbe?.slice(-1)[0],lm=M?.courbe?.slice(-1)[0];
+  $("#robots").innerHTML=`
+   <div><b>Crypto</b> · ${eur(valC)} investis sur ${pc.length} position${pc.length>1?"s":""} · gains réalisés ${euro(stC.pnl)} (${stC.nbTrades} clôturée${stC.nbTrades>1?"s":""})<br><span style="color:var(--muted)">Si les ${eur(cap)} étaient restés en Bitcoin : ${eur(lc?.btcRef)} ${lc?pct(100*(lc.btcRef-cap)/cap):""}</span></div>
+   <div><b>Actions, indices, matières, devises</b> · ${eur(valM)} investis sur ${pm.length} position${pm.length>1?"s":""} · gains réalisés ${euro(stM.pnl)} (${stM.nbTrades} clôturée${stM.nbTrades>1?"s":""})<br><span style="color:var(--muted)">Si les ${eur(cap)} étaient restés dans le S&amp;P 500 : ${eur(lm?.ref)} ${lm?pct(100*(lm.ref-cap)/cap):""}</span></div>`;
+  const al=[R?.marche?.achatsBloques&&`<b>Crypto, achats suspendus :</b> ${esc(R.marche.achatsBloques)}`,M?.marche?.achatsBloques&&`<b>Marchés, achats suspendus :</b> ${esc(M.marche.achatsBloques)}`].filter(Boolean);
+  $("#alert").innerHTML=al.length?`<div class="alert">${al.join("<br>")}</div>`:"";
+
+  const compte=k=>k==="tout"?tous.length:tous.filter(p=>p.marche===k).length;
+  $("#filters").innerHTML=["tout","crypto","actions","indices","matieres","devises"].map(k=>`<button type="button" data-f="${k}" aria-pressed="${filtre===k}">${k==="tout"?"Tout":MK[k]} (${compte(k)})</button>`).join("");
+  const liste=(filtre==="tout"?tous:tous.filter(p=>p.marche===filtre)).sort((a,b)=>new Date(b.ouvertLe)-new Date(a.ouvertLe));
+  const lv=pc.length?(liveAt?` · crypto en direct (Binance, il y a ${Math.round((Date.now()-liveAt)/1000)} s)`:liveErr?" · cours crypto en direct indisponibles":""):"";
+  $("#pos-title").innerHTML=`Positions en cours (${tous.length})<span style="text-transform:none;letter-spacing:0;font-weight:400">${lv}${pm.length?" · autres marchés actualisés chaque minute, parfois avec 15 min de retard":""}</span>`;
+  $("#pos").innerHTML=liste.length?`<table><thead><tr><th>Actif</th><th>Marché</th><th class="r">Montant</th><th class="r">Achat</th><th class="r">Cours</th><th class="r">Résultat</th><th>Stop / Objectif</th><th class="r">À l'objectif</th><th class="r">Au pire<br>(stop touché)</th><th>Depuis</th><th>Pourquoi</th></tr></thead><tbody>${liste.map(p=>{
+      const v=p.cours/p.entree-1;
+      return`<tr><td><b>${esc(p.nom)}</b></td><td><span class="mk">${MK[p.marche]}</span></td><td class="r num">${eur(p.montant)}</td><td class="r num">${prix(p.entree,p.devise)}</td><td class="r num">${prix(p.cours,p.devise)}</td><td class="r num">${pct(100*v)}<br><span style="font-size:12px">${euro(p.valeur-p.montant)}</span></td><td>${p.suiveur!=null?`<span class="up" style="font-size:12px">▲ Objectif dépassé<br>stop suiveur à +${nf(100*p.suiveur,1)} %</span>`:`${barre(v,p.sl,p.tp)}<span style="font-size:11px;color:var(--muted)">−${nf(100*p.sl,1)} % / +${nf(100*p.tp,1)} %</span>`}</td><td class="r num">${euro(p.gainMax)}</td><td class="r num">${euro(p.perteMax)}</td><td class="num">${depuis(p.ouvertLe)}</td><td class="why">${esc(p.motif)}${p.avis&&p.avis!=="aucun"?" · avis "+esc(p.avis):""}</td></tr>`}).join("")}</tbody></table>`
+    :`<p class="empty">Aucune position en cours${filtre!=="tout"?" sur ce marché":""}.</p>`;
+
+  const sous=(c,k)=>{const st=Math.max(1,Math.ceil(c.length/300));return c.filter((_,i)=>i%st===0||i===c.length-1).map(p=>({t:p.t,valeur:p.valeur,ref:p[k]}))};
+  $("#charts").innerHTML=(R?chart(sous(R.courbe||[],"btcRef"),cap,"Valeur totale comparée au Bitcoin","1 000 € gardés en Bitcoin","--accent"):"")+(M?`<div style="height:12px"></div>`+chart(sous(M.courbe||[],"ref"),cap,"Valeur totale comparée au S&amp;P 500","1 000 € gardés dans le S&amp;P 500","--accent2"):"");
+  const j=[...(R?.journal||[]).map(x=>({...x,m:"Crypto"})),...(M?.journal||[]).map(x=>({...x,m:"Marchés"}))].sort((a,b)=>new Date(b.t)-new Date(a.t)).slice(0,100);
+  $("#journal").innerHTML=j.length?`<table><tbody>${j.map(x=>`<tr><td class="num" style="width:1%">${fdate(x.t)}</td><td style="width:1%"><span class="mk">${x.m}</span></td><td style="white-space:normal" class="${/^Vente.*: -/.test(x.texte)?"down":/^Vente/.test(x.texte)?"up":""}">${esc(x.texte)}</td></tr>`).join("")}</tbody></table>`:'<p class="empty">Aucune transaction pour l\'instant.</p>';
+  const tr=[...(R?.trades||[]).map(t=>({...t,nom:t.base,marche:"crypto"})),...(M?.trades||[]).map(t=>({...t,marche:t.classe}))].sort((a,b)=>new Date(b.fermeLe)-new Date(a.fermeLe)).slice(0,60);
+  $("#trades").innerHTML=tr.length?`<table><thead><tr><th>Actif</th><th>Marché</th><th class="r">Montant</th><th class="r">Résultat</th><th>Ouvert</th><th>Fermé</th><th>Durée</th><th>Raison de la vente</th></tr></thead><tbody>${tr.map(t=>`<tr><td><b>${esc(t.nom)}</b></td><td><span class="mk">${MK[t.marche]}</span></td><td class="r num">${eur(t.montant)}</td><td class="r num">${euro(t.pnl)} ${pct(t.pnlPct)}</td><td class="num">${fdate(t.ouvertLe)}</td><td class="num">${fdate(t.fermeLe)}</td><td class="num">${duree(Math.round((new Date(t.fermeLe)-new Date(t.ouvertLe))/60000))}</td><td>${esc(t.motifSortie)}</td></tr>`).join("")}</tbody></table>`:'<p class="empty">Aucune transaction clôturée pour l\'instant.</p>';
+  $("#rules").textContent="Une seule caisse de 1 000 € fictifs, partagée par deux robots (crypto et autres marchés). Achat si le score technique atteint 5/8 (tendance, cassure, volume, élan, RSI) et qu'aucun agent n'a d'avis défavorable : 10 % de la valeur totale, 15 % avec un avis favorable, moitié moins en régime prudent. 8 places au total : 4 réservées à la crypto, 4 aux autres marchés. Crypto : stop-loss −3 %, objectif +5 %. Autres marchés : stop-loss et objectif adaptés à la volatilité de chaque actif, achats seulement quand la bourse est ouverte, effet de change ignoré. Une fois l'objectif atteint, la position n'est pas vendue : un stop suiveur suit le plus haut atteint et sécurise au moins 60 % de l'objectif. Sans objectif atteint, sortie au bout de 24 h (crypto) ou 48 h (autres marchés). Frais et écarts de prix simulés selon le marché. Simulation : rien ici n'est un conseil en investissement.";
+}
+$("#filters").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;filtre=b.dataset.f;try{localStorage.setItem("mt-filtre",filtre)}catch{};render()});
+// Données des robots : sur GitHub Pages, lues sur la branche « donnees » du dépôt ; sur le PC, lues dans le dossier.
+const enLigne=location.hostname.endsWith("github.io");
+const DEPOT=enLigne?`https://raw.githubusercontent.com/${location.hostname.split(".")[0]}/${location.pathname.split("/").filter(Boolean)[0]}/donnees/`:null;
+async function chargerEnLigne(){
+  const lire=f=>fetch(DEPOT+f+"?t="+Date.now(),{cache:"no-store"}).then(r=>r.ok?r.json():null).catch(()=>null);
+  const[r,m,k]=await Promise.all([lire("robot.json"),lire("robot-marches.json"),lire("caisse.json")]);
+  if(r)window.ROBOT=r;if(m)window.ROBOT_MARCHES=m;if(k)window.CAISSE=k;render();
+}
+function recharger(src){const s=document.createElement("script");s.src=src+"?t="+Date.now();s.onload=()=>{s.remove();render()};s.onerror=()=>s.remove();document.body.appendChild(s)}
+function majDonnees(){if(enLigne)chargerEnLigne();else{recharger("crypto-dashboard/robot.js");recharger("crypto-dashboard/robot-marches.js");recharger("crypto-dashboard/caisse.js")}}
+render();majDonnees();majLive();
+setInterval(majDonnees,enLigne?60000:15000);
+setInterval(majLive,5000);
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+# Fichiers d'etat produits par les robots et le simulateur : ils vivent sur la branche "donnees", pas ici.
+crypto-dashboard/*.json
+crypto-dashboard/robot.js
+crypto-dashboard/robot-marches.js
+crypto-dashboard/caisse.js
+crypto-dashboard/portefeuille.js
+crypto-dashboard/*.tmp
+donnees/
+.claude/

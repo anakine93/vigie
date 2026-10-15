@@ -1,0 +1,60 @@
+# Fait tourner les robots Vigie 24 h/24 sur les serveurs de GitHub (argent fictif, aucun ordre reel).
+# Lancement toutes les 5 minutes (GitHub peut retarder certains lancements de quelques minutes).
+# L'etat des robots est stocke sur la branche "donnees", reecrite a chaque passage (sans historique,
+# pour que le depot ne grossisse pas). Les fichiers d'avis des agents y sont preserves.
+name: Robots Vigie
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: robots-vigie
+  cancel-in-progress: false
+
+jobs:
+  robots:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    env:
+      TZ: Europe/Paris
+      BINANCE_API: https://data-api.binance.vision/api/v3
+      DEPOT: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+    steps:
+      - name: Recuperer les scripts
+        uses: actions/checkout@v4
+
+      - name: Recuperer l'etat des robots (branche donnees)
+        run: |
+          if git ls-remote --exit-code --heads "$DEPOT" donnees > /dev/null; then
+            git clone --depth 1 --branch donnees "$DEPOT" donnees
+          else
+            mkdir donnees
+          fi
+
+      - name: Faire tourner les robots
+        shell: pwsh
+        run: ./cloud.ps1 -Donnees ./donnees
+
+      - name: Enregistrer l'etat des robots
+        run: |
+          cd donnees
+          rm -rf .git
+          git init -q -b donnees
+          git config user.name "Robots Vigie"
+          git config user.email "robots-vigie@users.noreply.github.com"
+          git remote add origin "$DEPOT"
+          # Recupere les derniers avis publies par les agents pendant ce passage.
+          if git fetch -q --depth 1 origin donnees; then
+            for f in orientations.json orientations-marches.json; do
+              git show FETCH_HEAD:"$f" > "$f.tmp" 2>/dev/null && mv "$f.tmp" "$f" || rm -f "$f.tmp"
+            done
+          fi
+          rm -f *.tmp
+          git add -A
+          git commit -q -m "Etat des robots au $(date '+%d/%m/%Y %H:%M')"
+          git push -q --force origin donnees
