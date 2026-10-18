@@ -1,1 +1,77 @@
-{"maj": "2026-10-18T09:09:49", "regime": "normal", "commentaire": "Le BTC est stable autour de 81 700 USDT (+0,2 % sur 24 h) et l'ETH est calme, sans signe de stress. Les bougies Binance 1 h/4 h étaient inaccessibles (proxy 403) : l'analyse repose sur les données 15 min du robot et reste de confiance limitée.", "avis": [{"symbole": "GTC", "avis": "defavorable", "confiance": "moyenne", "raison": "Hausse de +11,7 % sur 24 h sur une petite capitalisation avec volume faible (x0,7) et aucune actualité trouvée : pic isolé non expliqué.", "expire": "2026-10-18T15:09:49"}, {"symbole": "AVA", "avis": "defavorable", "confiance": "moyenne", "raison": "+25,6 % sur 24 h sans catalyseur identifié, volume en retrait (x0,4) et repli de -2,4 % sur 1 h : risque de retour en arrière.", "expire": "2026-10-18T15:09:49"}, {"symbole": "SAND", "avis": "defavorable", "confiance": "faible", "raison": "RSI à 75 après +16 % sur 24 h sans actualité trouvée : surachat probable.", "expire": "2026-10-18T15:09:49"}, {"symbole": "NFP", "avis": "defavorable", "confiance": "elevee", "raison": "Effondrement de -66 % sur 24 h (RSI 16) : événement anormal, ne pas acheter.", "expire": "2026-10-18T15:09:49"}, {"symbole": "BCH", "avis": "neutre", "confiance": "faible", "raison": "Position ouverte, cours stable (-0,9 % sur 24 h), tendance 15 min haussière mais non confirmée en 1 h faute de données.", "expire": "2026-10-18T15:09:49"}, {"symbole": "MUBARAK", "avis": "neutre", "confiance": "faible", "raison": "Tendance haussière modérée (RSI 63) mais volume faible et aucune confirmation 1 h.", "expire": "2026-10-18T15:09:49"}, {"symbole": "ASTER", "avis": "neutre", "confiance": "faible", "raison": "Tendance haussière douce, aucun signal de risque trouvé, confirmation 1 h indisponible.", "expire": "2026-10-18T15:09:49"}, {"symbole": "ERA", "avis": "neutre", "confiance": "faible", "raison": "+13,7 % sur 24 h mais déjà retombé à 1 h, volume faible : pas de confirmation.", "expire": "2026-10-18T15:09:49"}, {"symbole": "NEAR", "avis": "neutre", "confiance": "faible", "raison": "Tendance haussière faible, volume faible, rien de notable.", "expire": "2026-10-18T15:09:49"}, {"symbole": "ETH", "avis": "neutre", "confiance": "moyenne", "raison": "Marché calme, tendance neutre, aucun risque particulier.", "expire": "2026-10-18T15:09:49"}, {"symbole": "BTC", "avis": "neutre", "confiance": "moyenne", "raison": "Stable à 81 700 USDT, RSI 50, aucune direction claire.", "expire": "2026-10-18T15:09:49"}]}
+{
+ "maj": "2026-10-18T13:09:24",
+ "regime": "normal",
+ "commentaire": "Le Bitcoin est stable (environ 82 100 USDT, -0,02 % sur 1 h) et aucun signe de stress de marché n'a été trouvé. Les bougies 1 h de Binance étaient inaccessibles depuis cet environnement : les avis reposent donc sur les données 15 min du robot et sur les recherches web.",
+ "avis": [
+  {
+   "symbole": "AMP",
+   "avis": "defavorable",
+   "confiance": "moyenne",
+   "raison": "Petite capitalisation (3 M USDT de volume) avec pic de volume x4 sans actualité trouvée, et déjà sortie en stop-loss le 16/10 ; aucun catalyseur identifié (recherche web).",
+   "expire": "2026-10-18T19:09:24"
+  },
+  {
+   "symbole": "HBAR",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Tendance 15 min haussière (+6 % sur 24 h) mais RSI 67 déjà élevé ; aucune alerte ni catalyseur trouvé, confirmation 1 h indisponible.",
+   "expire": "2026-10-18T19:09:24"
+  },
+  {
+   "symbole": "SOL",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Liquidité très élevée et tendance 15 min correcte, mais momentum faible (+0,07 % sur 1 h, -0,9 % sur 24 h) et RSI 66.",
+   "expire": "2026-10-18T19:09:24"
+  },
+  {
+   "symbole": "BCH",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Position ouverte depuis la veille, légèrement sous le prix d'entrée ; aucune alerte trouvée.",
+   "expire": "2026-10-18T19:09:24"
+  },
+  {
+   "symbole": "LTC",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Volume x2,2 mais mouvement plat sur 1 h et 4 h ; pas de catalyseur identifié.",
+   "expire": "2026-10-18T19:09:24"
+  },
+  {
+   "symbole": "XAUT",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Actif adossé à l'or, volatilité très faible ; le signal technique apporte peu.",
+   "expire": "2026-10-18T19:09:24"
+  },
+  {
+   "symbole": "WLD",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "RSI 68 avec retour négatif sur 24 h (-3,6 %) ; pas de confirmation de tendance.",
+   "expire": "2026-10-18T19:09:24"
+  },
+  {
+   "symbole": "AXL",
+   "avis": "defavorable",
+   "confiance": "faible",
+   "raison": "Retour 1 h de -2,3 % et RSI 35 : la tendance à court terme est baissière malgré le score.",
+   "expire": "2026-10-18T19:09:24"
+  },
+  {
+   "symbole": "TIA",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Pic ponctuel suivi d'un repli (-1,5 % sur 1 h, -3 % sur 24 h) ; signal peu convaincant.",
+   "expire": "2026-10-18T19:09:24"
+  },
+  {
+   "symbole": "SUI",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "RSI 68 sans volume (x0,43) ; pas de confirmation.",
+   "expire": "2026-10-18T19:09:24"
+  }
+ ]
+}
