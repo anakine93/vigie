@@ -1,7 +1,91 @@
-{"maj":"2026-10-18T19:09:21","regime":"normal","commentaire":"Le bitcoin reste calme (environ 81 300 USDT, -0,3 % sur 1 h) et aucun stress de marche n'a ete detecte. Les donnees de bougies 1 h etaient inaccessibles : les avis reposent sur les indicateurs du robot et sont donc prudents.","avis":[
-{"symbole":"AVA","avis":"defavorable","confiance":"moyenne","raison":"Hausse de +38 % en 24 h sur une petite capitalisation sans catalyseur trouve : risque de pic non explique suivi d'un retour en arriere.","expire":"2026-10-19T01:09:21"},
-{"symbole":"OGN","avis":"neutre","confiance":"faible","raison":"Petite capitalisation en recul de 4,7 % sur 1 h, aucun deblocage ni retrait de cote trouve dans les recherches (CoinMarketCap, MEXC).","expire":"2026-10-19T01:09:21"},
-{"symbole":"HBAR","avis":"neutre","confiance":"faible","raison":"Actif liquide mais en repli sur 4 h (-2 %) avec un RSI de 36 : le signal ne confirme pas une tendance haussiere nette.","expire":"2026-10-19T01:09:21"},
-{"symbole":"LTC","avis":"neutre","confiance":"faible","raison":"Mouvement quasi nul sur 24 h, simple hausse de volume sans catalyseur.","expire":"2026-10-19T01:09:21"},
-{"symbole":"S","avis":"neutre","confiance":"faible","raison":"Signal de score 3 seulement, volume modeste et momentum 1 h negatif.","expire":"2026-10-19T01:09:21"}
-]}
+{
+ "maj": "2026-10-19T09:14:00",
+ "regime": "normal",
+ "commentaire": "Bitcoin autour de 82 900 USDT, stable sur 1 h, sans signe de stress sur le marché. Les données de bougies Binance étaient inaccessibles : les avis reposent sur les tendances du robot et sur une recherche d'actualités sans alerte majeure.",
+ "avis": [
+  {
+   "symbole": "HYPE",
+   "avis": "favorable",
+   "confiance": "moyenne",
+   "raison": "Cassure du plus haut 12 h avec hausse régulière sur la journée, aucun signal négatif trouvé (bougies 1 h Binance inaccessibles, tendance lue sur les 25 derniers points du robot).",
+   "expire": "2026-10-19T15:14:00"
+  },
+  {
+   "symbole": "LINK",
+   "avis": "favorable",
+   "confiance": "faible",
+   "raison": "Tendance haussière douce et régulière, pas d'alerte trouvée (bougies 1 h Binance inaccessibles, tendance lue sur les 25 derniers points du robot).",
+   "expire": "2026-10-19T15:14:00"
+  },
+  {
+   "symbole": "TAO",
+   "avis": "favorable",
+   "confiance": "faible",
+   "raison": "Tendance haussière stable, volume faible mais pas de signal négatif (bougies 1 h Binance inaccessibles, tendance lue sur les 25 derniers points du robot).",
+   "expire": "2026-10-19T15:14:00"
+  },
+  {
+   "symbole": "ETHFI",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Tendance haussière mais momentum en repli sur 1 h, rien de particulier trouvé.",
+   "expire": "2026-10-19T15:14:00"
+  },
+  {
+   "symbole": "ARB",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "RSI 73 en surchauffe malgré un volume x3, risque de repli à court terme.",
+   "expire": "2026-10-19T15:14:00"
+  },
+  {
+   "symbole": "XAUT",
+   "avis": "neutre",
+   "confiance": "moyenne",
+   "raison": "Actif adossé à l'or, mouvement faible mais volume anormal, pas de catalyseur identifié.",
+   "expire": "2026-10-19T15:14:00"
+  },
+  {
+   "symbole": "AMP",
+   "avis": "defavorable",
+   "confiance": "moyenne",
+   "raison": "Petite capitalisation à +23 % en 24 h sans actualité trouvée, déjà en repli de 3 % sur 1 h, trade précédent perdant.",
+   "expire": "2026-10-19T15:14:00"
+  },
+  {
+   "symbole": "EPIC",
+   "avis": "defavorable",
+   "confiance": "moyenne",
+   "raison": "Hausse de 16 % en 24 h sur petite capitalisation sans actualité ni catalyseur trouvé, volume faible.",
+   "expire": "2026-10-19T15:14:00"
+  },
+  {
+   "symbole": "KORUB",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Hausse de 16 % en 24 h, aucune actualité trouvée, position déjà bien dans le vert.",
+   "expire": "2026-10-19T15:14:00"
+  },
+  {
+   "symbole": "SKHYB",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Action tokenisée en tendance haussière, volume x10 sans explication trouvée.",
+   "expire": "2026-10-19T15:14:00"
+  },
+  {
+   "symbole": "DRAMB",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Action tokenisée en tendance haussière, aucune actualité trouvée.",
+   "expire": "2026-10-19T15:14:00"
+  },
+  {
+   "symbole": "PYTH",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Tendance haussière mais repli de 1 % sur 1 h, rien de notable trouvé.",
+   "expire": "2026-10-19T15:14:00"
+  }
+ ]
+}
