@@ -1,106 +1,106 @@
 {
- "maj": "2026-10-16T16:05:00",
+ "maj": "2026-10-19T10:05:00",
  "regime": "normal",
  "classesPrudentes": [],
- "commentaire": "Le robot semble arrete (derniere execution a 11h46) et les recherches n'ont revele aucun evenement majeur dans les 48 h. Prudence sur les valeurs crypto et les hausses non expliquees avant le week-end; inflation americaine elevee et Fed les 27-28 octobre.",
+ "commentaire": "Saison de publications du 3e trimestre : plusieurs valeurs françaises (Danone, L'Oréal, Kering, Renault, Orange) risquent de publier cette semaine, d'où des avis défavorables de faible confiance. Aucun stress de marché général ni événement majeur confirmé sous 24 h.",
  "avis": [
+  {
+   "symbole": "EL.PA",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Score élevé et volume x3, mais la publication T3 (mi-octobre l'an dernier) n'a pu être confirmée ; prudence.",
+   "expire": "2026-10-19T18:00:00"
+  },
+  {
+   "symbole": "SIE.DE",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Pas de risque identifié ; momentum 1 h négatif, signal peu convaincant.",
+   "expire": "2026-10-19T18:00:00"
+  },
+  {
+   "symbole": "BN.PA",
+   "avis": "defavorable",
+   "confiance": "faible",
+   "raison": "Publication du chiffre d'affaires du 3e trimestre attendue cette semaine (date non confirmée par la recherche), risque de gap. RSI 74, surachat.",
+   "expire": "2026-10-19T18:00:00"
+  },
+  {
+   "symbole": "RNO.PA",
+   "avis": "defavorable",
+   "confiance": "faible",
+   "raison": "Publication du chiffre d'affaires du 3e trimestre attendue cette semaine (date non confirmée par la recherche), risque de gap. Hausse sur gros volume sans explication claire.",
+   "expire": "2026-10-19T18:00:00"
+  },
   {
    "symbole": "RHM.DE",
    "avis": "neutre",
-   "confiance": "faible",
-   "raison": "Position ouverte, +4,5% depuis l'entree et fort volume; pas de resultats annonces avant fin octobre, mais le titre est tendu et la recherche web n'a rien de recent.",
-   "expire": "2026-10-17T00:04:00"
-  },
-  {
-   "symbole": "ML.PA",
-   "avis": "neutre",
-   "confiance": "faible",
-   "raison": "Position ouverte plate; chiffre d'affaires du T3 attendu fin octobre, pas dans les 2 jours.",
-   "expire": "2026-10-17T00:04:00"
-  },
-  {
-   "symbole": "RI.PA",
-   "avis": "neutre",
-   "confiance": "faible",
-   "raison": "Position en gain; ventes du T1 attendues fin octobre, pas de risque immediat identifie.",
-   "expire": "2026-10-17T00:04:00"
-  },
-  {
-   "symbole": "AAPL",
-   "avis": "neutre",
    "confiance": "moyenne",
-   "raison": "Resultats attendus vers le 29 octobre, hors fenetre de 2 jours; signal modeste.",
-   "expire": "2026-10-17T00:04:00"
+   "raison": "Position ouverte en gain (+5,7 %) avec stop suiveur ; aucune actualité négative trouvée.",
+   "expire": "2026-10-19T18:00:00"
   },
   {
-   "symbole": "ADBE",
-   "avis": "favorable",
-   "confiance": "moyenne",
-   "raison": "Meilleur score, tendance et volume coherents; prochains resultats en decembre, aucun risque imminent.",
-   "expire": "2026-10-17T00:04:00"
-  },
-  {
-   "symbole": "CRM",
-   "avis": "neutre",
-   "confiance": "faible",
-   "raison": "Tendance haussiere mais resultats habituellement fin novembre; aucune information specifique trouvee.",
-   "expire": "2026-10-17T00:04:00"
-  },
-  {
-   "symbole": "ROKU",
-   "avis": "neutre",
-   "confiance": "faible",
-   "raison": "Resultats attendus fin octobre; signal sur volume sans catalyseur identifie.",
-   "expire": "2026-10-17T00:04:00"
-  },
-  {
-   "symbole": "MSTR",
+   "symbole": "ORA.PA",
    "avis": "defavorable",
-   "confiance": "moyenne",
-   "raison": "Titre tres volatil, lie au bitcoin, RSI 69 et veille de week-end: mouvement fragile.",
-   "expire": "2026-10-17T00:04:00"
-  },
-  {
-   "symbole": "COIN",
-   "avis": "defavorable",
-   "confiance": "moyenne",
-   "raison": "Hausse de 3% en 4 h, RSI 71, forte dependance aux cryptos ouvertes le week-end: risque de reflux.",
-   "expire": "2026-10-17T00:04:00"
-  },
-  {
-   "symbole": "LCID",
-   "avis": "defavorable",
-   "confiance": "moyenne",
-   "raison": "Hausse de 3% en 4 h non expliquee, RSI 71: mouvement fragile.",
-   "expire": "2026-10-17T00:04:00"
-  },
-  {
-   "symbole": "DKNG",
-   "avis": "neutre",
    "confiance": "faible",
-   "raison": "Tendance haussiere mais RSI 66 et hausse rapide; pas de catalyseur trouve.",
-   "expire": "2026-10-17T00:04:00"
+   "raison": "Publication du chiffre d'affaires du 3e trimestre attendue cette semaine (date non confirmée par la recherche), risque de gap.",
+   "expire": "2026-10-19T18:00:00"
+  },
+  {
+   "symbole": "OR.PA",
+   "avis": "defavorable",
+   "confiance": "faible",
+   "raison": "Publication du chiffre d'affaires du 3e trimestre attendue cette semaine (date non confirmée par la recherche), risque de gap. RSI 71 et volume faible.",
+   "expire": "2026-10-19T18:00:00"
   },
   {
    "symbole": "MA",
    "avis": "neutre",
    "confiance": "faible",
-   "raison": "Resultats attendus vers fin octobre; signal moyen.",
-   "expire": "2026-10-17T00:04:00"
+   "raison": "Résultats T3 US probables fin octobre, pas de risque identifié sous 48 h.",
+   "expire": "2026-10-19T18:00:00"
   },
   {
-   "symbole": "^DJI",
+   "symbole": "GBPUSD=X",
    "avis": "neutre",
-   "confiance": "moyenne",
-   "raison": "Indice calme; inflation US attendue a 3,6% et reunion Fed les 27-28 octobre, mais pas dans 48 h.",
-   "expire": "2026-10-17T00:04:00"
+   "confiance": "faible",
+   "raison": "Signal faible sans volume ; calendrier macro de la semaine non confirmé.",
+   "expire": "2026-10-19T18:00:00"
   },
   {
-   "symbole": "^FCHI",
+   "symbole": "AUDUSD=X",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Signal faible sans volume ; calendrier macro de la semaine non confirmé.",
+   "expire": "2026-10-19T18:00:00"
+  },
+  {
+   "symbole": "MC.PA",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Publication T3 LVMH probablement déjà passée ; signal mitigé.",
+   "expire": "2026-10-19T18:00:00"
+  },
+  {
+   "symbole": "KER.PA",
+   "avis": "defavorable",
+   "confiance": "faible",
+   "raison": "Publication du chiffre d'affaires du 3e trimestre attendue cette semaine (date non confirmée par la recherche), risque de gap.",
+   "expire": "2026-10-19T18:00:00"
+  },
+  {
+   "symbole": "TTE.PA",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Aucune actualité négative trouvée ; RSI 70.",
+   "expire": "2026-10-19T18:00:00"
+  },
+  {
+   "symbole": "RI.PA",
    "avis": "neutre",
    "confiance": "moyenne",
-   "raison": "CAC 40 calme, pas d'evenement majeur dans les 48 h; seance se terminant a 17h30.",
-   "expire": "2026-10-17T00:04:00"
+   "raison": "Position ouverte en gain ; discussions Brown-Forman terminées en avril, pas de nouveau risque trouvé.",
+   "expire": "2026-10-19T18:00:00"
   }
  ]
 }
