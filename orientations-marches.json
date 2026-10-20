@@ -1,12 +1,134 @@
-{"maj":"2026-10-19T16:15:00","regime":"normal","classesPrudentes":[],"commentaire":"Pas de stress general identifie, mais plusieurs valeurs francaises approchent de leurs publications trimestrielles. Les signaux sur les valeurs publiant sous 48 h sont filtres.","avis":[
-{"symbole":"EL.PA","avis":"defavorable","confiance":"elevee","raison":"Chiffre d'affaires du T3 attendu le 20 octobre 2026 (calendrier MarketScreener), risque de gap eleve apres une hausse recente.","expire":"2026-10-20T00:15:00"},
-{"symbole":"OR.PA","avis":"defavorable","confiance":"faible","raison":"Publication du T3 probablement cette semaine (date non confirmee) et RSI 71 deja eleve.","expire":"2026-10-20T00:15:00"},
-{"symbole":"BN.PA","avis":"defavorable","confiance":"faible","raison":"RSI 74 en surachat et publication trimestrielle proche (date non confirmee).","expire":"2026-10-20T00:15:00"},
-{"symbole":"RHM.DE","avis":"neutre","confiance":"moyenne","raison":"Objectifs 2026 confirmes le 6 octobre, resultats T3 en novembre, pas de risque imminent (optionfinance).","expire":"2026-10-20T00:15:00"},
-{"symbole":"RI.PA","avis":"neutre","confiance":"moyenne","raison":"T1 publie le 15 octobre, donc pas d'evenement a venir, mais activite plombee par les Etats-Unis et la Chine.","expire":"2026-10-20T00:15:00"},
-{"symbole":"MC.PA","avis":"neutre","confiance":"moyenne","raison":"Chiffre d'affaires T3 deja publie le 12 octobre (+2 % organique, mode en baisse de 5 %), pas de nouvel evenement.","expire":"2026-10-20T00:15:00"},
-{"symbole":"SIE.DE","avis":"neutre","confiance":"moyenne","raison":"Resultats record publies en aout avec objectif releve, pas d'echeance proche.","expire":"2026-10-20T00:15:00"},
-{"symbole":"RNO.PA","avis":"neutre","confiance":"faible","raison":"Publication du T3 possible sous peu, date non confirmee, signal sur gros volume.","expire":"2026-10-20T00:15:00"},
-{"symbole":"ORA.PA","avis":"neutre","confiance":"faible","raison":"Aucune information negative trouvee, date de publication non confirmee.","expire":"2026-10-20T00:15:00"},
-{"symbole":"TTE.PA","avis":"neutre","confiance":"faible","raison":"RSI 70 en haut de zone, aucune alerte specifique trouvee.","expire":"2026-10-20T00:15:00"}
-]}
+{
+ "maj": "2026-10-20T10:12:00",
+ "regime": "normal",
+ "classesPrudentes": [],
+ "commentaire": "Saison des resultats T3 en cours en Europe: plusieurs valeurs au score eleve (Renault, Michelin, Air Liquide) sont proches de publications, d'ou des avis defavorables. Recherches web peu concluantes sur le calendrier macro, regime normal par defaut.",
+ "avis": [
+  {
+   "symbole": "CL=F",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Hausse petrole non expliquee par une source fiable; stocks EIA mercredi 22/10 (risque de volatilite), recherche web non concluante.",
+   "expire": "2026-10-20T18:12:00"
+  },
+  {
+   "symbole": "BZ=F",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Hausse petrole non expliquee par une source fiable; stocks EIA mercredi 22/10 (risque de volatilite), recherche web non concluante.",
+   "expire": "2026-10-20T18:12:00"
+  },
+  {
+   "symbole": "PL=F",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Hausse moderee, aucun evenement specifique trouve.",
+   "expire": "2026-10-20T18:12:00"
+  },
+  {
+   "symbole": "HG=F",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Tendance haussiere coherente, aucun risque identifie.",
+   "expire": "2026-10-20T18:12:00"
+  },
+  {
+   "symbole": "SI=F",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Signal faible, aucun risque identifie.",
+   "expire": "2026-10-20T18:12:00"
+  },
+  {
+   "symbole": "TTE.PA",
+   "avis": "defavorable",
+   "confiance": "faible",
+   "raison": "Resultats T3 des majors petrolieres attendus fin octobre, RSI sans tendance claire; date non confirmee.",
+   "expire": "2026-10-20T18:12:00"
+  },
+  {
+   "symbole": "XOM",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Position ouverte; resultats T3 prevus fin octobre/debut novembre, pas dans les 2 jours selon les sources disponibles.",
+   "expire": "2026-10-20T18:12:00"
+  },
+  {
+   "symbole": "RNO.PA",
+   "avis": "defavorable",
+   "confiance": "moyenne",
+   "raison": "Chiffre d'affaires T3 habituellement publie vers le 22-24 octobre; RSI 72 eleve, risque de gap.",
+   "expire": "2026-10-20T18:12:00"
+  },
+  {
+   "symbole": "ML.PA",
+   "avis": "defavorable",
+   "confiance": "faible",
+   "raison": "Ventes T3 de Michelin habituellement publiees vers le 21-22 octobre; date non confirmee.",
+   "expire": "2026-10-20T18:12:00"
+  },
+  {
+   "symbole": "AI.PA",
+   "avis": "defavorable",
+   "confiance": "faible",
+   "raison": "CA T3 d'Air Liquide habituellement publie vers le 21-23 octobre; RSI 77 en surachat.",
+   "expire": "2026-10-20T18:12:00"
+  },
+  {
+   "symbole": "VOW3.DE",
+   "avis": "defavorable",
+   "confiance": "moyenne",
+   "raison": "Resultats T3 le 2026-10-29 (MarketScreener); RSI 74 en surachat, mouvement fragile.",
+   "expire": "2026-10-20T18:12:00"
+  },
+  {
+   "symbole": "ADS.DE",
+   "avis": "defavorable",
+   "confiance": "faible",
+   "raison": "RSI 76 en surachat apres +1,9% sur 4h; resultats T3 attendus fin octobre.",
+   "expire": "2026-10-20T18:12:00"
+  },
+  {
+   "symbole": "BMW.DE",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "RSI 74 en surachat; resultats T3 en novembre, pas d'evenement dans 48h trouve.",
+   "expire": "2026-10-20T18:12:00"
+  },
+  {
+   "symbole": "VIE.PA",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Hausse de 1,3% sur 1h sans catalyseur identifie; resultats T3 debut novembre.",
+   "expire": "2026-10-20T18:12:00"
+  },
+  {
+   "symbole": "GBPUSD=X",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Aucune decision de banque centrale majeure confirmee dans les 48h (calendrier introuvable).",
+   "expire": "2026-10-20T18:12:00"
+  },
+  {
+   "symbole": "EURUSD=X",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Aucune decision de banque centrale majeure confirmee dans les 48h (calendrier introuvable).",
+   "expire": "2026-10-20T18:12:00"
+  },
+  {
+   "symbole": "NZDUSD=X",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Aucune decision de banque centrale majeure confirmee dans les 48h (calendrier introuvable).",
+   "expire": "2026-10-20T18:12:00"
+  },
+  {
+   "symbole": "COST",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Pas de resultats dans les 2 jours selon les sources disponibles.",
+   "expire": "2026-10-20T18:12:00"
+  }
+ ]
+}
