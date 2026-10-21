@@ -1,13 +1,99 @@
-{"maj":"2026-10-20T16:22:00","regime":"normal","classesPrudentes":[],"commentaire":"Aucun stress general detecte ; les signaux du robot sont faibles (score maximal 4/8) et sans resultat annonce dans les 2 jours sur les valeurs suivies. Le petrole reste tres volatil (Brent et WTI en forte baisse, RSI sous 30, contexte Ormuz) : prudence sur les matieres energetiques.","avis":[
-{"symbole":"XOM","avis":"neutre","confiance":"moyenne","raison":"Resultats T3 annonces le 30 octobre (hors fenetre de 2 jours, source : investor.exxonmobil.com) mais le petrole chute de plus de 1 % aujourd'hui, ce qui pese sur le titre.","expire":"2026-10-21T00:22:00"},
-{"symbole":"BZ=F","avis":"defavorable","confiance":"moyenne","raison":"Brent en baisse de 1,2 % sur 4 h avec RSI a 28 et forte volatilite liee au contexte geopolitique (Ormuz) : mouvement fragile, signal haussier peu fiable.","expire":"2026-10-21T00:22:00"},
-{"symbole":"CL=F","avis":"defavorable","confiance":"moyenne","raison":"WTI en chute de 1,2 % avec RSI a 27 et volatilite elevee : le signal haussier est contredit par la tendance recente.","expire":"2026-10-21T00:22:00"},
-{"symbole":"CC=F","avis":"defavorable","confiance":"faible","raison":"Cacao tres volatil (ATR 0,6 %), RSI 68 apres +2,2 % en 4 h sans catalyseur identifie : hausse fragile.","expire":"2026-10-21T00:22:00"},
-{"symbole":"GBPUSD=X","avis":"neutre","confiance":"faible","raison":"Tendance haussiere moderee, aucun evenement majeur confirme dans les 48 h, RSI deja eleve a 67.","expire":"2026-10-21T00:22:00"},
-{"symbole":"AUDUSD=X","avis":"neutre","confiance":"faible","raison":"Tendance haussiere douce sans catalyseur identifie.","expire":"2026-10-21T00:22:00"},
-{"symbole":"HG=F","avis":"neutre","confiance":"faible","raison":"Cuivre en tendance haussiere reguliere, pas de risque specifique identifie.","expire":"2026-10-21T00:22:00"},
-{"symbole":"GC=F","avis":"neutre","confiance":"faible","raison":"Or stable dans une fourchette etroite, signal peu marque (score 3).","expire":"2026-10-21T00:22:00"},
-{"symbole":"V","avis":"neutre","confiance":"faible","raison":"Resultats trimestriels attendus vers le 27 octobre (non confirme, hors fenetre de 2 jours) ; tendance saine.","expire":"2026-10-21T00:22:00"},
-{"symbole":"SAP.DE","avis":"neutre","confiance":"faible","raison":"Tendance haussiere sans actualite majeure identifiee ; volume faible.","expire":"2026-10-21T00:22:00"},
-{"symbole":"CAP.PA","avis":"neutre","confiance":"faible","raison":"Saut visible dans la seance suivi d'un retour au calme, volume faible : signal peu convaincant.","expire":"2026-10-21T00:22:00"}
-]}
+{
+ "maj": "2026-10-21T10:10:00",
+ "regime": "normal",
+ "classesPrudentes": [],
+ "commentaire": "Les recherches n'ont montré aucun événement majeur confirmé dans les 24 à 48 h, mais les dates de résultats restent peu fiables : avis prudents. Rendements obligataires élevés et tensions pétrolières (Ormuz) en toile de fond.",
+ "avis": [
+  {
+   "symbole": "LCID",
+   "avis": "defavorable",
+   "confiance": "moyenne",
+   "raison": "Hausse de +6,7 % sur 4 h sans catalyseur identifié, titre fragile après les rumeurs de faillite de juillet (Bloomberg/Benzinga).",
+   "expire": "2026-10-21T18:10:00"
+  },
+  {
+   "symbole": "IFX.DE",
+   "avis": "defavorable",
+   "confiance": "moyenne",
+   "raison": "Titre très volatil : -8,9 % le 15/10 (50,40 €) puis rebond brutal, RSI 76 ; mouvement fragile.",
+   "expire": "2026-10-21T18:10:00"
+  },
+  {
+   "symbole": "DKNG",
+   "avis": "defavorable",
+   "confiance": "faible",
+   "raison": "RSI 75 après +2 % en 4 h : titre étendu, risque de repli ; publication de résultats proche non exclue.",
+   "expire": "2026-10-21T18:10:00"
+  },
+  {
+   "symbole": "ADBE",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "RSI 73, pas de risque précis trouvé ; dates de résultats non confirmées.",
+   "expire": "2026-10-21T18:10:00"
+  },
+  {
+   "symbole": "ROKU",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Signal cohérent mais dates de résultats non confirmées par la recherche.",
+   "expire": "2026-10-21T18:10:00"
+  },
+  {
+   "symbole": "DIS",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Signal cohérent, aucune actualité négative trouvée.",
+   "expire": "2026-10-21T18:10:00"
+  },
+  {
+   "symbole": "BA",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Volume x2,9 sans mouvement de prix : signal peu lisible.",
+   "expire": "2026-10-21T18:10:00"
+  },
+  {
+   "symbole": "CRM",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Tendance haussière sans risque identifié.",
+   "expire": "2026-10-21T18:10:00"
+  },
+  {
+   "symbole": "^DJI",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Tendance haussière ; contexte de rendements obligataires élevés et tensions Ormuz (investinglive).",
+   "expire": "2026-10-21T18:10:00"
+  },
+  {
+   "symbole": "AUDUSD=X",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Position ouverte, pas de décision de banque centrale identifiée dans les 48 h.",
+   "expire": "2026-10-21T18:10:00"
+  },
+  {
+   "symbole": "ADS.DE",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Volume x3,4 mais prix en baisse, aucune actualité négative trouvée.",
+   "expire": "2026-10-21T18:10:00"
+  },
+  {
+   "symbole": "^GDAXI",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Tendance haussière, pas d'événement majeur identifié.",
+   "expire": "2026-10-21T18:10:00"
+  },
+  {
+   "symbole": "DG.PA",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Aucune actualité trouvée sur Vinci, tendance haussière.",
+   "expire": "2026-10-21T18:10:00"
+  }
+ ]
+}
