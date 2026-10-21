@@ -1,1 +1,84 @@
-{"maj": "2026-10-20T19:10:22", "regime": "normal", "commentaire": "BTC autour de 81 650 USDT, mouvement 1 h faible (+0,19 %) et aucun signe de stress de marche. Les bougies 1 h Binance etant inaccessibles, les avis reposent sur les donnees du robot (r4h, r24h, RSI) et sont donc de confiance limitee.", "avis": [{"symbole": "APT", "avis": "favorable", "confiance": "faible", "raison": "Cassure du plus haut 12 h avec r4h +2,1 % et RSI 63, aucune alerte trouvee ; tendance 1 h non verifiee par bougies.", "expire": "2026-10-21T01:10:22"}, {"symbole": "TSLAB", "avis": "neutre", "confiance": "faible", "raison": "Action tokenisee, hausse reguliere (+3,8 % sur 24 h) mais sans cassure ; pas de catalyseur crypto identifie.", "expire": "2026-10-21T01:10:22"}, {"symbole": "BMT", "avis": "defavorable", "confiance": "moyenne", "raison": "Petite capitalisation en hausse de +18,6 % sur 24 h avec volume x5 et RSI 69, sans actualite trouvee (recherche web) : pic probablement non explique.", "expire": "2026-10-21T01:10:22"}, {"symbole": "PEPE", "avis": "neutre", "confiance": "faible", "raison": "Meme coin, volume x2,4 mais hausse de seulement +1 % sur 24 h ; pas d'actualite notable.", "expire": "2026-10-21T01:10:22"}, {"symbole": "ALT", "avis": "defavorable", "confiance": "moyenne", "raison": "Hausse de +22 % sur 24 h deja retombee (r4h -1,7 %), volume faible : pic isole sur petite capitalisation.", "expire": "2026-10-21T01:10:22"}, {"symbole": "ZEC", "avis": "neutre", "confiance": "faible", "raison": "RSI 69 proche de la surchauffe, momentum correct mais sans cassure.", "expire": "2026-10-21T01:10:22"}, {"symbole": "PYTH", "avis": "neutre", "confiance": "faible", "raison": "RSI 68 avec volume faible (x0,63), hausse peu soutenue.", "expire": "2026-10-21T01:10:22"}, {"symbole": "PUMP", "avis": "neutre", "confiance": "faible", "raison": "Signal technique modeste, volume sous la moyenne, pas de catalyseur.", "expire": "2026-10-21T01:10:22"}, {"symbole": "WLD", "avis": "neutre", "confiance": "faible", "raison": "Position ouverte en gain leger, sans alerte ni catalyseur identifie.", "expire": "2026-10-21T01:10:22"}]}
+{
+ "maj": "2026-10-21T09:15:00",
+ "regime": "normal",
+ "commentaire": "Le marché est calme : BTC est stable (+0,2 % sur 1 h) et la courbe de référence est quasi plate. Les données de bougies 1 h/4 h n'ont pas pu être récupérées, les avis restent donc prudents.",
+ "avis": [
+  {
+   "symbole": "ARB",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Bougies 1 h indisponibles (Binance bloqué), aucun signal d'alerte trouvé en recherche : avis neutre par prudence.",
+   "expire": "2026-10-21T15:11:00"
+  },
+  {
+   "symbole": "UNI",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Bougies 1 h indisponibles (Binance bloqué), aucun signal d'alerte trouvé en recherche : avis neutre par prudence.",
+   "expire": "2026-10-21T15:11:00"
+  },
+  {
+   "symbole": "HYPE",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Bougies 1 h indisponibles (Binance bloqué), aucun signal d'alerte trouvé en recherche : avis neutre par prudence.",
+   "expire": "2026-10-21T15:11:00"
+  },
+  {
+   "symbole": "INJ",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Bougies 1 h indisponibles (Binance bloqué), aucun signal d'alerte trouvé en recherche : avis neutre par prudence.",
+   "expire": "2026-10-21T15:11:00"
+  },
+  {
+   "symbole": "WLD",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Bougies 1 h indisponibles (Binance bloqué), aucun signal d'alerte trouvé en recherche : avis neutre par prudence.",
+   "expire": "2026-10-21T15:11:00"
+  },
+  {
+   "symbole": "APT",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Bougies 1 h indisponibles (Binance bloqué), aucun signal d'alerte trouvé en recherche : avis neutre par prudence.",
+   "expire": "2026-10-21T15:11:00"
+  },
+  {
+   "symbole": "SPCXB",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Actif tokenisé (action) en hausse de 9 % sur 24 h avec cassure, sans confirmation 1 h ni actualité vérifiée.",
+   "expire": "2026-10-21T15:11:00"
+  },
+  {
+   "symbole": "TSLAB",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "Actif tokenisé suivant une action, hors logique crypto classique ; pas de confirmation 1 h possible.",
+   "expire": "2026-10-21T15:11:00"
+  },
+  {
+   "symbole": "KORUB",
+   "avis": "defavorable",
+   "confiance": "faible",
+   "raison": "Actif tokenisé de faible volume en hausse de 5 % en 1 h et 10 % en 24 h, sans explication : pic isolé probable.",
+   "expire": "2026-10-21T15:11:00"
+  },
+  {
+   "symbole": "BMT",
+   "avis": "defavorable",
+   "confiance": "moyenne",
+   "raison": "Petite capitalisation déjà vendue sur avis défavorable hier ; +10 % en 24 h avec volume faible (x0.3), sans catalyseur.",
+   "expire": "2026-10-21T15:11:00"
+  },
+  {
+   "symbole": "SKHYB",
+   "avis": "neutre",
+   "confiance": "faible",
+   "raison": "RSI 74 proche de la surchauffe ; tendance haussière mais pas de confirmation 1 h.",
+   "expire": "2026-10-21T15:11:00"
+  }
+ ]
+}
