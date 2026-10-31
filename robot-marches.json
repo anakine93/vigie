@@ -1,0 +1,2190 @@
+{
+  "config": {
+    "capitalInitial": 1000,
+    "partBase": 0.1,
+    "partFavorable": 0.15,
+    "maxPositions": 4,
+    "scoreMin": 5,
+    "rsiMax": 75,
+    "slAtr": 3,
+    "tpAtr": 5,
+    "slMin": 0.002,
+    "slMax": 0.04,
+    "dureeMaxH": 48,
+    "cooldownH": 4,
+    "reference": "^GSPC"
+  },
+  "debut": "2026-10-15T17:32:37",
+  "liquidites": 535.53,
+  "refInitial": 7726.45,
+  "positions": [
+    {
+      "symbole": "EL.PA",
+      "nom": "ESSILORLUXOTTICA",
+      "classe": "actions",
+      "devise": "EUR",
+      "montant": 77.71,
+      "investiNet": 77.63531529379789,
+      "prixEntree": 181.6908,
+      "slPct": 0.015,
+      "tpPct": 0.0251,
+      "ouvertLe": "2026-10-30T10:52:19",
+      "score": 6,
+      "motif": "score 6 : tendance haussiere, cassure du plus haut recent, elan 1 h, RSI 59",
+      "avis": "aucun",
+      "prixActuel": 184.3,
+      "plusHaut": 184.45,
+      "stopSuiveur": null
+    },
+    {
+      "symbole": "PUB.PA",
+      "nom": "Publicis Groupe S.A.",
+      "classe": "actions",
+      "devise": "EUR",
+      "montant": 77.71,
+      "investiNet": 77.63531529379789,
+      "prixEntree": 100.35015,
+      "slPct": 0.0123,
+      "tpPct": 0.0204,
+      "ouvertLe": "2026-10-30T10:52:19",
+      "score": 5,
+      "motif": "score 5 : tendance haussiere, volume x4.8, RSI 63",
+      "avis": "aucun",
+      "prixActuel": 100.15,
+      "plusHaut": 100.35015,
+      "stopSuiveur": null
+    }
+  ],
+  "trades": [
+    {
+      "symbole": "AAPL",
+      "nom": "Apple Inc.",
+      "classe": "actions",
+      "montant": 99.85,
+      "prixEntree": 343.87185,
+      "prixSortie": 342.48867,
+      "devise": "USD",
+      "ouvertLe": "2026-10-15T17:32:37",
+      "fermeLe": "2026-10-16T20:14:00",
+      "pnl": -0.6,
+      "pnlPct": -0.6,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.6, RSI 54",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "symbole": "ML.PA",
+      "nom": "MICHELIN",
+      "classe": "actions",
+      "montant": 99.85,
+      "prixEntree": 34.006995,
+      "prixSortie": 33.653165,
+      "devise": "EUR",
+      "ouvertLe": "2026-10-15T17:32:37",
+      "fermeLe": "2026-10-16T20:15:23",
+      "pnl": -1.24,
+      "pnlPct": -1.24,
+      "motifEntree": "score 6 : tendance haussiere, volume x3.5, elan 1 h, RSI 55",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "symbole": "RHM.DE",
+      "nom": "Rheinmetall AG",
+      "classe": "actions",
+      "montant": 99.85,
+      "prixEntree": 1031.9157,
+      "prixSortie": 1048.6754,
+      "devise": "EUR",
+      "ouvertLe": "2026-10-15T17:32:37",
+      "fermeLe": "2026-10-19T16:38:18",
+      "pnl": 1.42,
+      "pnlPct": 1.42,
+      "motifEntree": "score 6 : tendance haussiere, volume x11.4, elan 1 h, RSI 67",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "symbole": "RI.PA",
+      "nom": "Pernod Ricard SA",
+      "classe": "actions",
+      "montant": 99.85,
+      "prixEntree": 66.6333,
+      "prixSortie": 67.48624,
+      "devise": "EUR",
+      "ouvertLe": "2026-10-15T17:32:37",
+      "fermeLe": "2026-10-19T16:38:18",
+      "pnl": 1.08,
+      "pnlPct": 1.08,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.6, RSI 52",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "symbole": "XOM",
+      "nom": "ExxonMobil Holdings Corporation",
+      "classe": "actions",
+      "montant": 99.46,
+      "prixEntree": 178.364138,
+      "prixSortie": 177.25133,
+      "devise": "USD",
+      "ouvertLe": "2026-10-19T22:13:10",
+      "fermeLe": "2026-10-20T19:52:17",
+      "pnl": -0.82,
+      "pnlPct": -0.82,
+      "motifEntree": "score 5 : tendance haussiere, volume x6.1, RSI 58",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "symbole": "AUDUSD=X",
+      "nom": "AUD/USD",
+      "classe": "devises",
+      "montant": 99.43,
+      "prixEntree": 0.70247,
+      "prixSortie": 0.70183,
+      "devise": "USD",
+      "ouvertLe": "2026-10-21T04:05:39",
+      "fermeLe": "2026-10-22T11:48:03",
+      "pnl": -0.11,
+      "pnlPct": -0.11,
+      "motifEntree": "score 6 : tendance haussiere, cassure du plus haut recent, elan 1 h, RSI 69",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "symbole": "AIR.PA",
+      "nom": "Airbus SE",
+      "classe": "actions",
+      "montant": 99.31,
+      "prixEntree": 196.01796,
+      "prixSortie": 195.88201,
+      "devise": "EUR",
+      "ouvertLe": "2026-10-21T15:11:30",
+      "fermeLe": "2026-10-22T11:48:03",
+      "pnl": -0.27,
+      "pnlPct": -0.27,
+      "motifEntree": "score 6 : tendance haussiere, volume x3.3, elan 1 h, RSI 69",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "symbole": "CS.PA",
+      "nom": "AXA SA",
+      "classe": "actions",
+      "montant": 99.31,
+      "prixEntree": 43.231605,
+      "prixSortie": 42.27885,
+      "devise": "EUR",
+      "ouvertLe": "2026-10-21T15:11:30",
+      "fermeLe": "2026-10-22T11:48:03",
+      "pnl": -2.39,
+      "pnlPct": -2.4,
+      "motifEntree": "score 6 : tendance haussiere, cassure du plus haut recent, elan 1 h, RSI 69",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "symbole": "SAF.PA",
+      "nom": "Safran SA",
+      "classe": "actions",
+      "montant": 99.31,
+      "prixEntree": 313.1565,
+      "prixSortie": 307.74605,
+      "devise": "EUR",
+      "ouvertLe": "2026-10-21T15:11:30",
+      "fermeLe": "2026-10-22T11:48:03",
+      "pnl": -1.91,
+      "pnlPct": -1.93,
+      "motifEntree": "score 5 : tendance haussiere, volume x1.8, elan 1 h, RSI 53",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "symbole": "NG=F",
+      "nom": "Gaz naturel",
+      "classe": "matieres",
+      "montant": 95.03,
+      "prixEntree": 2.798398,
+      "prixSortie": 2.765616,
+      "devise": "USD",
+      "ouvertLe": "2026-10-22T16:44:11",
+      "fermeLe": "2026-10-23T02:37:09",
+      "pnl": -1.21,
+      "pnlPct": -1.27,
+      "motifEntree": "score 5 : tendance haussiere, volume x1.6, elan 1 h, RSI 66",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "symbole": "GBPUSD=X",
+      "nom": "GBP/USD",
+      "classe": "devises",
+      "montant": 95.57,
+      "prixEntree": 1.340834,
+      "prixSortie": 1.338866,
+      "devise": "USD",
+      "ouvertLe": "2026-10-23T02:37:09",
+      "fermeLe": "2026-10-23T07:21:27",
+      "pnl": -0.16,
+      "pnlPct": -0.17,
+      "motifEntree": "score 6 : tendance haussiere, cassure du plus haut recent, elan 1 h, RSI 59",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "symbole": "AUDUSD=X",
+      "nom": "AUD/USD",
+      "classe": "devises",
+      "montant": 94.44,
+      "prixEntree": 0.70417,
+      "prixSortie": 0.70263,
+      "devise": "USD",
+      "ouvertLe": "2026-10-23T21:18:20",
+      "fermeLe": "2026-10-25T20:20:58",
+      "pnl": -0.23,
+      "pnlPct": -0.24,
+      "motifEntree": "score 6 : tendance haussiere, cassure du plus haut recent, elan 1 h, RSI 57",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "symbole": "OR.PA",
+      "nom": "L'Oréal S.A.",
+      "classe": "actions",
+      "montant": 95.03,
+      "prixEntree": 410.555175,
+      "prixSortie": 435.9819,
+      "devise": "EUR",
+      "ouvertLe": "2026-10-22T16:44:11",
+      "fermeLe": "2026-10-26T21:40:33",
+      "pnl": 5.68,
+      "pnlPct": 5.98,
+      "motifEntree": "score 6 : tendance haussiere, volume x2.2, elan 1 h, RSI 63",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "symbole": "VOW3.DE",
+      "nom": "Volkswagen AG",
+      "classe": "actions",
+      "montant": 84.82,
+      "prixEntree": 69.93495,
+      "prixSortie": 67.92602,
+      "devise": "EUR",
+      "ouvertLe": "2026-10-26T09:22:29",
+      "fermeLe": "2026-10-27T11:17:26",
+      "pnl": -2.6,
+      "pnlPct": -3.07,
+      "motifEntree": "score 6 : tendance haussiere, volume x2.5, elan 1 h, RSI 60",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "symbole": "AI.PA",
+      "nom": "L'Air Liquide S.A.",
+      "classe": "actions",
+      "montant": 84.82,
+      "prixEntree": 174.30711,
+      "prixSortie": 173.25333,
+      "devise": "EUR",
+      "ouvertLe": "2026-10-26T09:22:29",
+      "fermeLe": "2026-10-28T11:52:58",
+      "pnl": -0.68,
+      "pnlPct": -0.81,
+      "motifEntree": "score 6 : tendance haussiere, volume x2.9, elan 1 h, RSI 62",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "symbole": "CRWD",
+      "nom": "CrowdStrike Holdings, Inc.",
+      "classe": "actions",
+      "montant": 94.44,
+      "prixEntree": 255.477675,
+      "prixSortie": 264.877495,
+      "devise": "USD",
+      "ouvertLe": "2026-10-23T21:18:20",
+      "fermeLe": "2026-10-28T17:56:44",
+      "pnl": 3.27,
+      "pnlPct": 3.47,
+      "motifEntree": "score 5 : tendance haussiere, cassure du plus haut recent, elan 1 h",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "symbole": "ORA.PA",
+      "nom": "Orange S.A.",
+      "classe": "actions",
+      "montant": 82.89,
+      "prixEntree": 14.292142,
+      "prixSortie": 14.217888,
+      "devise": "EUR",
+      "ouvertLe": "2026-10-27T11:17:26",
+      "fermeLe": "2026-10-28T17:56:44",
+      "pnl": -0.6,
+      "pnlPct": -0.72,
+      "motifEntree": "score 6 : tendance haussiere, volume x4.4, elan 1 h, RSI 58",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "symbole": "BN.PA",
+      "nom": "Danone S.A.",
+      "classe": "actions",
+      "montant": 82.71,
+      "prixEntree": 63.27162,
+      "prixSortie": 64.34781,
+      "devise": "EUR",
+      "ouvertLe": "2026-10-28T17:56:44",
+      "fermeLe": "2026-10-29T20:45:23",
+      "pnl": 1.24,
+      "pnlPct": 1.5,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.3, RSI 65",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "symbole": "ML.PA",
+      "nom": "MICHELIN",
+      "classe": "actions",
+      "montant": 82.98,
+      "prixEntree": 31.945965,
+      "prixSortie": 32.10394,
+      "devise": "EUR",
+      "ouvertLe": "2026-10-27T16:55:48",
+      "fermeLe": "2026-10-30T10:52:19",
+      "pnl": 0.24,
+      "pnlPct": 0.29,
+      "motifEntree": "score 6 : tendance haussiere, cassure du plus haut recent, elan 1 h, RSI 65",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "symbole": "RNO.PA",
+      "nom": "Renault SA",
+      "classe": "actions",
+      "montant": 82.71,
+      "prixEntree": 26.363175,
+      "prixSortie": 27.66616,
+      "devise": "EUR",
+      "ouvertLe": "2026-10-28T17:56:44",
+      "fermeLe": "2026-10-30T10:52:19",
+      "pnl": 3.91,
+      "pnlPct": 4.73,
+      "motifEntree": "score 6 : tendance haussiere, volume x2.8, elan 1 h, RSI 54",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "symbole": "SAN.PA",
+      "nom": "Sanofi",
+      "classe": "actions",
+      "montant": 82.71,
+      "prixEntree": 75.547755,
+      "prixSortie": 79.78009,
+      "devise": "EUR",
+      "ouvertLe": "2026-10-28T17:56:44",
+      "fermeLe": "2026-10-30T17:23:26",
+      "pnl": 4.46,
+      "pnlPct": 5.39,
+      "motifEntree": "score 5 : tendance haussiere, volume x4.1, RSI 57",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    }
+  ],
+  "courbe": [
+    {
+      "t": "2026-10-15T17:32:37",
+      "valeur": 997.91,
+      "ref": 1000.0
+    },
+    {
+      "t": "2026-10-15T17:54:56",
+      "valeur": 999.33,
+      "ref": 999.62
+    },
+    {
+      "t": "2026-10-15T21:23:00",
+      "valeur": 1003.17,
+      "ref": 1003.52
+    },
+    {
+      "t": "2026-10-16T00:33:02",
+      "valeur": 998.41,
+      "ref": 1002.28
+    },
+    {
+      "t": "2026-10-16T02:43:09",
+      "valeur": 997.75,
+      "ref": 1002.28
+    },
+    {
+      "t": "2026-10-16T07:08:11",
+      "valeur": 1001.08,
+      "ref": 1002.28
+    },
+    {
+      "t": "2026-10-16T11:46:11",
+      "valeur": 1007.06,
+      "ref": 1002.28
+    },
+    {
+      "t": "2026-10-16T16:21:58",
+      "valeur": 1006.5,
+      "ref": 1001.22
+    },
+    {
+      "t": "2026-10-16T20:14:00",
+      "valeur": 992.05,
+      "ref": 990.87
+    },
+    {
+      "t": "2026-10-16T23:17:00",
+      "valeur": 985.82,
+      "ref": 991.33
+    },
+    {
+      "t": "2026-10-17T01:41:54",
+      "valeur": 979.88,
+      "ref": 991.33
+    },
+    {
+      "t": "2026-10-17T03:35:26",
+      "valeur": 979.88,
+      "ref": 991.33
+    },
+    {
+      "t": "2026-10-17T08:09:26",
+      "valeur": 979.39,
+      "ref": 991.33
+    },
+    {
+      "t": "2026-10-17T12:42:33",
+      "valeur": 977.82,
+      "ref": 991.33
+    },
+    {
+      "t": "2026-10-17T15:58:00",
+      "valeur": 976.16,
+      "ref": 991.33
+    },
+    {
+      "t": "2026-10-17T18:57:10",
+      "valeur": 990.65,
+      "ref": 991.33
+    },
+    {
+      "t": "2026-10-17T21:07:41",
+      "valeur": 998.96,
+      "ref": 991.33
+    },
+    {
+      "t": "2026-10-17T23:26:58",
+      "valeur": 1000.24,
+      "ref": 991.33
+    },
+    {
+      "t": "2026-10-18T01:20:40",
+      "valeur": 985.44,
+      "ref": 991.33
+    },
+    {
+      "t": "2026-10-18T03:14:57",
+      "valeur": 986.03,
+      "ref": 991.33
+    },
+    {
+      "t": "2026-10-18T08:01:15",
+      "valeur": 985.12,
+      "ref": 991.33
+    },
+    {
+      "t": "2026-10-18T12:55:09",
+      "valeur": 983.79,
+      "ref": 991.33
+    },
+    {
+      "t": "2026-10-18T16:19:28",
+      "valeur": 974.5,
+      "ref": 991.33
+    },
+    {
+      "t": "2026-10-18T19:27:02",
+      "valeur": 968.05,
+      "ref": 991.33
+    },
+    {
+      "t": "2026-10-18T21:34:09",
+      "valeur": 967.56,
+      "ref": 991.33
+    },
+    {
+      "t": "2026-10-18T23:50:35",
+      "valeur": 966.21,
+      "ref": 991.33
+    },
+    {
+      "t": "2026-10-19T01:46:01",
+      "valeur": 967.26,
+      "ref": 991.33
+    },
+    {
+      "t": "2026-10-19T03:51:14",
+      "valeur": 985.1,
+      "ref": 991.33
+    },
+    {
+      "t": "2026-10-19T09:04:01",
+      "valeur": 1005.78,
+      "ref": 991.33
+    },
+    {
+      "t": "2026-10-19T16:38:18",
+      "valeur": 998.27,
+      "ref": 996.78
+    },
+    {
+      "t": "2026-10-19T22:13:10",
+      "valeur": 994.46,
+      "ref": 995.38
+    },
+    {
+      "t": "2026-10-20T01:45:55",
+      "valeur": 997.0,
+      "ref": 995.38
+    },
+    {
+      "t": "2026-10-20T04:10:07",
+      "valeur": 986.27,
+      "ref": 995.38
+    },
+    {
+      "t": "2026-10-20T09:34:15",
+      "valeur": 984.69,
+      "ref": 995.38
+    },
+    {
+      "t": "2026-10-20T14:57:39",
+      "valeur": 986.17,
+      "ref": 995.38
+    },
+    {
+      "t": "2026-10-20T19:52:17",
+      "valeur": 995.68,
+      "ref": 999.53
+    },
+    {
+      "t": "2026-10-20T23:01:30",
+      "valeur": 998.31,
+      "ref": 998.2
+    },
+    {
+      "t": "2026-10-21T01:48:14",
+      "valeur": 996.08,
+      "ref": 998.2
+    },
+    {
+      "t": "2026-10-21T04:05:39",
+      "valeur": 994.29,
+      "ref": 998.2
+    },
+    {
+      "t": "2026-10-21T09:32:09",
+      "valeur": 995.79,
+      "ref": 998.2
+    },
+    {
+      "t": "2026-10-21T15:11:30",
+      "valeur": 992.63,
+      "ref": 998.2
+    },
+    {
+      "t": "2026-10-21T20:04:26",
+      "valeur": 993.71,
+      "ref": 1004.82
+    },
+    {
+      "t": "2026-10-21T23:37:14",
+      "valeur": 992.12,
+      "ref": 1003.98
+    },
+    {
+      "t": "2026-10-22T02:12:40",
+      "valeur": 982.56,
+      "ref": 1003.98
+    },
+    {
+      "t": "2026-10-22T06:53:32",
+      "valeur": 971.1,
+      "ref": 1003.98
+    },
+    {
+      "t": "2026-10-22T11:48:03",
+      "valeur": 956.39,
+      "ref": 1003.98
+    },
+    {
+      "t": "2026-10-22T16:44:11",
+      "valeur": 950.04,
+      "ref": 990.47
+    },
+    {
+      "t": "2026-10-22T20:53:59",
+      "valeur": 954.85,
+      "ref": 989.22
+    },
+    {
+      "t": "2026-10-23T00:03:42",
+      "valeur": 946.83,
+      "ref": 991.84
+    },
+    {
+      "t": "2026-10-23T02:37:09",
+      "valeur": 955.67,
+      "ref": 991.84
+    },
+    {
+      "t": "2026-10-23T07:21:27",
+      "valeur": 953.63,
+      "ref": 991.84
+    },
+    {
+      "t": "2026-10-23T12:17:07",
+      "valeur": 954.11,
+      "ref": 991.84
+    },
+    {
+      "t": "2026-10-23T17:12:54",
+      "valeur": 950.22,
+      "ref": 989.75
+    },
+    {
+      "t": "2026-10-23T21:18:20",
+      "valeur": 944.19,
+      "ref": 987.55
+    },
+    {
+      "t": "2026-10-24T00:23:10",
+      "valeur": 946.31,
+      "ref": 986.7
+    },
+    {
+      "t": "2026-10-24T02:53:49",
+      "valeur": 944.94,
+      "ref": 986.7
+    },
+    {
+      "t": "2026-10-24T07:18:38",
+      "valeur": 944.95,
+      "ref": 986.7
+    },
+    {
+      "t": "2026-10-24T11:39:00",
+      "valeur": 925.09,
+      "ref": 986.7
+    },
+    {
+      "t": "2026-10-24T15:36:39",
+      "valeur": 910.99,
+      "ref": 986.7
+    },
+    {
+      "t": "2026-10-24T18:57:24",
+      "valeur": 904.43,
+      "ref": 986.7
+    },
+    {
+      "t": "2026-10-24T21:20:17",
+      "valeur": 893.63,
+      "ref": 986.7
+    },
+    {
+      "t": "2026-10-24T23:42:28",
+      "valeur": 888.93,
+      "ref": 986.7
+    },
+    {
+      "t": "2026-10-25T01:46:31",
+      "valeur": 883.34,
+      "ref": 986.7
+    },
+    {
+      "t": "2026-10-25T02:46:26",
+      "valeur": 883.31,
+      "ref": 986.7
+    },
+    {
+      "t": "2026-10-25T07:59:39",
+      "valeur": 874.91,
+      "ref": 986.7
+    },
+    {
+      "t": "2026-10-25T13:30:45",
+      "valeur": 873.3,
+      "ref": 986.7
+    },
+    {
+      "t": "2026-10-25T17:45:32",
+      "valeur": 870.49,
+      "ref": 986.7
+    },
+    {
+      "t": "2026-10-25T20:19:41",
+      "valeur": 869.99,
+      "ref": 986.7
+    },
+    {
+      "t": "2026-10-25T22:56:12",
+      "valeur": 864.42,
+      "ref": 986.7
+    },
+    {
+      "t": "2026-10-26T00:54:05",
+      "valeur": 864.0,
+      "ref": 986.7
+    },
+    {
+      "t": "2026-10-26T03:53:11",
+      "valeur": 852.69,
+      "ref": 986.7
+    },
+    {
+      "t": "2026-10-26T09:22:29",
+      "valeur": 847.92,
+      "ref": 986.7
+    },
+    {
+      "t": "2026-10-26T16:21:03",
+      "valeur": 851.8,
+      "ref": 996.51
+    },
+    {
+      "t": "2026-10-26T21:39:13",
+      "valeur": 843.87,
+      "ref": 993.57
+    },
+    {
+      "t": "2026-10-27T01:06:00",
+      "valeur": 844.62,
+      "ref": 993.57
+    },
+    {
+      "t": "2026-10-27T05:57:17",
+      "valeur": 838.4,
+      "ref": 993.57
+    },
+    {
+      "t": "2026-10-27T11:17:26",
+      "valeur": 828.78,
+      "ref": 993.57
+    },
+    {
+      "t": "2026-10-27T16:55:48",
+      "valeur": 829.66,
+      "ref": 1000.41
+    },
+    {
+      "t": "2026-10-27T21:28:16",
+      "valeur": 830.67,
+      "ref": 999.5
+    },
+    {
+      "t": "2026-10-28T00:56:56",
+      "valeur": 834.0,
+      "ref": 999.5
+    },
+    {
+      "t": "2026-10-28T05:48:07",
+      "valeur": 835.45,
+      "ref": 999.5
+    },
+    {
+      "t": "2026-10-28T11:52:58",
+      "valeur": 834.15,
+      "ref": 999.5
+    },
+    {
+      "t": "2026-10-28T17:56:44",
+      "valeur": 826.72,
+      "ref": 1002.13
+    },
+    {
+      "t": "2026-10-28T22:32:43",
+      "valeur": 821.6,
+      "ref": 1002.27
+    },
+    {
+      "t": "2026-10-29T02:12:52",
+      "valeur": 816.73,
+      "ref": 1002.27
+    },
+    {
+      "t": "2026-10-29T08:10:15",
+      "valeur": 814.4,
+      "ref": 1002.27
+    },
+    {
+      "t": "2026-10-29T15:19:27",
+      "valeur": 814.89,
+      "ref": 999.26
+    },
+    {
+      "t": "2026-10-29T20:44:05",
+      "valeur": 811.36,
+      "ref": 997.55
+    },
+    {
+      "t": "2026-10-30T00:39:34",
+      "valeur": 782.72,
+      "ref": 999.22
+    },
+    {
+      "t": "2026-10-30T03:59:00",
+      "valeur": 780.08,
+      "ref": 999.22
+    },
+    {
+      "t": "2026-10-30T10:52:19",
+      "valeur": 776.9,
+      "ref": 999.22
+    },
+    {
+      "t": "2026-10-30T17:23:26",
+      "valeur": 775.05,
+      "ref": 982.89
+    },
+    {
+      "t": "2026-10-30T21:57:41",
+      "valeur": 779.45,
+      "ref": 981.05
+    },
+    {
+      "t": "2026-10-31T01:35:37",
+      "valeur": 776.67,
+      "ref": 981.05
+    },
+    {
+      "t": "2026-10-31T07:16:02",
+      "valeur": 775.56,
+      "ref": 981.05
+    },
+    {
+      "t": "2026-10-31T13:46:58",
+      "valeur": 771.87,
+      "ref": 981.05
+    },
+    {
+      "t": "2026-10-31T18:24:21",
+      "valeur": 768.24,
+      "ref": 981.05
+    }
+  ],
+  "journal": [
+    {
+      "t": "2026-10-15T17:32:37",
+      "texte": "Achat Rheinmetall AG pour 99.85 EUR (stop -1.9 %, gain +3.1 % ; score 6 : tendance haussiere, volume x11.4, elan 1 h, RSI 67)"
+    },
+    {
+      "t": "2026-10-15T17:32:37",
+      "texte": "Achat MICHELIN pour 99.85 EUR (stop -0.7 %, gain +1.2 % ; score 6 : tendance haussiere, volume x3.5, elan 1 h, RSI 55)"
+    },
+    {
+      "t": "2026-10-15T17:32:37",
+      "texte": "Achat Pernod Ricard SA pour 99.85 EUR (stop -1.5 %, gain +2.5 % ; score 5 : tendance haussiere, volume x2.6, RSI 52)"
+    },
+    {
+      "t": "2026-10-15T17:32:37",
+      "texte": "Achat Apple Inc. pour 99.85 EUR (stop -1.3 %, gain +2.1 % ; score 5 : tendance haussiere, volume x2.6, RSI 54)"
+    },
+    {
+      "t": "2026-10-16T11:46:11",
+      "texte": "Objectif atteint sur Rheinmetall AG : stop suiveur active, gain securise a +3.2 %"
+    },
+    {
+      "t": "2026-10-16T11:46:11",
+      "texte": "Objectif atteint sur Pernod Ricard SA : stop suiveur active, gain securise a +1.8 %"
+    },
+    {
+      "t": "2026-10-16T20:14:00",
+      "texte": "Vente Apple Inc. (tendance cassee) : -0.60 EUR (-0.6 %)"
+    },
+    {
+      "t": "2026-10-16T20:15:23",
+      "texte": "Vente MICHELIN (stop-loss) : -1.24 EUR (-1.2 %)"
+    },
+    {
+      "t": "2026-10-19T16:38:18",
+      "texte": "Vente Rheinmetall AG (stop suiveur, gain securise) : +1.42 EUR (+1.4 %)"
+    },
+    {
+      "t": "2026-10-19T16:38:18",
+      "texte": "Vente Pernod Ricard SA (stop suiveur, gain securise) : +1.08 EUR (+1.1 %)"
+    },
+    {
+      "t": "2026-10-19T22:13:10",
+      "texte": "Achat ExxonMobil Holdings Corporation pour 99.46 EUR (stop -0.6 %, gain +0.9 % ; score 5 : tendance haussiere, volume x6.1, RSI 58)"
+    },
+    {
+      "t": "2026-10-20T19:52:17",
+      "texte": "Vente ExxonMobil Holdings Corporation (stop-loss) : -0.82 EUR (-0.8 %)"
+    },
+    {
+      "t": "2026-10-21T04:05:39",
+      "texte": "Achat AUD/USD pour 99.43 EUR (stop -0.2 %, gain +0.3 % ; score 6 : tendance haussiere, cassure du plus haut recent, elan 1 h, RSI 69)"
+    },
+    {
+      "t": "2026-10-21T15:11:30",
+      "texte": "Achat Airbus SE pour 99.31 EUR (stop -0.7 %, gain +1.2 % ; score 6 : tendance haussiere, volume x3.3, elan 1 h, RSI 69)"
+    },
+    {
+      "t": "2026-10-21T15:11:30",
+      "texte": "Achat AXA SA pour 99.31 EUR (stop -0.3 %, gain +0.5 % ; score 6 : tendance haussiere, cassure du plus haut recent, elan 1 h, RSI 69)"
+    },
+    {
+      "t": "2026-10-21T15:11:30",
+      "texte": "Achat Safran SA pour 99.31 EUR (stop -0.7 %, gain +1.2 % ; score 5 : tendance haussiere, volume x1.8, elan 1 h, RSI 53)"
+    },
+    {
+      "t": "2026-10-21T20:04:26",
+      "texte": "Objectif atteint sur Airbus SE : stop suiveur active, gain securise a +0.9 %"
+    },
+    {
+      "t": "2026-10-22T11:48:03",
+      "texte": "Vente AUD/USD (tendance cassee) : -0.11 EUR (-0.1 %)"
+    },
+    {
+      "t": "2026-10-22T11:48:03",
+      "texte": "Vente Airbus SE (stop suiveur, gain securise) : -0.27 EUR (-0.3 %)"
+    },
+    {
+      "t": "2026-10-22T11:48:03",
+      "texte": "Vente AXA SA (stop-loss) : -2.39 EUR (-2.4 %)"
+    },
+    {
+      "t": "2026-10-22T11:48:03",
+      "texte": "Vente Safran SA (stop-loss) : -1.91 EUR (-1.9 %)"
+    },
+    {
+      "t": "2026-10-22T16:44:11",
+      "texte": "Achat L'Oréal S.A. pour 95.03 EUR (stop -1.0 %, gain +1.6 % ; score 6 : tendance haussiere, volume x2.2, elan 1 h, RSI 63)"
+    },
+    {
+      "t": "2026-10-22T16:44:11",
+      "texte": "Achat Gaz naturel pour 95.03 EUR (stop -2.3 %, gain +3.9 % ; score 5 : tendance haussiere, volume x1.6, elan 1 h, RSI 66)"
+    },
+    {
+      "t": "2026-10-23T02:37:09",
+      "texte": "Vente Gaz naturel (tendance cassee) : -1.21 EUR (-1.3 %)"
+    },
+    {
+      "t": "2026-10-23T02:37:09",
+      "texte": "Achat GBP/USD pour 95.57 EUR (stop -0.2 %, gain +0.3 % ; score 6 : tendance haussiere, cassure du plus haut recent, elan 1 h, RSI 59)"
+    },
+    {
+      "t": "2026-10-23T07:21:27",
+      "texte": "Vente GBP/USD (tendance cassee) : -0.16 EUR (-0.2 %)"
+    },
+    {
+      "t": "2026-10-23T12:17:07",
+      "texte": "Objectif atteint sur L'Oréal S.A. : stop suiveur active, gain securise a +4.9 %"
+    },
+    {
+      "t": "2026-10-23T21:18:20",
+      "texte": "Achat AUD/USD pour 94.44 EUR (stop -0.2 %, gain +0.3 % ; score 6 : tendance haussiere, cassure du plus haut recent, elan 1 h, RSI 57)"
+    },
+    {
+      "t": "2026-10-23T21:18:20",
+      "texte": "Achat CrowdStrike Holdings, Inc. pour 94.44 EUR (stop -1.2 %, gain +2.0 % ; score 5 : tendance haussiere, cassure du plus haut recent, elan 1 h)"
+    },
+    {
+      "t": "2026-10-25T20:20:58",
+      "texte": "Vente AUD/USD (stop-loss) : -0.23 EUR (-0.2 %)"
+    },
+    {
+      "t": "2026-10-26T09:22:29",
+      "texte": "Achat Volkswagen AG pour 84.82 EUR (stop -1.6 %, gain +2.6 % ; score 6 : tendance haussiere, volume x2.5, elan 1 h, RSI 60)"
+    },
+    {
+      "t": "2026-10-26T09:22:29",
+      "texte": "Achat L'Air Liquide S.A. pour 84.82 EUR (stop -0.7 %, gain +1.2 % ; score 6 : tendance haussiere, volume x2.9, elan 1 h, RSI 62)"
+    },
+    {
+      "t": "2026-10-26T16:21:03",
+      "texte": "Objectif atteint sur CrowdStrike Holdings, Inc. : stop suiveur active, gain securise a +1.8 %"
+    },
+    {
+      "t": "2026-10-26T21:40:33",
+      "texte": "Vente L'Oréal S.A. (stop suiveur, gain securise) : +5.68 EUR (+6.0 %)"
+    },
+    {
+      "t": "2026-10-27T11:17:26",
+      "texte": "Vente Volkswagen AG (stop-loss) : -2.60 EUR (-3.1 %)"
+    },
+    {
+      "t": "2026-10-27T11:17:26",
+      "texte": "Achat Orange S.A. pour 82.89 EUR (stop -1.7 %, gain +2.8 % ; score 6 : tendance haussiere, volume x4.4, elan 1 h, RSI 58)"
+    },
+    {
+      "t": "2026-10-27T16:55:48",
+      "texte": "Achat MICHELIN pour 82.98 EUR (stop -0.6 %, gain +1.0 % ; score 6 : tendance haussiere, cassure du plus haut recent, elan 1 h, RSI 65)"
+    },
+    {
+      "t": "2026-10-28T11:52:58",
+      "texte": "Vente L'Air Liquide S.A. (duree maximale atteinte) : -0.68 EUR (-0.8 %)"
+    },
+    {
+      "t": "2026-10-28T17:56:44",
+      "texte": "Vente CrowdStrike Holdings, Inc. (stop suiveur, gain securise) : +3.27 EUR (+3.5 %)"
+    },
+    {
+      "t": "2026-10-28T17:56:44",
+      "texte": "Vente Orange S.A. (tendance cassee) : -0.60 EUR (-0.7 %)"
+    },
+    {
+      "t": "2026-10-28T17:56:44",
+      "texte": "Achat Renault SA pour 82.71 EUR (stop -1.1 %, gain +1.8 % ; score 6 : tendance haussiere, volume x2.8, elan 1 h, RSI 54)"
+    },
+    {
+      "t": "2026-10-28T17:56:44",
+      "texte": "Achat Danone S.A. pour 82.71 EUR (stop -0.9 %, gain +1.5 % ; score 5 : tendance haussiere, volume x2.3, RSI 65)"
+    },
+    {
+      "t": "2026-10-28T17:56:44",
+      "texte": "Achat Sanofi pour 82.71 EUR (stop -1.0 %, gain +1.7 % ; score 5 : tendance haussiere, volume x4.1, RSI 57)"
+    },
+    {
+      "t": "2026-10-29T15:19:27",
+      "texte": "Objectif atteint sur Renault SA : stop suiveur active, gain securise a +5.9 %"
+    },
+    {
+      "t": "2026-10-29T15:19:27",
+      "texte": "Objectif atteint sur Danone S.A. : stop suiveur active, gain securise a +2.4 %"
+    },
+    {
+      "t": "2026-10-29T20:45:23",
+      "texte": "Vente Danone S.A. (stop suiveur, gain securise) : +1.24 EUR (+1.5 %)"
+    },
+    {
+      "t": "2026-10-30T10:52:19",
+      "texte": "Vente MICHELIN (duree maximale atteinte) : +0.24 EUR (+0.3 %)"
+    },
+    {
+      "t": "2026-10-30T10:52:19",
+      "texte": "Vente Renault SA (stop suiveur, gain securise) : +3.91 EUR (+4.7 %)"
+    },
+    {
+      "t": "2026-10-30T10:52:19",
+      "texte": "Objectif atteint sur Sanofi : stop suiveur active, gain securise a +5.6 %"
+    },
+    {
+      "t": "2026-10-30T10:52:19",
+      "texte": "Achat ESSILORLUXOTTICA pour 77.71 EUR (stop -1.5 %, gain +2.5 % ; score 6 : tendance haussiere, cassure du plus haut recent, elan 1 h, RSI 59)"
+    },
+    {
+      "t": "2026-10-30T10:52:19",
+      "texte": "Achat Publicis Groupe S.A. pour 77.71 EUR (stop -1.2 %, gain +2.0 % ; score 5 : tendance haussiere, volume x4.8, RSI 63)"
+    },
+    {
+      "t": "2026-10-30T17:23:26",
+      "texte": "Vente Sanofi (stop suiveur, gain securise) : +4.46 EUR (+5.4 %)"
+    }
+  ],
+  "signaux": [
+    {
+      "symbole": "OR.PA",
+      "nom": "L'Oréal S.A.",
+      "classe": "actions",
+      "prix": 436.95,
+      "devise": "EUR",
+      "ouvert": false,
+      "r1h": 0.51,
+      "r4h": 1.06,
+      "rsi": 70.2,
+      "volRatio": 2.59,
+      "atrPct": 0.305,
+      "score": 7,
+      "raisons": "tendance haussiere, cassure du plus haut recent, volume x2.6, elan 1 h",
+      "avis": "",
+      "spark": [
+        427.299988,
+        426.450012,
+        424.5,
+        424.0,
+        424.75,
+        424.299988,
+        424.25,
+        428.5,
+        428.25,
+        428.299988,
+        430.149994,
+        430.799988,
+        431.149994,
+        431.950012,
+        431.899994,
+        431.0,
+        432.899994,
+        433.100006,
+        433.25,
+        434.899994,
+        434.5,
+        434.649994,
+        435.149994,
+        435.450012,
+        436.95
+      ]
+    },
+    {
+      "symbole": "CAP.PA",
+      "nom": "Capgemini SE",
+      "classe": "actions",
+      "prix": 127.65,
+      "devise": "EUR",
+      "ouvert": false,
+      "r1h": 2.08,
+      "r4h": 1.11,
+      "rsi": 62.8,
+      "volRatio": 1.55,
+      "atrPct": 0.575,
+      "score": 7,
+      "raisons": "tendance haussiere, cassure du plus haut recent, volume x1.5, elan 1 h, RSI 63",
+      "avis": "",
+      "spark": [
+        122.050003,
+        123.25,
+        123.099998,
+        123.400002,
+        123.400002,
+        122.900002,
+        123.349998,
+        124.849998,
+        126.300003,
+        124.75,
+        125.050003,
+        124.900002,
+        125.349998,
+        125.699997,
+        125.349998,
+        125.949997,
+        125.650002,
+        125.949997,
+        125.349998,
+        125.099998,
+        125.699997,
+        124.900002,
+        126.599998,
+        127.400002,
+        127.65
+      ]
+    },
+    {
+      "symbole": "RIVN",
+      "nom": "Rivian Automotive, Inc.",
+      "classe": "actions",
+      "prix": 12.16,
+      "devise": "USD",
+      "ouvert": false,
+      "r1h": 2.92,
+      "r4h": 0.99,
+      "rsi": 55.7,
+      "volRatio": 2.2,
+      "atrPct": 1.127,
+      "score": 6,
+      "raisons": "tendance haussiere, volume x2.2, elan 1 h, RSI 56",
+      "avis": "",
+      "spark": [
+        11.64,
+        11.745,
+        11.845,
+        11.7384,
+        11.7239,
+        11.76,
+        11.725,
+        11.6651,
+        11.57,
+        11.595,
+        11.45,
+        11.99,
+        12.045,
+        12.07,
+        12.095,
+        12.015,
+        12.015,
+        11.835,
+        11.8,
+        11.5701,
+        11.655,
+        11.715,
+        11.81,
+        12.185,
+        12.16
+      ]
+    },
+    {
+      "symbole": "XOM",
+      "nom": "ExxonMobil Holdings Corporation",
+      "classe": "actions",
+      "prix": 187.25,
+      "devise": "USD",
+      "ouvert": false,
+      "r1h": 0.44,
+      "r4h": 0.76,
+      "rsi": 62.3,
+      "volRatio": 2.12,
+      "atrPct": 0.353,
+      "score": 6,
+      "raisons": "tendance haussiere, volume x2.1, elan 1 h, RSI 62",
+      "avis": "",
+      "spark": [
+        182.134995,
+        181.380005,
+        182.020004,
+        182.229996,
+        182.25,
+        181.960007,
+        182.494995,
+        182.294998,
+        182.429993,
+        182.710007,
+        183.179993,
+        188.240005,
+        186.960007,
+        184.880005,
+        185.494995,
+        185.675003,
+        185.929993,
+        186.820007,
+        187.410004,
+        186.604996,
+        185.729996,
+        186.630005,
+        186.440002,
+        187.25,
+        187.25
+      ]
+    },
+    {
+      "symbole": "DKNG",
+      "nom": "DraftKings Inc.",
+      "classe": "actions",
+      "prix": 20.91,
+      "devise": "USD",
+      "ouvert": false,
+      "r1h": 1.11,
+      "r4h": 2.47,
+      "rsi": 70.7,
+      "volRatio": 2.01,
+      "atrPct": 0.609,
+      "score": 5,
+      "raisons": "tendance haussiere, volume x2.0, elan 1 h",
+      "avis": "",
+      "spark": [
+        20.209999,
+        20.344999,
+        20.125,
+        20.155001,
+        20.195,
+        20.27,
+        20.379999,
+        20.540001,
+        20.725,
+        20.565001,
+        20.715,
+        20.370001,
+        20.24,
+        20.370001,
+        20.450001,
+        20.5,
+        20.4168,
+        20.344999,
+        20.540001,
+        20.615,
+        20.674999,
+        20.645,
+        20.6765,
+        20.93,
+        20.91
+      ]
+    },
+    {
+      "symbole": "AI.PA",
+      "nom": "L'Air Liquide S.A.",
+      "classe": "actions",
+      "prix": 180.9,
+      "devise": "EUR",
+      "ouvert": false,
+      "r1h": 0.14,
+      "r4h": 0.52,
+      "rsi": 58.6,
+      "volRatio": 3.98,
+      "atrPct": 0.233,
+      "score": 5,
+      "raisons": "tendance haussiere, volume x4.0, RSI 59",
+      "avis": "",
+      "spark": [
+        179.600006,
+        178.440002,
+        177.399994,
+        177.339996,
+        176.880005,
+        177.259995,
+        177.199997,
+        179.940002,
+        180.100006,
+        179.559998,
+        179.919998,
+        180.039993,
+        180.080002,
+        180.339996,
+        180.259995,
+        179.940002,
+        180.240005,
+        180.360001,
+        180.440002,
+        180.910004,
+        180.820007,
+        181.240005,
+        180.740005,
+        180.880005,
+        180.9
+      ]
+    },
+    {
+      "symbole": "WMT",
+      "nom": "Walmart Inc.",
+      "classe": "actions",
+      "prix": 123.51,
+      "devise": "USD",
+      "ouvert": false,
+      "r1h": 0.02,
+      "r4h": -0.38,
+      "rsi": 35.4,
+      "volRatio": 2.28,
+      "atrPct": 0.247,
+      "score": 4,
+      "raisons": "tendance haussiere, volume x2.3",
+      "avis": "",
+      "spark": [
+        120.82,
+        120.959999,
+        121.069801,
+        121.080002,
+        121.160004,
+        120.949898,
+        120.970001,
+        121.269997,
+        121.379997,
+        121.410004,
+        121.25,
+        123.620102,
+        123.364998,
+        123.110001,
+        123.589699,
+        123.629997,
+        124.214996,
+        124.099998,
+        123.800003,
+        124.010803,
+        123.93,
+        123.699997,
+        123.470001,
+        123.519997,
+        123.51
+      ]
+    },
+    {
+      "symbole": "ARM",
+      "nom": "Arm Holdings plc",
+      "classe": "actions",
+      "prix": 205.97,
+      "devise": "USD",
+      "ouvert": false,
+      "r1h": 1.65,
+      "r4h": 1.07,
+      "rsi": 54.2,
+      "volRatio": 2.95,
+      "atrPct": 0.908,
+      "score": 4,
+      "raisons": "volume x3.0, elan 1 h, RSI 54",
+      "avis": "",
+      "spark": [
+        227.199997,
+        229.097397,
+        231.677002,
+        230.410004,
+        229.550003,
+        230.139999,
+        228.910004,
+        227.589996,
+        227.639999,
+        226.809998,
+        228.789993,
+        207.910202,
+        205.059998,
+        205.210007,
+        204.320496,
+        203.839996,
+        204.190002,
+        203.210007,
+        203.551697,
+        201.110001,
+        199.684998,
+        200.924606,
+        204.880005,
+        205.910004,
+        205.97
+      ]
+    },
+    {
+      "symbole": "ADBE",
+      "nom": "Adobe Inc.",
+      "classe": "actions",
+      "prix": 250.23,
+      "devise": "USD",
+      "ouvert": false,
+      "r1h": -0.27,
+      "r4h": -0.85,
+      "rsi": 39.1,
+      "volRatio": 2.02,
+      "atrPct": 0.323,
+      "score": 4,
+      "raisons": "tendance haussiere, volume x2.0",
+      "avis": "",
+      "spark": [
+        245.809998,
+        245.089996,
+        246.099503,
+        246.399994,
+        246.271805,
+        247.199997,
+        247.5,
+        247.929993,
+        246.770004,
+        247.350006,
+        248.119995,
+        255.830002,
+        253.720001,
+        253.990005,
+        252.699997,
+        252.970001,
+        252.175003,
+        250.850006,
+        250.380005,
+        249.979996,
+        249.755005,
+        250.410004,
+        250.820007,
+        250.100006,
+        250.23
+      ]
+    },
+    {
+      "symbole": "RIOT",
+      "nom": "Riot Platforms, Inc.",
+      "classe": "actions",
+      "prix": 12.81,
+      "devise": "USD",
+      "ouvert": false,
+      "r1h": 2.97,
+      "r4h": 2.77,
+      "rsi": 64.1,
+      "volRatio": 2.12,
+      "atrPct": 1.129,
+      "score": 4,
+      "raisons": "volume x2.1, elan 1 h, RSI 64",
+      "avis": "",
+      "spark": [
+        14.06,
+        14.2082,
+        14.36,
+        14.2801,
+        14.16,
+        14.04,
+        13.995,
+        13.72,
+        13.765,
+        13.76,
+        13.72,
+        12.665,
+        12.45,
+        12.54,
+        12.56,
+        12.475,
+        12.46,
+        12.405,
+        12.31,
+        12.265,
+        12.145,
+        12.205,
+        12.495,
+        12.795,
+        12.81
+      ]
+    },
+    {
+      "symbole": "MA",
+      "nom": "Mastercard Incorporated",
+      "classe": "actions",
+      "prix": 638.01,
+      "devise": "USD",
+      "ouvert": false,
+      "r1h": -0.21,
+      "r4h": 0.44,
+      "rsi": 58.5,
+      "volRatio": 1.84,
+      "atrPct": 0.216,
+      "score": 4,
+      "raisons": "tendance haussiere, volume x1.8, RSI 58",
+      "avis": "",
+      "spark": [
+        639.23999,
+        639.51001,
+        634.72998,
+        637.530029,
+        636.291809,
+        636.130005,
+        635.27002,
+        636.275024,
+        637.140015,
+        636.929993,
+        635.705017,
+        637.780029,
+        636.130005,
+        638.36499,
+        636.984985,
+        635.460022,
+        636.405029,
+        635.705017,
+        639.539978,
+        638.809998,
+        638.585022,
+        639.5,
+        638.650024,
+        638.01001,
+        638.01
+      ]
+    },
+    {
+      "symbole": "INTC",
+      "nom": "Intel Corporation",
+      "classe": "actions",
+      "prix": 65.76,
+      "devise": "USD",
+      "ouvert": false,
+      "r1h": 2.97,
+      "r4h": 1.87,
+      "rsi": 61.5,
+      "volRatio": 2.57,
+      "atrPct": 0.975,
+      "score": 4,
+      "raisons": "volume x2.6, elan 1 h, RSI 62",
+      "avis": "",
+      "spark": [
+        92.678299,
+        93.095001,
+        93.339996,
+        92.334999,
+        92.385002,
+        91.989998,
+        91.375,
+        91.324997,
+        91.175003,
+        91.424103,
+        92.080002,
+        65.480103,
+        65.940002,
+        66.131401,
+        65.972504,
+        65.385002,
+        64.759903,
+        64.714996,
+        64.385002,
+        63.884998,
+        63.785,
+        63.670101,
+        63.875,
+        65.879997,
+        65.76
+      ]
+    },
+    {
+      "symbole": "ORA.PA",
+      "nom": "Orange S.A.",
+      "classe": "actions",
+      "prix": 14.47,
+      "devise": "EUR",
+      "ouvert": false,
+      "r1h": -0.34,
+      "r4h": -0.52,
+      "rsi": 31.8,
+      "volRatio": 5.1,
+      "atrPct": 0.212,
+      "score": 4,
+      "raisons": "tendance haussiere, volume x5.1",
+      "avis": "",
+      "spark": [
+        14.375,
+        14.335,
+        14.35,
+        14.36,
+        14.39,
+        14.385,
+        14.43,
+        14.56,
+        14.57,
+        14.54,
+        14.55,
+        14.56,
+        14.59,
+        14.575,
+        14.58,
+        14.55,
+        14.545,
+        14.54,
+        14.525,
+        14.565,
+        14.575,
+        14.555,
+        14.5,
+        14.455,
+        14.47
+      ]
+    },
+    {
+      "symbole": "COST",
+      "nom": "Costco Wholesale Corporation",
+      "classe": "actions",
+      "prix": 1012.28,
+      "devise": "USD",
+      "ouvert": false,
+      "r1h": -0.36,
+      "r4h": -0.45,
+      "rsi": 32.1,
+      "volRatio": 2.48,
+      "atrPct": 0.215,
+      "score": 4,
+      "raisons": "tendance haussiere, volume x2.5",
+      "avis": "",
+      "spark": [
+        990.26001,
+        989.27002,
+        989.659973,
+        989.315002,
+        990.26001,
+        989.640015,
+        991.0,
+        993.150024,
+        994.349976,
+        994.809998,
+        996.200012,
+        1012.434998,
+        1009.929993,
+        1009.945007,
+        1013.619995,
+        1015.190002,
+        1018.692688,
+        1018.710022,
+        1019.690002,
+        1020.132507,
+        1019.570007,
+        1016.914978,
+        1014.35498,
+        1012.419983,
+        1012.28
+      ]
+    },
+    {
+      "symbole": "SHOP",
+      "nom": "Shopify Inc.",
+      "classe": "actions",
+      "prix": 157.49,
+      "devise": "USD",
+      "ouvert": false,
+      "r1h": 1.1,
+      "r4h": 1.43,
+      "rsi": 66.1,
+      "volRatio": 2.73,
+      "atrPct": 0.51,
+      "score": 4,
+      "raisons": "volume x2.7, elan 1 h, RSI 66",
+      "avis": "",
+      "spark": [
+        166.809998,
+        167.389999,
+        166.919998,
+        167.149994,
+        167.910004,
+        167.119995,
+        166.479996,
+        166.720001,
+        166.619995,
+        166.789993,
+        166.919998,
+        160.610001,
+        158.580002,
+        157.820007,
+        156.320007,
+        155.845001,
+        156.100006,
+        155.75,
+        154.949997,
+        154.539993,
+        154.919998,
+        155.610001,
+        156.220001,
+        157.389999,
+        157.49
+      ]
+    },
+    {
+      "symbole": "PYPL",
+      "nom": "PayPal Holdings, Inc.",
+      "classe": "actions",
+      "prix": 57.01,
+      "devise": "USD",
+      "ouvert": false,
+      "r1h": -0.4,
+      "r4h": 0.14,
+      "rsi": 27.4,
+      "volRatio": 2.42,
+      "atrPct": 0.334,
+      "score": 4,
+      "raisons": "tendance haussiere, volume x2.4",
+      "avis": "",
+      "spark": [
+        57.369999,
+        57.540001,
+        57.549999,
+        57.349998,
+        57.25,
+        57.310001,
+        57.290001,
+        57.220001,
+        57.2701,
+        57.23,
+        56.965,
+        56.759998,
+        56.68,
+        56.985001,
+        56.8605,
+        56.965,
+        57.25,
+        57.290001,
+        57.34,
+        57.169998,
+        57.119999,
+        57.209999,
+        57.139999,
+        57.009998,
+        57.01
+      ]
+    },
+    {
+      "symbole": "EL.PA",
+      "nom": "ESSILORLUXOTTICA",
+      "classe": "actions",
+      "prix": 184.3,
+      "devise": "EUR",
+      "ouvert": false,
+      "r1h": 0.38,
+      "r4h": -0.78,
+      "rsi": 37.7,
+      "volRatio": 2.54,
+      "atrPct": 0.455,
+      "score": 4,
+      "raisons": "tendance haussiere, volume x2.5",
+      "avis": "",
+      "spark": [
+        180.300003,
+        180.350006,
+        179.850006,
+        180.399994,
+        179.600006,
+        178.800003,
+        178.300003,
+        178.75,
+        180.300003,
+        180.949997,
+        183.100006,
+        183.75,
+        184.149994,
+        184.699997,
+        185.399994,
+        185.449997,
+        185.600006,
+        186.0,
+        185.100006,
+        184.850006,
+        183.75,
+        183.899994,
+        184.449997,
+        184.949997,
+        184.3
+      ]
+    },
+    {
+      "symbole": "ZW=F",
+      "nom": "Ble",
+      "classe": "matieres",
+      "prix": 603.5,
+      "devise": "USX",
+      "ouvert": false,
+      "r1h": -0.49,
+      "r4h": 0.46,
+      "rsi": 59.4,
+      "volRatio": 1.76,
+      "atrPct": 0.379,
+      "score": 4,
+      "raisons": "tendance haussiere, volume x1.8, RSI 59",
+      "avis": "",
+      "spark": [
+        605.25,
+        604.5,
+        604.5,
+        606.0,
+        604.25,
+        605.25,
+        604.0,
+        603.75,
+        606.5,
+        606.0,
+        606.0,
+        604.5,
+        602.25,
+        603.25,
+        601.0,
+        598.5,
+        600.5,
+        601.0,
+        604.75,
+        604.0,
+        604.5,
+        607.5,
+        604.75,
+        603.5,
+        603.5
+      ]
+    },
+    {
+      "symbole": "NKE",
+      "nom": "NIKE, Inc.",
+      "classe": "actions",
+      "prix": 38.67,
+      "devise": "USD",
+      "ouvert": false,
+      "r1h": -0.35,
+      "r4h": -0.23,
+      "rsi": 33.7,
+      "volRatio": 2.16,
+      "atrPct": 0.294,
+      "score": 4,
+      "raisons": "tendance haussiere, volume x2.2",
+      "avis": "",
+      "spark": [
+        38.381302,
+        38.485001,
+        38.365002,
+        38.314999,
+        38.32,
+        38.314999,
+        38.334999,
+        38.305,
+        38.400002,
+        38.494999,
+        38.419998,
+        38.875,
+        38.799999,
+        38.935001,
+        38.889999,
+        38.869999,
+        38.945,
+        38.855,
+        38.924999,
+        38.904999,
+        38.735001,
+        38.7397,
+        38.724998,
+        38.689999,
+        38.67
+      ]
+    },
+    {
+      "symbole": "COIN",
+      "nom": "Coinbase Global, Inc.",
+      "classe": "actions",
+      "prix": 143.54,
+      "devise": "USD",
+      "ouvert": false,
+      "r1h": 3.15,
+      "r4h": 2.55,
+      "rsi": 68.0,
+      "volRatio": 2.24,
+      "atrPct": 0.793,
+      "score": 4,
+      "raisons": "volume x2.2, elan 1 h, RSI 68",
+      "avis": "",
+      "spark": [
+        160.945007,
+        160.910004,
+        161.710007,
+        160.925003,
+        160.889999,
+        161.449997,
+        160.074997,
+        158.343994,
+        158.934998,
+        159.070007,
+        160.690002,
+        143.395004,
+        139.229996,
+        140.595001,
+        139.979996,
+        140.539993,
+        140.449997,
+        139.809906,
+        138.880005,
+        138.145004,
+        138.259995,
+        138.375,
+        140.449997,
+        143.509995,
+        143.54
+      ]
+    },
+    {
+      "symbole": "USDCHF=X",
+      "nom": "USD/CHF",
+      "classe": "devises",
+      "prix": 0.8249,
+      "devise": "CHF",
+      "ouvert": false,
+      "r1h": 0.09,
+      "r4h": 0.1,
+      "rsi": 61.6,
+      "volRatio": 0.0,
+      "atrPct": 0.061,
+      "score": 4,
+      "raisons": "tendance haussiere, elan 1 h, RSI 62",
+      "avis": "",
+      "spark": [
+        0.82148,
+        0.82114,
+        0.82172,
+        0.82114,
+        0.82059,
+        0.82117,
+        0.82231,
+        0.82334,
+        0.8239,
+        0.82465,
+        0.82452,
+        0.82519,
+        0.82392,
+        0.82274,
+        0.82398,
+        0.82372,
+        0.8242,
+        0.82383,
+        0.82364,
+        0.82386,
+        0.82419,
+        0.82412,
+        0.82492,
+        0.8249,
+        0.8249
+      ]
+    },
+    {
+      "symbole": "AFRM",
+      "nom": "Affirm Holdings, Inc.",
+      "classe": "actions",
+      "prix": 73.47,
+      "devise": "USD",
+      "ouvert": false,
+      "r1h": 2.13,
+      "r4h": 1.74,
+      "rsi": 55.1,
+      "volRatio": 2.16,
+      "atrPct": 0.687,
+      "score": 4,
+      "raisons": "volume x2.2, elan 1 h, RSI 55",
+      "avis": "",
+      "spark": [
+        75.714996,
+        76.065002,
+        75.875,
+        74.900002,
+        75.099998,
+        75.419998,
+        75.160004,
+        74.875,
+        74.785004,
+        75.120003,
+        74.830002,
+        72.745003,
+        72.849998,
+        73.220001,
+        72.519997,
+        72.5,
+        72.769997,
+        72.455002,
+        72.309998,
+        71.639999,
+        71.260002,
+        71.584999,
+        72.525002,
+        73.510002,
+        73.47
+      ]
+    },
+    {
+      "symbole": "AUDUSD=X",
+      "nom": "AUD/USD",
+      "classe": "devises",
+      "prix": 0.7035,
+      "devise": "USD",
+      "ouvert": false,
+      "r1h": -0.0,
+      "r4h": 0.04,
+      "rsi": 56.3,
+      "volRatio": 0.0,
+      "atrPct": 0.024,
+      "score": 3,
+      "raisons": "tendance haussiere, RSI 56",
+      "avis": "",
+      "spark": [
+        0.703482,
+        0.704077,
+        0.703383,
+        0.702938,
+        0.702938,
+        0.70279,
+        0.702839,
+        0.702001,
+        0.703433,
+        0.703087,
+        0.703482,
+        0.703878,
+        0.70373,
+        0.703829,
+        0.703185,
+        0.703383,
+        0.703185,
+        0.703383,
+        0.702988,
+        0.70368,
+        0.703383,
+        0.703532,
+        0.703532,
+        0.703532,
+        0.7035
+      ]
+    },
+    {
+      "symbole": "MBG.DE",
+      "nom": "Mercedes-Benz Group AG",
+      "classe": "actions",
+      "prix": 40.68,
+      "devise": "EUR",
+      "ouvert": false,
+      "r1h": -0.39,
+      "r4h": -0.14,
+      "rsi": 41.6,
+      "volRatio": 1.52,
+      "atrPct": 0.321,
+      "score": 3,
+      "raisons": "tendance haussiere, volume x1.5",
+      "avis": "",
+      "spark": [
+        40.799999,
+        40.560001,
+        40.490002,
+        40.755001,
+        40.744999,
+        40.744999,
+        40.837502,
+        41.009998,
+        40.974998,
+        40.869999,
+        40.869999,
+        40.764999,
+        40.805,
+        40.805,
+        40.82,
+        40.744999,
+        40.779999,
+        40.875,
+        40.735001,
+        40.974998,
+        40.915001,
+        41.0,
+        40.875,
+        40.73,
+        40.68
+      ]
+    },
+    {
+      "symbole": "VIE.PA",
+      "nom": "Veolia Environnement SA",
+      "classe": "actions",
+      "prix": 33.01,
+      "devise": "EUR",
+      "ouvert": false,
+      "r1h": 0.15,
+      "r4h": 0.46,
+      "rsi": 54.5,
+      "volRatio": 1.22,
+      "atrPct": 0.187,
+      "score": 3,
+      "raisons": "tendance haussiere, RSI 55",
+      "avis": "",
+      "spark": [
+        33.029999,
+        32.990002,
+        32.779999,
+        32.82,
+        32.860001,
+        32.799999,
+        32.790001,
+        32.950001,
+        32.990002,
+        32.84,
+        32.880001,
+        32.990002,
+        32.990002,
+        32.990002,
+        32.939999,
+        32.869999,
+        32.919998,
+        32.939999,
+        32.970001,
+        33.02,
+        32.91,
+        32.970001,
+        32.919998,
+        32.990002,
+        33.01
+      ]
+    }
+  ],
+  "stats": {
+    "nbTrades": 21,
+    "gagnants": 8,
+    "frais": 3.4592752620281106,
+    "pnl": 8.489623847182543
+  },
+  "marche": {
+    "analyses": 126,
+    "echecs": 0,
+    "ouverts": {
+      "matieres": 0,
+      "indices": 0,
+      "actions": 0,
+      "devises": 0
+    },
+    "achatsBloques": null
+  },
+  "regime": "normal",
+  "derniereExecution": "2026-10-31T18:24:21",
+  "derniereVerif": "2026-10-31T18:27:41"
+}
