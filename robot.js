@@ -1,0 +1,5539 @@
+// Genere par robot.ps1 - ne pas modifier a la main.
+window.ROBOT = {
+  "config": {
+    "capitalInitial": 1000,
+    "partBase": 0.1,
+    "partFavorable": 0.15,
+    "maxPositions": 4,
+    "stopLoss": 0.03,
+    "priseGain": 0.05,
+    "dureeMaxH": 24,
+    "scoreMin": 5,
+    "rsiMax": 75,
+    "volumeMinUsdt": 3000000,
+    "univers": 150,
+    "frais": 0.001,
+    "cooldownH": 2,
+    "btcChute1h": -0.01
+  },
+  "debut": "2026-10-15T17:31:16",
+  "liquidites": 503.88,
+  "btcInitialEur": 73357.12629325723,
+  "positions": [
+    {
+      "paire": "RAREUSDT",
+      "base": "RARE",
+      "quantite": 4621.705083157739,
+      "prixEntreeUsdt": 0.01499976,
+      "montant": 63.33,
+      "ouvertLe": "2026-11-21T12:48:06",
+      "score": 5,
+      "motif": "score 5 : tendance haussiere, volume x2.4, RSI 63",
+      "volUsdt": 10888606.063444,
+      "avis": "aucun",
+      "prixActuelUsdt": 0.01459,
+      "plusHaut": 0.01499976,
+      "stopSuiveur": null
+    }
+  ],
+  "trades": [
+    {
+      "paire": "DASHUSDT",
+      "base": "DASH",
+      "montant": 100.0,
+      "prixEntreeUsdt": 49.01528,
+      "prixSortieUsdt": 48.27612,
+      "ouvertLe": "2026-10-15T17:31:16",
+      "fermeLe": "2026-10-16T20:12:59",
+      "pnl": -1.98,
+      "pnlPct": -1.98,
+      "motifEntree": "score 6 : tendance haussiere, volume x2.1, elan 1 h, RSI 70",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "QNTUSDT",
+      "base": "QNT",
+      "montant": 100.0,
+      "prixEntreeUsdt": 208.15176,
+      "prixSortieUsdt": 199.96692,
+      "ouvertLe": "2026-10-15T17:31:16",
+      "fermeLe": "2026-10-16T20:12:59",
+      "pnl": -4.39,
+      "pnlPct": -4.39,
+      "motifEntree": "score 6 : tendance haussiere, volume x2.8, elan 1 h, RSI 60",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "PEPEUSDT",
+      "base": "PEPE",
+      "montant": 100.0,
+      "prixEntreeUsdt": 4.1562E-06,
+      "prixSortieUsdt": 3.9442E-06,
+      "ouvertLe": "2026-10-15T17:31:16",
+      "fermeLe": "2026-10-16T20:12:59",
+      "pnl": -5.55,
+      "pnlPct": -5.55,
+      "motifEntree": "score 6 : tendance haussiere, volume x3.2, elan 1 h, RSI 69",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "BCHUSDT",
+      "base": "BCH",
+      "montant": 100.0,
+      "prixEntreeUsdt": 276.3008,
+      "prixSortieUsdt": 273.0036,
+      "ouvertLe": "2026-10-15T17:31:16",
+      "fermeLe": "2026-10-16T20:12:59",
+      "pnl": -1.66,
+      "pnlPct": -1.66,
+      "motifEntree": "score 6 : tendance haussiere, volume x3.6, elan 1 h, RSI 69",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "AMPUSDT",
+      "base": "AMP",
+      "montant": 99.33,
+      "prixEntreeUsdt": 0.000785128,
+      "prixSortieUsdt": 0.000739032,
+      "ouvertLe": "2026-10-16T20:12:59",
+      "fermeLe": "2026-10-16T23:16:11",
+      "pnl": -6.08,
+      "pnlPct": -6.12,
+      "motifEntree": "score 5 : tendance haussiere, volume x4.4, RSI 63",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "RADUSDT",
+      "base": "RAD",
+      "montant": 98.63,
+      "prixEntreeUsdt": 0.324292,
+      "prixSortieUsdt": 0.30378,
+      "ouvertLe": "2026-10-16T23:16:11",
+      "fermeLe": "2026-10-17T01:40:53",
+      "pnl": -6.43,
+      "pnlPct": -6.52,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.1, RSI 65",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "LDOUSDT",
+      "base": "LDO",
+      "montant": 97.99,
+      "prixEntreeUsdt": 0.4068208,
+      "prixSortieUsdt": 0.389436,
+      "ouvertLe": "2026-10-17T08:08:41",
+      "fermeLe": "2026-10-17T15:57:16",
+      "pnl": -4.36,
+      "pnlPct": -4.45,
+      "motifEntree": "score 6 : tendance haussiere, cassure du plus haut 12 h, elan 1 h, RSI 70",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "LSKUSDT",
+      "base": "LSK",
+      "montant": 97.76,
+      "prixEntreeUsdt": 0.2067236,
+      "prixSortieUsdt": 0.2097576,
+      "ouvertLe": "2026-10-17T15:57:16",
+      "fermeLe": "2026-10-17T21:06:51",
+      "pnl": 1.29,
+      "pnlPct": 1.32,
+      "motifEntree": "score 5 : tendance haussiere, volume x10.4, RSI 55",
+      "motifSortie": "avis defavorable (agent Technique)",
+      "avis": "aucun"
+    },
+    {
+      "paire": "SANDUSDT",
+      "base": "SAND",
+      "montant": 97.83,
+      "prixEntreeUsdt": 0.0588846,
+      "prixSortieUsdt": 0.05964048,
+      "ouvertLe": "2026-10-17T12:41:49",
+      "fermeLe": "2026-10-17T23:26:03",
+      "pnl": 1.09,
+      "pnlPct": 1.11,
+      "motifEntree": "score 6 : tendance haussiere, volume x6.3, elan 1 h, RSI 60",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "paire": "AVAUSDT",
+      "base": "AVA",
+      "montant": 97.76,
+      "prixEntreeUsdt": 0.3253964,
+      "prixSortieUsdt": 0.3852528,
+      "ouvertLe": "2026-10-17T15:57:16",
+      "fermeLe": "2026-10-18T01:19:50",
+      "pnl": 17.83,
+      "pnlPct": 18.23,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.5, RSI 60",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "paire": "ALTUSDT",
+      "base": "ALT",
+      "montant": 100.12,
+      "prixEntreeUsdt": 0.00957816,
+      "prixSortieUsdt": 0.00877476,
+      "ouvertLe": "2026-10-17T23:26:03",
+      "fermeLe": "2026-10-18T01:19:50",
+      "pnl": -8.55,
+      "pnlPct": -8.54,
+      "motifEntree": "score 5 : tendance haussiere, volume x1.9, elan 1 h, RSI 67",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "CAKEUSDT",
+      "base": "CAKE",
+      "montant": 97.76,
+      "prixEntreeUsdt": 2.206792,
+      "prixSortieUsdt": 2.172276,
+      "ouvertLe": "2026-10-17T15:57:16",
+      "fermeLe": "2026-10-18T08:00:37",
+      "pnl": -1.69,
+      "pnlPct": -1.72,
+      "motifEntree": "score 5 : tendance haussiere, cassure du plus haut 12 h, elan 1 h",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "BCHUSDT",
+      "base": "BCH",
+      "montant": 100.12,
+      "prixEntreeUsdt": 277.104,
+      "prixSortieUsdt": 270.2148,
+      "ouvertLe": "2026-10-17T23:26:03",
+      "fermeLe": "2026-10-18T16:18:37",
+      "pnl": -2.67,
+      "pnlPct": -2.67,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.1, RSI 65",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "AMPUSDT",
+      "base": "AMP",
+      "montant": 98.49,
+      "prixEntreeUsdt": 0.00076304,
+      "prixSortieUsdt": 0.000738036,
+      "ouvertLe": "2026-10-18T12:54:16",
+      "fermeLe": "2026-10-18T16:18:37",
+      "pnl": -3.42,
+      "pnlPct": -3.47,
+      "motifEntree": "score 6 : tendance haussiere, volume x4.2, elan 1 h, RSI 69",
+      "motifSortie": "avis defavorable (agent Technique)",
+      "avis": "aucun"
+    },
+    {
+      "paire": "SOLUSDT",
+      "base": "SOL",
+      "montant": 98.49,
+      "prixEntreeUsdt": 104.11203,
+      "prixSortieUsdt": 102.418765,
+      "ouvertLe": "2026-10-18T12:54:16",
+      "fermeLe": "2026-10-18T16:18:37",
+      "pnl": -1.79,
+      "pnlPct": -1.82,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.4, RSI 66",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "HBARUSDT",
+      "base": "HBAR",
+      "montant": 98.49,
+      "prixEntreeUsdt": 0.08907488,
+      "prixSortieUsdt": 0.08523196,
+      "ouvertLe": "2026-10-18T12:54:16",
+      "fermeLe": "2026-10-18T19:26:25",
+      "pnl": -4.39,
+      "pnlPct": -4.46,
+      "motifEntree": "score 5 : tendance haussiere, volume x1.7, elan 1 h, RSI 67",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "OGNUSDT",
+      "base": "OGN",
+      "montant": 97.5,
+      "prixEntreeUsdt": 0.03059188,
+      "prixSortieUsdt": 0.02902344,
+      "ouvertLe": "2026-10-18T16:18:37",
+      "fermeLe": "2026-10-18T19:26:25",
+      "pnl": -5.14,
+      "pnlPct": -5.28,
+      "motifEntree": "score 5 : tendance haussiere, volume x3.1, RSI 55",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "AMPUSDT",
+      "base": "AMP",
+      "montant": 96.81,
+      "prixEntreeUsdt": 0.000779104,
+      "prixSortieUsdt": 0.000864528,
+      "ouvertLe": "2026-10-18T21:33:31",
+      "fermeLe": "2026-10-19T16:37:21",
+      "pnl": 10.5,
+      "pnlPct": 10.85,
+      "motifEntree": "score 6 : tendance haussiere, volume x2.9, elan 1 h, RSI 60",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "paire": "KORUBUSDT",
+      "base": "KORUB",
+      "montant": 96.87,
+      "prixEntreeUsdt": 10.65244,
+      "prixSortieUsdt": 11.952,
+      "ouvertLe": "2026-10-19T01:45:20",
+      "fermeLe": "2026-10-20T01:48:42",
+      "pnl": 11.66,
+      "pnlPct": 12.04,
+      "motifEntree": "score 5 : tendance haussiere, volume x3.7, RSI 68",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "paire": "SKHYBUSDT",
+      "base": "SKHYB",
+      "montant": 96.87,
+      "prixEntreeUsdt": 135.12836,
+      "prixSortieUsdt": 138.08544,
+      "ouvertLe": "2026-10-19T01:45:20",
+      "fermeLe": "2026-10-20T04:09:26",
+      "pnl": 1.93,
+      "pnlPct": 1.99,
+      "motifEntree": "score 5 : tendance haussiere, volume x10.2, RSI 58",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "paire": "DRAMBUSDT",
+      "base": "DRAMB",
+      "montant": 96.87,
+      "prixEntreeUsdt": 46.3346,
+      "prixSortieUsdt": 47.27016,
+      "ouvertLe": "2026-10-19T01:45:20",
+      "fermeLe": "2026-10-20T04:09:26",
+      "pnl": 1.77,
+      "pnlPct": 1.82,
+      "motifEntree": "score 5 : tendance haussiere, volume x5.2, RSI 64",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "paire": "MORPHOUSDT",
+      "base": "MORPHO",
+      "montant": 100.41,
+      "prixEntreeUsdt": 2.483896,
+      "prixSortieUsdt": 2.433228,
+      "ouvertLe": "2026-10-19T16:37:21",
+      "fermeLe": "2026-10-20T09:33:09",
+      "pnl": -2.42,
+      "pnlPct": -2.41,
+      "motifEntree": "score 6 : tendance haussiere, volume x2.2, elan 1 h, RSI 53",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "BCHUSDT",
+      "base": "BCH",
+      "montant": 98.7,
+      "prixEntreeUsdt": 279.112,
+      "prixSortieUsdt": 273.8004,
+      "ouvertLe": "2026-10-20T04:09:26",
+      "fermeLe": "2026-10-20T09:33:09",
+      "pnl": -2.18,
+      "pnlPct": -2.21,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.1, elan 1 h",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "BMTUSDT",
+      "base": "BMT",
+      "montant": 98.76,
+      "prixEntreeUsdt": 0.01966836,
+      "prixSortieUsdt": 0.01944192,
+      "ouvertLe": "2026-10-20T14:56:59",
+      "fermeLe": "2026-10-20T19:51:30",
+      "pnl": -1.39,
+      "pnlPct": -1.41,
+      "motifEntree": "score 5 : tendance haussiere, volume x5.0, RSI 69",
+      "motifSortie": "avis defavorable (agent Technique)",
+      "avis": "aucun"
+    },
+    {
+      "paire": "RAYUSDT",
+      "base": "RAY",
+      "montant": 99.68,
+      "prixEntreeUsdt": 2.0686416,
+      "prixSortieUsdt": 1.98204,
+      "ouvertLe": "2026-10-20T19:51:30",
+      "fermeLe": "2026-10-21T04:04:51",
+      "pnl": -4.28,
+      "pnlPct": -4.3,
+      "motifEntree": "score 6 : tendance haussiere, volume x2.6, elan 1 h, RSI 68",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "APTUSDT",
+      "base": "APT",
+      "montant": 98.76,
+      "prixEntreeUsdt": 0.7864332,
+      "prixSortieUsdt": 0.8223972,
+      "ouvertLe": "2026-10-20T14:56:59",
+      "fermeLe": "2026-10-21T15:10:32",
+      "pnl": 4.31,
+      "pnlPct": 4.36,
+      "motifEntree": "score 6 : tendance haussiere, cassure du plus haut 12 h, elan 1 h, RSI 63",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "paire": "TSLABUSDT",
+      "base": "TSLAB",
+      "montant": 98.76,
+      "prixEntreeUsdt": 370.5764,
+      "prixSortieUsdt": 378.86844,
+      "ouvertLe": "2026-10-20T14:56:59",
+      "fermeLe": "2026-10-21T15:10:32",
+      "pnl": 2.0,
+      "pnlPct": 2.03,
+      "motifEntree": "score 6 : tendance haussiere, volume x2.0, elan 1 h, RSI 55",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "WLDUSDT",
+      "base": "WLD",
+      "montant": 98.7,
+      "prixEntreeUsdt": 0.5337995,
+      "prixSortieUsdt": 0.573139,
+      "ouvertLe": "2026-10-20T04:09:26",
+      "fermeLe": "2026-10-21T20:03:34",
+      "pnl": 6.9,
+      "pnlPct": 6.99,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.1, elan 1 h",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "paire": "DOTUSDT",
+      "base": "DOT",
+      "montant": 99.39,
+      "prixEntreeUsdt": 1.181708,
+      "prixSortieUsdt": 1.146396,
+      "ouvertLe": "2026-10-21T15:10:32",
+      "fermeLe": "2026-10-22T02:11:49",
+      "pnl": -3.19,
+      "pnlPct": -3.21,
+      "motifEntree": "score 7 : tendance haussiere, cassure du plus haut 12 h, volume x2.1, elan 1 h",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "ARBUSDT",
+      "base": "ARB",
+      "montant": 99.46,
+      "prixEntreeUsdt": 0.19298905,
+      "prixSortieUsdt": 0.1833636,
+      "ouvertLe": "2026-10-21T04:04:51",
+      "fermeLe": "2026-10-22T06:52:39",
+      "pnl": -5.3,
+      "pnlPct": -5.32,
+      "motifEntree": "score 6 : tendance haussiere, volume x2.1, elan 1 h, RSI 65",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "ONDOUSDT",
+      "base": "ONDO",
+      "montant": 99.39,
+      "prixEntreeUsdt": 0.4662576,
+      "prixSortieUsdt": 0.4433196,
+      "ouvertLe": "2026-10-21T15:10:32",
+      "fermeLe": "2026-10-22T06:52:39",
+      "pnl": -5.2,
+      "pnlPct": -5.23,
+      "motifEntree": "score 7 : tendance haussiere, cassure du plus haut 12 h, volume x2.3, elan 1 h",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "TAOUSDT",
+      "base": "TAO",
+      "montant": 99.26,
+      "prixEntreeUsdt": 279.11805,
+      "prixSortieUsdt": 264.70235,
+      "ouvertLe": "2026-10-21T20:03:34",
+      "fermeLe": "2026-10-22T06:52:39",
+      "pnl": -5.38,
+      "pnlPct": -5.42,
+      "motifEntree": "score 6 : tendance haussiere, cassure du plus haut 12 h, volume x1.5, elan 1 h",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "PHAUSDT",
+      "base": "PHA",
+      "montant": 97.18,
+      "prixEntreeUsdt": 0.0675692,
+      "prixSortieUsdt": 0.0621504,
+      "ouvertLe": "2026-10-22T06:52:39",
+      "fermeLe": "2026-10-22T11:47:09",
+      "pnl": -7.85,
+      "pnlPct": -8.08,
+      "motifEntree": "score 5 : tendance haussiere, volume x4.1, RSI 67",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "PROMUSDT",
+      "base": "PROM",
+      "montant": 98.3,
+      "prixEntreeUsdt": 5.931632,
+      "prixSortieUsdt": 5.71704,
+      "ouvertLe": "2026-10-22T02:11:49",
+      "fermeLe": "2026-10-22T16:43:00",
+      "pnl": -3.42,
+      "pnlPct": -3.48,
+      "motifEntree": "score 6 : tendance haussiere, volume x5.1, elan 1 h, RSI 62",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "ARKMUSDT",
+      "base": "ARKM",
+      "montant": 96.3,
+      "prixEntreeUsdt": 0.1392548,
+      "prixSortieUsdt": 0.1318704,
+      "ouvertLe": "2026-10-22T11:47:09",
+      "fermeLe": "2026-10-22T16:43:00",
+      "pnl": -5.01,
+      "pnlPct": -5.2,
+      "motifEntree": "score 5 : tendance haussiere, volume x5.8, RSI 62",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "BMTUSDT",
+      "base": "BMT",
+      "montant": 95.54,
+      "prixEntreeUsdt": 0.02822244,
+      "prixSortieUsdt": 0.02598564,
+      "ouvertLe": "2026-10-22T20:53:00",
+      "fermeLe": "2026-10-23T00:02:39",
+      "pnl": -7.73,
+      "pnlPct": -8.09,
+      "motifEntree": "score 6 : tendance haussiere, volume x2.3, elan 1 h, RSI 63",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "GTCUSDT",
+      "base": "GTC",
+      "montant": 95.08,
+      "prixEntreeUsdt": 0.29245516,
+      "prixSortieUsdt": 0.32058252,
+      "ouvertLe": "2026-10-22T16:43:00",
+      "fermeLe": "2026-10-23T07:20:18",
+      "pnl": 8.72,
+      "pnlPct": 9.17,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.3, RSI 59",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "paire": "RLUSDUSDT",
+      "base": "RLUSD",
+      "montant": 96.3,
+      "prixEntreeUsdt": 1.00280195,
+      "prixSortieUsdt": 0.9996982,
+      "ouvertLe": "2026-10-22T11:47:09",
+      "fermeLe": "2026-10-23T12:16:11",
+      "pnl": -0.26,
+      "pnlPct": -0.27,
+      "motifEntree": "score 5 : tendance haussiere, volume x4.0, RSI 67",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "DASHUSDT",
+      "base": "DASH",
+      "montant": 94.82,
+      "prixEntreeUsdt": 53.28228,
+      "prixSortieUsdt": 53.286,
+      "ouvertLe": "2026-10-23T00:02:39",
+      "fermeLe": "2026-10-23T17:12:10",
+      "pnl": -0.04,
+      "pnlPct": -0.04,
+      "motifEntree": "score 5 : tendance haussiere, cassure du plus haut 12 h, elan 1 h",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "INJUSDT",
+      "base": "INJ",
+      "montant": 95.01,
+      "prixEntreeUsdt": 8.080192,
+      "prixSortieUsdt": 7.826568,
+      "ouvertLe": "2026-10-23T12:16:11",
+      "fermeLe": "2026-10-23T17:12:10",
+      "pnl": -3.15,
+      "pnlPct": -3.32,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.7, elan 1 h",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "COTIUSDT",
+      "base": "COTI",
+      "montant": 95.04,
+      "prixEntreeUsdt": 0.01195764,
+      "prixSortieUsdt": 0.01117512,
+      "ouvertLe": "2026-10-23T17:12:10",
+      "fermeLe": "2026-10-23T21:17:20",
+      "pnl": -6.37,
+      "pnlPct": -6.7,
+      "motifEntree": "score 6 : tendance haussiere, volume x13.1, elan 1 h, RSI 57",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "BCHUSDT",
+      "base": "BCH",
+      "montant": 95.43,
+      "prixEntreeUsdt": 288.4492,
+      "prixSortieUsdt": 281.868,
+      "ouvertLe": "2026-10-23T07:20:18",
+      "fermeLe": "2026-10-24T00:22:08",
+      "pnl": -2.25,
+      "pnlPct": -2.36,
+      "motifEntree": "score 5 : tendance haussiere, volume x3.1, elan 1 h",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "BNBUSDT",
+      "base": "BNB",
+      "montant": 95.01,
+      "prixEntreeUsdt": 749.84308,
+      "prixSortieUsdt": 740.078215,
+      "ouvertLe": "2026-10-23T12:16:11",
+      "fermeLe": "2026-10-24T00:22:08",
+      "pnl": -1.43,
+      "pnlPct": -1.5,
+      "motifEntree": "score 5 : tendance haussiere, volume x4.5, elan 1 h",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "ARKUSDT",
+      "base": "ARK",
+      "montant": 95.04,
+      "prixEntreeUsdt": 0.2181692,
+      "prixSortieUsdt": 0.2152356,
+      "ouvertLe": "2026-10-23T17:12:10",
+      "fermeLe": "2026-10-24T07:17:32",
+      "pnl": -1.42,
+      "pnlPct": -1.49,
+      "motifEntree": "score 6 : tendance haussiere, volume x2.1, elan 1 h, RSI 63",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "ERAUSDT",
+      "base": "ERA",
+      "montant": 94.54,
+      "prixEntreeUsdt": 0.0900588,
+      "prixSortieUsdt": 0.08237625,
+      "ouvertLe": "2026-10-24T02:52:44",
+      "fermeLe": "2026-10-24T11:37:56",
+      "pnl": -8.23,
+      "pnlPct": -8.7,
+      "motifEntree": "score 6 : tendance haussiere, cassure du plus haut 12 h, volume x4.3",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "KATUSDT",
+      "base": "KAT",
+      "montant": 94.54,
+      "prixEntreeUsdt": 0.00470876,
+      "prixSortieUsdt": 0.0043824,
+      "ouvertLe": "2026-10-24T07:17:32",
+      "fermeLe": "2026-10-24T11:37:56",
+      "pnl": -6.73,
+      "pnlPct": -7.11,
+      "motifEntree": "score 5 : tendance haussiere, volume x4.0, RSI 62",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "TREEUSDT",
+      "base": "TREE",
+      "montant": 92.69,
+      "prixEntreeUsdt": 0.0519068,
+      "prixSortieUsdt": 0.0477084,
+      "ouvertLe": "2026-10-24T11:37:56",
+      "fermeLe": "2026-10-24T15:35:40",
+      "pnl": -7.65,
+      "pnlPct": -8.25,
+      "motifEntree": "score 5 : tendance haussiere, volume x5.0, RSI 67",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "paire": "NILUSDT",
+      "base": "NIL",
+      "montant": 92.69,
+      "prixEntreeUsdt": 0.08625364,
+      "prixSortieUsdt": 0.08320584,
+      "ouvertLe": "2026-10-24T11:37:56",
+      "fermeLe": "2026-10-24T15:35:40",
+      "pnl": -3.43,
+      "pnlPct": -3.71,
+      "motifEntree": "score 5 : tendance haussiere, volume x1.7, elan 1 h, RSI 65",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "ERAUSDT",
+      "base": "ERA",
+      "montant": 91.12,
+      "prixEntreeUsdt": 0.09464175,
+      "prixSortieUsdt": 0.09016455,
+      "ouvertLe": "2026-10-24T15:35:40",
+      "fermeLe": "2026-10-24T15:37:23",
+      "pnl": -4.48,
+      "pnlPct": -4.92,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.8, RSI 66",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "LUMIAUSDT",
+      "base": "LUMIA",
+      "montant": 92.69,
+      "prixEntreeUsdt": 0.0777096,
+      "prixSortieUsdt": 0.0749988,
+      "ouvertLe": "2026-10-24T11:37:56",
+      "fermeLe": "2026-10-24T15:39:57",
+      "pnl": -3.39,
+      "pnlPct": -3.66,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.9, RSI 65",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "WCTUSDT",
+      "base": "WCT",
+      "montant": 92.69,
+      "prixEntreeUsdt": 0.03828252,
+      "prixSortieUsdt": 0.03667272,
+      "ouvertLe": "2026-10-24T11:37:56",
+      "fermeLe": "2026-10-24T21:19:15",
+      "pnl": -4.07,
+      "pnlPct": -4.39,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.1, RSI 53",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "FUSDT",
+      "base": "F",
+      "montant": 90.56,
+      "prixEntreeUsdt": 0.003419624,
+      "prixSortieUsdt": 0.00308262,
+      "ouvertLe": "2026-10-24T18:56:17",
+      "fermeLe": "2026-10-24T21:19:15",
+      "pnl": -9.11,
+      "pnlPct": -10.06,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.6, RSI 56",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "RWUSDUSDT",
+      "base": "RWUSD",
+      "montant": 90.56,
+      "prixEntreeUsdt": 1.0038996,
+      "prixSortieUsdt": 0.9958008,
+      "ouvertLe": "2026-10-24T18:56:17",
+      "fermeLe": "2026-10-24T23:41:39",
+      "pnl": -0.94,
+      "pnlPct": -1.04,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.6, RSI 67",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "REZUSDT",
+      "base": "REZ",
+      "montant": 89.41,
+      "prixEntreeUsdt": 0.004455752,
+      "prixSortieUsdt": 0.00425292,
+      "ouvertLe": "2026-10-24T21:19:15",
+      "fermeLe": "2026-10-24T23:41:39",
+      "pnl": -4.24,
+      "pnlPct": -4.75,
+      "motifEntree": "score 6 : tendance haussiere, volume x3.2, elan 1 h, RSI 62",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "ANIMEUSDT",
+      "base": "ANIME",
+      "montant": 88.94,
+      "prixEntreeUsdt": 0.00377504,
+      "prixSortieUsdt": 0.00355572,
+      "ouvertLe": "2026-10-24T23:41:39",
+      "fermeLe": "2026-10-25T01:45:40",
+      "pnl": -5.35,
+      "pnlPct": -6.02,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.5, RSI 59",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "STEEMUSDT",
+      "base": "STEEM",
+      "montant": 88.38,
+      "prixEntreeUsdt": 0.05754928,
+      "prixSortieUsdt": 0.05277804,
+      "ouvertLe": "2026-10-25T02:45:44",
+      "fermeLe": "2026-10-25T07:58:58",
+      "pnl": -7.51,
+      "pnlPct": -8.5,
+      "motifEntree": "score 5 : tendance haussiere, volume x7.5, RSI 59",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "ASTERUSDT",
+      "base": "ASTER",
+      "montant": 88.4,
+      "prixEntreeUsdt": 0.711836,
+      "prixSortieUsdt": 0.6985944,
+      "ouvertLe": "2026-10-25T01:45:40",
+      "fermeLe": "2026-10-25T17:44:55",
+      "pnl": -1.86,
+      "pnlPct": -2.1,
+      "motifEntree": "score 6 : tendance haussiere, volume x2.0, elan 1 h, RSI 62",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "LUMIAUSDT",
+      "base": "LUMIA",
+      "montant": 87.53,
+      "prixEntreeUsdt": 0.0792156,
+      "prixSortieUsdt": 0.0764928,
+      "ouvertLe": "2026-10-25T07:58:58",
+      "fermeLe": "2026-10-25T17:44:55",
+      "pnl": -3.2,
+      "pnlPct": -3.65,
+      "motifEntree": "score 5 : tendance haussiere, volume x5.0, RSI 56",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "UUSDT",
+      "base": "U",
+      "montant": 90.56,
+      "prixEntreeUsdt": 1.00180045,
+      "prixSortieUsdt": 0.996498,
+      "ouvertLe": "2026-10-24T18:56:17",
+      "fermeLe": "2026-10-25T20:19:04",
+      "pnl": -0.75,
+      "pnlPct": -0.83,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.4, RSI 67",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "QNTUSDT",
+      "base": "QNT",
+      "montant": 87.06,
+      "prixEntreeUsdt": 195.97076,
+      "prixSortieUsdt": 188.8416,
+      "ouvertLe": "2026-10-25T20:19:04",
+      "fermeLe": "2026-10-25T22:55:20",
+      "pnl": -3.46,
+      "pnlPct": -3.97,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.0, elan 1 h",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "ICPUSDT",
+      "base": "ICP",
+      "montant": 87.11,
+      "prixEntreeUsdt": 2.642528,
+      "prixSortieUsdt": 2.606532,
+      "ouvertLe": "2026-10-25T17:44:55",
+      "fermeLe": "2026-10-26T00:53:11",
+      "pnl": -1.48,
+      "pnlPct": -1.7,
+      "motifEntree": "score 5 : tendance haussiere, volume x3.4, RSI 59",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "RLUSDUSDT",
+      "base": "RLUSD",
+      "montant": 88.4,
+      "prixEntreeUsdt": 1.0029021,
+      "prixSortieUsdt": 0.99979805,
+      "ouvertLe": "2026-10-25T01:45:40",
+      "fermeLe": "2026-10-26T03:52:35",
+      "pnl": -0.67,
+      "pnlPct": -0.76,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.5, RSI 60",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "NEARUSDT",
+      "base": "NEAR",
+      "montant": 87.11,
+      "prixEntreeUsdt": 4.598888,
+      "prixSortieUsdt": 4.4563055,
+      "ouvertLe": "2026-10-25T17:44:55",
+      "fermeLe": "2026-10-26T03:52:35",
+      "pnl": -3.04,
+      "pnlPct": -3.49,
+      "motifEntree": "score 8 : tendance haussiere, cassure du plus haut 12 h, volume x2.1, elan 1 h, RSI 68",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "DODOUSDT",
+      "base": "DODO",
+      "montant": 86.49,
+      "prixEntreeUsdt": 0.0272084,
+      "prixSortieUsdt": 0.02522868,
+      "ouvertLe": "2026-10-26T00:53:11",
+      "fermeLe": "2026-10-26T03:52:35",
+      "pnl": -6.5,
+      "pnlPct": -7.52,
+      "motifEntree": "score 6 : tendance haussiere, volume x2.8, elan 1 h, RSI 66",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "BMTUSDT",
+      "base": "BMT",
+      "montant": 85.35,
+      "prixEntreeUsdt": 0.03580264,
+      "prixSortieUsdt": 0.03420264,
+      "ouvertLe": "2026-10-26T03:52:35",
+      "fermeLe": "2026-10-26T03:54:03",
+      "pnl": -3.98,
+      "pnlPct": -4.66,
+      "motifEntree": "score 5 : tendance haussiere, volume x5.0, RSI 65",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "PYTHUSDT",
+      "base": "PYTH",
+      "montant": 86.49,
+      "prixEntreeUsdt": 0.07542048,
+      "prixSortieUsdt": 0.07268808,
+      "ouvertLe": "2026-10-26T00:53:11",
+      "fermeLe": "2026-10-26T09:21:53",
+      "pnl": -3.27,
+      "pnlPct": -3.78,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.0, RSI 55",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "NILUSDT",
+      "base": "NIL",
+      "montant": 84.89,
+      "prixEntreeUsdt": 0.09371336,
+      "prixSortieUsdt": 0.08946072,
+      "ouvertLe": "2026-10-26T09:21:53",
+      "fermeLe": "2026-10-26T16:20:05",
+      "pnl": -3.84,
+      "pnlPct": -4.53,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.1, RSI 54",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "ERAUSDT",
+      "base": "ERA",
+      "montant": 85.35,
+      "prixEntreeUsdt": 0.08785,
+      "prixSortieUsdt": 0.0842616,
+      "ouvertLe": "2026-10-26T03:52:35",
+      "fermeLe": "2026-10-26T21:38:24",
+      "pnl": -3.33,
+      "pnlPct": -3.9,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.5, RSI 60",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "BTCUSDT",
+      "base": "BTC",
+      "montant": 85.01,
+      "prixEntreeUsdt": 80688.334005,
+      "prixSortieUsdt": 79858.6507,
+      "ouvertLe": "2026-10-26T16:20:05",
+      "fermeLe": "2026-10-26T21:38:24",
+      "pnl": -0.97,
+      "pnlPct": -1.15,
+      "motifEntree": "score 8 : tendance haussiere, cassure du plus haut 12 h, volume x2.3, elan 1 h, RSI 56",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "ASTERUSDT",
+      "base": "ASTER",
+      "montant": 84.89,
+      "prixEntreeUsdt": 0.7106312,
+      "prixSortieUsdt": 0.700686,
+      "ouvertLe": "2026-10-26T09:21:53",
+      "fermeLe": "2026-10-27T05:56:27",
+      "pnl": -1.08,
+      "pnlPct": -1.27,
+      "motifEntree": "score 5 : tendance haussiere, volume x3.0, RSI 66",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "SOXLBUSDT",
+      "base": "SOXLB",
+      "montant": 84.48,
+      "prixEntreeUsdt": 93.790475,
+      "prixSortieUsdt": 90.28437,
+      "ouvertLe": "2026-10-27T01:04:58",
+      "fermeLe": "2026-10-27T05:56:27",
+      "pnl": -3.27,
+      "pnlPct": -3.87,
+      "motifEntree": "score 6 : tendance haussiere, cassure du plus haut 12 h, elan 1 h, RSI 69",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "BEAMXUSDT",
+      "base": "BEAMX",
+      "montant": 84.89,
+      "prixEntreeUsdt": 0.003255972,
+      "prixSortieUsdt": 0.003211104,
+      "ouvertLe": "2026-10-26T09:21:53",
+      "fermeLe": "2026-10-27T11:16:44",
+      "pnl": -0.82,
+      "pnlPct": -0.97,
+      "motifEntree": "score 5 : tendance haussiere, volume x5.2, RSI 62",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "SYNUSDT",
+      "base": "SYN",
+      "montant": 83.88,
+      "prixEntreeUsdt": 0.19915344,
+      "prixSortieUsdt": 0.18751692,
+      "ouvertLe": "2026-10-27T05:56:27",
+      "fermeLe": "2026-10-27T11:16:44",
+      "pnl": -4.84,
+      "pnlPct": -5.77,
+      "motifEntree": "score 6 : tendance haussiere, volume x4.9, elan 1 h, RSI 69",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "REZUSDT",
+      "base": "REZ",
+      "montant": 83.12,
+      "prixEntreeUsdt": 0.005088272,
+      "prixSortieUsdt": 0.004898328,
+      "ouvertLe": "2026-10-27T11:16:44",
+      "fermeLe": "2026-10-28T11:52:16",
+      "pnl": -3.14,
+      "pnlPct": -3.78,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.5, RSI 65",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "NVDABUSDT",
+      "base": "NVDAB",
+      "montant": 82.9,
+      "prixEntreeUsdt": 220.20732,
+      "prixSortieUsdt": 216.879,
+      "ouvertLe": "2026-10-27T16:55:06",
+      "fermeLe": "2026-10-28T17:55:52",
+      "pnl": -1.42,
+      "pnlPct": -1.71,
+      "motifEntree": "score 8 : tendance haussiere, cassure du plus haut 12 h, volume x2.2, elan 1 h, RSI 56",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "MUBUSDT",
+      "base": "MUB",
+      "montant": 82.9,
+      "prixEntreeUsdt": 934.20192,
+      "prixSortieUsdt": 966.98652,
+      "ouvertLe": "2026-10-27T16:55:06",
+      "fermeLe": "2026-10-28T17:55:52",
+      "pnl": 2.74,
+      "pnlPct": 3.3,
+      "motifEntree": "score 7 : tendance haussiere, cassure du plus haut 12 h, volume x2.0, RSI 53",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "NBISBUSDT",
+      "base": "NBISB",
+      "montant": 83.49,
+      "prixEntreeUsdt": 176.23212,
+      "prixSortieUsdt": 171.33192,
+      "ouvertLe": "2026-10-28T11:52:16",
+      "fermeLe": "2026-10-28T17:55:52",
+      "pnl": -2.64,
+      "pnlPct": -3.16,
+      "motifEntree": "score 6 : tendance haussiere, cassure du plus haut 12 h, elan 1 h, RSI 65",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "SOXLBUSDT",
+      "base": "SOXLB",
+      "montant": 82.9,
+      "prixEntreeUsdt": 99.819505,
+      "prixSortieUsdt": 100.618845,
+      "ouvertLe": "2026-10-27T16:55:06",
+      "fermeLe": "2026-10-28T22:32:02",
+      "pnl": 0.5,
+      "pnlPct": 0.6,
+      "motifEntree": "score 8 : tendance haussiere, cassure du plus haut 12 h, volume x3.3, elan 1 h, RSI 67",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "paire": "AMDBUSDT",
+      "base": "AMDB",
+      "montant": 83.01,
+      "prixEntreeUsdt": 573.11332,
+      "prixSortieUsdt": 563.238,
+      "ouvertLe": "2026-10-28T17:55:52",
+      "fermeLe": "2026-10-29T02:11:59",
+      "pnl": -1.52,
+      "pnlPct": -1.83,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.3, elan 1 h",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "ZROUSDT",
+      "base": "ZRO",
+      "montant": 82.2,
+      "prixEntreeUsdt": 1.728888,
+      "prixSortieUsdt": 1.665312,
+      "ouvertLe": "2026-10-28T22:32:02",
+      "fermeLe": "2026-10-29T02:11:59",
+      "pnl": -3.1,
+      "pnlPct": -3.77,
+      "motifEntree": "score 5 : tendance haussiere, volume x1.6, elan 1 h, RSI 60",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "XPLUSDT",
+      "base": "XPL",
+      "montant": 83.01,
+      "prixEntreeUsdt": 0.07681604,
+      "prixSortieUsdt": 0.0740028,
+      "ouvertLe": "2026-10-28T17:55:52",
+      "fermeLe": "2026-10-29T08:09:18",
+      "pnl": -3.14,
+      "pnlPct": -3.78,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.2, RSI 52",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "SNDKBUSDT",
+      "base": "SNDKB",
+      "montant": 83.01,
+      "prixEntreeUsdt": 1384.39348,
+      "prixSortieUsdt": 1353.476735,
+      "ouvertLe": "2026-10-28T17:55:52",
+      "fermeLe": "2026-10-29T08:09:18",
+      "pnl": -1.96,
+      "pnlPct": -2.36,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.2, RSI 65",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "AIUSDT",
+      "base": "AI",
+      "montant": 81.75,
+      "prixEntreeUsdt": 0.02008,
+      "prixSortieUsdt": 0.01887165,
+      "ouvertLe": "2026-10-29T02:11:59",
+      "fermeLe": "2026-10-29T15:18:26",
+      "pnl": -5.06,
+      "pnlPct": -6.19,
+      "motifEntree": "score 6 : tendance haussiere, volume x13.7, elan 1 h, RSI 57",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "KATUSDT",
+      "base": "KAT",
+      "montant": 81.75,
+      "prixEntreeUsdt": 0.00459832,
+      "prixSortieUsdt": 0.00417324,
+      "ouvertLe": "2026-10-29T02:11:59",
+      "fermeLe": "2026-10-30T00:38:15",
+      "pnl": -8.17,
+      "pnlPct": -9.99,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.9, elan 1 h",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "BNBUSDT",
+      "base": "BNB",
+      "montant": 81.45,
+      "prixEntreeUsdt": 752.886255,
+      "prixSortieUsdt": 703.657995,
+      "ouvertLe": "2026-10-29T08:09:18",
+      "fermeLe": "2026-10-30T00:38:15",
+      "pnl": -5.94,
+      "pnlPct": -7.3,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.2, RSI 63",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "INJUSDT",
+      "base": "INJ",
+      "montant": 80.61,
+      "prixEntreeUsdt": 8.103284,
+      "prixSortieUsdt": 7.31562,
+      "ouvertLe": "2026-10-29T15:18:26",
+      "fermeLe": "2026-10-30T00:38:15",
+      "pnl": -8.45,
+      "pnlPct": -10.48,
+      "motifEntree": "score 6 : tendance haussiere, volume x2.1, elan 1 h, RSI 55",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "SOXLBUSDT",
+      "base": "SOXLB",
+      "montant": 80.61,
+      "prixEntreeUsdt": 102.543585,
+      "prixSortieUsdt": 88.536995,
+      "ouvertLe": "2026-10-29T15:18:26",
+      "fermeLe": "2026-10-30T00:38:15",
+      "pnl": -11.6,
+      "pnlPct": -14.39,
+      "motifEntree": "score 6 : tendance haussiere, cassure du plus haut 12 h, elan 1 h, RSI 60",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "SKYUSDT",
+      "base": "SKY",
+      "montant": 78.36,
+      "prixEntreeUsdt": 0.0673684,
+      "prixSortieUsdt": 0.06281772,
+      "ouvertLe": "2026-10-30T00:38:15",
+      "fermeLe": "2026-10-30T03:57:36",
+      "pnl": -6.09,
+      "pnlPct": -7.77,
+      "motifEntree": "score 6 : tendance haussiere, volume x5.8, elan 1 h, RSI 54",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "TRXUSDT",
+      "base": "TRX",
+      "montant": 78.36,
+      "prixEntreeUsdt": 0.3503751,
+      "prixSortieUsdt": 0.3324337,
+      "ouvertLe": "2026-10-30T00:38:15",
+      "fermeLe": "2026-10-30T10:51:04",
+      "pnl": -5.07,
+      "pnlPct": -6.47,
+      "motifEntree": "score 5 : tendance haussiere, volume x3.3, RSI 62",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "RUNEUSDT",
+      "base": "RUNE",
+      "montant": 78.36,
+      "prixEntreeUsdt": 0.629508,
+      "prixSortieUsdt": 0.644412,
+      "ouvertLe": "2026-10-30T00:38:15",
+      "fermeLe": "2026-10-30T17:21:56",
+      "pnl": 1.53,
+      "pnlPct": 1.96,
+      "motifEntree": "score 5 : tendance haussiere, volume x4.0, RSI 61",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "paire": "SANDUSDT",
+      "base": "SAND",
+      "montant": 77.55,
+      "prixEntreeUsdt": 0.04695708,
+      "prixSortieUsdt": 0.04640364,
+      "ouvertLe": "2026-10-30T10:51:04",
+      "fermeLe": "2026-10-31T13:46:21",
+      "pnl": -0.59,
+      "pnlPct": -0.76,
+      "motifEntree": "score 8 : tendance haussiere, cassure du plus haut 12 h, volume x3.6, elan 1 h, RSI 70",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "NIGHTUSDT",
+      "base": "NIGHT",
+      "montant": 77.55,
+      "prixEntreeUsdt": 0.03934676,
+      "prixSortieUsdt": 0.03984996,
+      "ouvertLe": "2026-10-30T10:51:04",
+      "fermeLe": "2026-10-31T13:46:21",
+      "pnl": 1.32,
+      "pnlPct": 1.71,
+      "motifEntree": "score 6 : tendance haussiere, cassure du plus haut 12 h, elan 1 h, RSI 63",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "BLURUSDT",
+      "base": "BLUR",
+      "montant": 77.55,
+      "prixEntreeUsdt": 0.0086344,
+      "prixSortieUsdt": 0.00810744,
+      "ouvertLe": "2026-10-30T10:51:04",
+      "fermeLe": "2026-10-31T13:46:21",
+      "pnl": -4.43,
+      "pnlPct": -5.71,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.6, RSI 67",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "LSKUSDT",
+      "base": "LSK",
+      "montant": 77.23,
+      "prixEntreeUsdt": 0.2809192,
+      "prixSortieUsdt": 0.2700156,
+      "ouvertLe": "2026-10-31T13:46:21",
+      "fermeLe": "2026-10-31T13:50:39",
+      "pnl": -3.15,
+      "pnlPct": -4.08,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.2, elan 1 h",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "TSLABUSDT",
+      "base": "TSLAB",
+      "montant": 77.5,
+      "prixEntreeUsdt": 402.49356,
+      "prixSortieUsdt": 398.11116,
+      "ouvertLe": "2026-10-30T17:21:56",
+      "fermeLe": "2026-10-31T18:23:27",
+      "pnl": -1.43,
+      "pnlPct": -1.85,
+      "motifEntree": "score 5 : tendance haussiere, volume x3.2, RSI 62",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "AMPUSDT",
+      "base": "AMP",
+      "montant": 76.92,
+      "prixEntreeUsdt": 0.000743964,
+      "prixSortieUsdt": 0.00071712,
+      "ouvertLe": "2026-10-31T21:34:19",
+      "fermeLe": "2026-11-01T00:44:59",
+      "pnl": -3.02,
+      "pnlPct": -3.92,
+      "motifEntree": "score 5 : tendance haussiere, volume x5.7, RSI 66",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "STXUSDT",
+      "base": "STX",
+      "montant": 76.86,
+      "prixEntreeUsdt": 0.3249948,
+      "prixSortieUsdt": 0.3190188,
+      "ouvertLe": "2026-10-31T18:23:27",
+      "fermeLe": "2026-11-01T10:43:14",
+      "pnl": -1.0,
+      "pnlPct": -1.3,
+      "motifEntree": "score 6 : tendance haussiere, volume x2.4, elan 1 h, RSI 64",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "XPLUSDT",
+      "base": "XPL",
+      "montant": 76.92,
+      "prixEntreeUsdt": 0.08240832,
+      "prixSortieUsdt": 0.073579465,
+      "ouvertLe": "2026-10-31T21:34:19",
+      "fermeLe": "2026-11-01T10:43:14",
+      "pnl": -7.91,
+      "pnlPct": -10.29,
+      "motifEntree": "score 6 : tendance haussiere, volume x2.8, elan 1 h, RSI 60",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "GUSDT",
+      "base": "G",
+      "montant": 75.69,
+      "prixEntreeUsdt": 0.00397584,
+      "prixSortieUsdt": 0.00372504,
+      "ouvertLe": "2026-11-01T10:43:14",
+      "fermeLe": "2026-11-01T17:27:08",
+      "pnl": -5.06,
+      "pnlPct": -6.69,
+      "motifEntree": "score 5 : tendance haussiere, volume x3.6, RSI 58",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "RWUSDUSDT",
+      "base": "RWUSD",
+      "montant": 76.43,
+      "prixEntreeUsdt": 1.004,
+      "prixSortieUsdt": 0.9959004,
+      "ouvertLe": "2026-11-01T03:37:04",
+      "fermeLe": "2026-11-02T05:55:37",
+      "pnl": 0.09,
+      "pnlPct": 0.12,
+      "motifEntree": "score 5 : tendance haussiere, volume x4.8, RSI 60",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "PROMUSDT",
+      "base": "PROM",
+      "montant": 75.69,
+      "prixEntreeUsdt": 5.731836,
+      "prixSortieUsdt": 5.490948,
+      "ouvertLe": "2026-11-01T10:43:14",
+      "fermeLe": "2026-11-02T05:55:37",
+      "pnl": -3.05,
+      "pnlPct": -4.03,
+      "motifEntree": "score 5 : tendance haussiere, volume x15.9, RSI 57",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "BNBUSDT",
+      "base": "BNB",
+      "montant": 75.69,
+      "prixEntreeUsdt": 712.296845,
+      "prixSortieUsdt": 702.76427,
+      "ouvertLe": "2026-11-01T10:43:14",
+      "fermeLe": "2026-11-02T14:12:44",
+      "pnl": -1.18,
+      "pnlPct": -1.56,
+      "motifEntree": "score 5 : tendance haussiere, volume x3.6, RSI 63",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "ARBUSDT",
+      "base": "ARB",
+      "montant": 74.97,
+      "prixEntreeUsdt": 0.1662624,
+      "prixSortieUsdt": 0.157866,
+      "ouvertLe": "2026-11-01T17:27:08",
+      "fermeLe": "2026-11-02T14:12:44",
+      "pnl": -3.8,
+      "pnlPct": -5.06,
+      "motifEntree": "score 6 : tendance haussiere, volume x10.7, elan 1 h, RSI 66",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "TQQQBUSDT",
+      "base": "TQQQB",
+      "montant": 74.79,
+      "prixEntreeUsdt": 64.09536,
+      "prixSortieUsdt": 63.01692,
+      "ouvertLe": "2026-11-02T05:55:37",
+      "fermeLe": "2026-11-02T14:12:44",
+      "pnl": -1.7,
+      "pnlPct": -2.27,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.1, RSI 59",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "牛来USDT",
+      "base": "牛来",
+      "montant": 74.79,
+      "prixEntreeUsdt": 0.07136432,
+      "prixSortieUsdt": 0.0614034,
+      "ouvertLe": "2026-11-02T05:55:37",
+      "fermeLe": "2026-11-02T23:20:32",
+      "pnl": -10.71,
+      "pnlPct": -14.31,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.1, RSI 55",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "HBARUSDT",
+      "base": "HBAR",
+      "montant": 73.14,
+      "prixEntreeUsdt": 0.07029004,
+      "prixSortieUsdt": 0.06784752,
+      "ouvertLe": "2026-11-03T12:16:52",
+      "fermeLe": "2026-11-04T04:14:59",
+      "pnl": -3.14,
+      "pnlPct": -4.29,
+      "motifEntree": "score 5 : tendance haussiere, cassure du plus haut 12 h, RSI 70",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "SAGAUSDT",
+      "base": "SAGA",
+      "montant": 73.05,
+      "prixEntreeUsdt": 0.01764028,
+      "prixSortieUsdt": 0.01645392,
+      "ouvertLe": "2026-11-03T19:30:05",
+      "fermeLe": "2026-11-04T04:14:59",
+      "pnl": -5.4,
+      "pnlPct": -7.4,
+      "motifEntree": "score 5 : tendance haussiere, volume x3.2, RSI 59",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "LSKUSDT",
+      "base": "LSK",
+      "montant": 72.29,
+      "prixEntreeUsdt": 0.2072256,
+      "prixSortieUsdt": 0.200196,
+      "ouvertLe": "2026-11-04T12:09:44",
+      "fermeLe": "2026-11-04T19:40:55",
+      "pnl": -2.44,
+      "pnlPct": -3.37,
+      "motifEntree": "score 6 : tendance haussiere, volume x2.6, elan 1 h, RSI 61",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "QNTUSDT",
+      "base": "QNT",
+      "montant": 72.29,
+      "prixEntreeUsdt": 202.0048,
+      "prixSortieUsdt": 201.0426,
+      "ouvertLe": "2026-11-04T12:09:44",
+      "fermeLe": "2026-11-05T14:29:31",
+      "pnl": -0.31,
+      "pnlPct": -0.42,
+      "motifEntree": "score 7 : tendance haussiere, cassure du plus haut 12 h, volume x2.2, elan 1 h",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "HAEDALUSDT",
+      "base": "HAEDAL",
+      "montant": 72.29,
+      "prixEntreeUsdt": 0.02837304,
+      "prixSortieUsdt": 0.02546772,
+      "ouvertLe": "2026-11-04T12:09:44",
+      "fermeLe": "2026-11-05T14:29:31",
+      "pnl": -7.37,
+      "pnlPct": -10.19,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.1, RSI 55",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "ONDOUSDT",
+      "base": "ONDO",
+      "montant": 72.29,
+      "prixEntreeUsdt": 0.4073228,
+      "prixSortieUsdt": 0.3973044,
+      "ouvertLe": "2026-11-04T12:09:44",
+      "fermeLe": "2026-11-05T14:29:31",
+      "pnl": -1.74,
+      "pnlPct": -2.41,
+      "motifEntree": "score 5 : tendance haussiere, cassure du plus haut 12 h, RSI 67",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "SOXSBUSDT",
+      "base": "SOXSB",
+      "montant": 71.2,
+      "prixEntreeUsdt": 78.30196,
+      "prixSortieUsdt": 75.61632,
+      "ouvertLe": "2026-11-05T21:47:28",
+      "fermeLe": "2026-11-06T02:10:23",
+      "pnl": -2.54,
+      "pnlPct": -3.57,
+      "motifEntree": "score 6 : tendance haussiere, volume x2.7, elan 1 h, RSI 55",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "RLUSDUSDT",
+      "base": "RLUSD",
+      "montant": 72.18,
+      "prixEntreeUsdt": 1.0025015,
+      "prixSortieUsdt": 1.00079935,
+      "ouvertLe": "2026-11-05T06:38:34",
+      "fermeLe": "2026-11-06T08:56:02",
+      "pnl": 0.24,
+      "pnlPct": 0.33,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.5, RSI 60",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "ZECUSDT",
+      "base": "ZEC",
+      "montant": 70.93,
+      "prixEntreeUsdt": 1321.750545,
+      "prixSortieUsdt": 1264.9672,
+      "ouvertLe": "2026-11-06T02:10:23",
+      "fermeLe": "2026-11-06T08:56:02",
+      "pnl": -2.95,
+      "pnlPct": -4.17,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.1, elan 1 h",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "UUSDT",
+      "base": "U",
+      "montant": 71.85,
+      "prixEntreeUsdt": 1.0023012,
+      "prixSortieUsdt": 0.9988994,
+      "ouvertLe": "2026-11-06T08:56:02",
+      "fermeLe": "2026-11-06T16:45:57",
+      "pnl": -0.8,
+      "pnlPct": -1.12,
+      "motifEntree": "score 5 : tendance haussiere, cassure du plus haut 12 h, RSI 60",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "CYBERUSDT",
+      "base": "CYBER",
+      "montant": 70.93,
+      "prixEntreeUsdt": 0.32128,
+      "prixSortieUsdt": 0.35946,
+      "ouvertLe": "2026-11-06T02:10:23",
+      "fermeLe": "2026-11-06T22:06:26",
+      "pnl": 8.79,
+      "pnlPct": 12.39,
+      "motifEntree": "score 6 : tendance haussiere, volume x3.6, elan 1 h, RSI 68",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "paire": "ARBUSDT",
+      "base": "ARB",
+      "montant": 70.93,
+      "prixEntreeUsdt": 0.1633508,
+      "prixSortieUsdt": 0.1655352,
+      "ouvertLe": "2026-11-06T02:10:23",
+      "fermeLe": "2026-11-06T22:06:26",
+      "pnl": 1.27,
+      "pnlPct": 1.79,
+      "motifEntree": "score 6 : tendance haussiere, volume x2.3, elan 1 h, RSI 61",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "ONEUSDT",
+      "base": "ONE",
+      "montant": 71.61,
+      "prixEntreeUsdt": 0.001563228,
+      "prixSortieUsdt": 0.001796784,
+      "ouvertLe": "2026-11-06T16:45:57",
+      "fermeLe": "2026-11-07T07:48:14",
+      "pnl": 11.27,
+      "pnlPct": 15.74,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.9, RSI 57",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "paire": "MARSCOINUSDT",
+      "base": "MARSCOIN",
+      "montant": 71.61,
+      "prixEntreeUsdt": 0.0464852,
+      "prixSortieUsdt": 0.04482,
+      "ouvertLe": "2026-11-06T16:45:57",
+      "fermeLe": "2026-11-07T14:37:52",
+      "pnl": -2.06,
+      "pnlPct": -2.87,
+      "motifEntree": "score 6 : tendance haussiere, volume x2.4, elan 1 h, RSI 63",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "METUSDT",
+      "base": "MET",
+      "montant": 72.19,
+      "prixEntreeUsdt": 0.3166616,
+      "prixSortieUsdt": 0.3166284,
+      "ouvertLe": "2026-11-07T19:17:22",
+      "fermeLe": "2026-11-08T02:19:12",
+      "pnl": -0.14,
+      "pnlPct": -0.19,
+      "motifEntree": "score 6 : tendance haussiere, volume x2.9, elan 1 h, RSI 68",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "paire": "ARBUSDT",
+      "base": "ARB",
+      "montant": 72.29,
+      "prixEntreeUsdt": 0.168672,
+      "prixSortieUsdt": 0.1682244,
+      "ouvertLe": "2026-11-07T14:36:24",
+      "fermeLe": "2026-11-08T15:29:40",
+      "pnl": -0.34,
+      "pnlPct": -0.47,
+      "motifEntree": "score 6 : tendance haussiere, cassure du plus haut 12 h, elan 1 h, RSI 67",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "BMTUSDT",
+      "base": "BMT",
+      "montant": 72.28,
+      "prixEntreeUsdt": 0.02599356,
+      "prixSortieUsdt": 0.0237546,
+      "ouvertLe": "2026-11-08T08:31:37",
+      "fermeLe": "2026-11-08T20:01:44",
+      "pnl": -7.53,
+      "pnlPct": -10.42,
+      "motifEntree": "score 5 : tendance haussiere, volume x6.7, RSI 57",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "RSRUSDT",
+      "base": "RSR",
+      "montant": 72.02,
+      "prixEntreeUsdt": 0.001692744,
+      "prixSortieUsdt": 0.001750968,
+      "ouvertLe": "2026-11-08T15:29:40",
+      "fermeLe": "2026-11-09T21:10:27",
+      "pnl": 1.81,
+      "pnlPct": 2.51,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.0, elan 1 h, RSI 61",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "PEPEUSDT",
+      "base": "PEPE",
+      "montant": 71.24,
+      "prixEntreeUsdt": 4.9574E-06,
+      "prixSortieUsdt": 5.1223E-06,
+      "ouvertLe": "2026-11-08T23:48:38",
+      "fermeLe": "2026-11-10T03:44:41",
+      "pnl": 1.83,
+      "pnlPct": 2.56,
+      "motifEntree": "score 5 : tendance haussiere, volume x3.1, elan 1 h",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "GOOGLBUSDT",
+      "base": "GOOGLB",
+      "montant": 71.77,
+      "prixEntreeUsdt": 288.66004,
+      "prixSortieUsdt": 289.49736,
+      "ouvertLe": "2026-11-09T03:06:28",
+      "fermeLe": "2026-11-10T03:44:41",
+      "pnl": -0.15,
+      "pnlPct": -0.21,
+      "motifEntree": "score 7 : tendance haussiere, cassure du plus haut 12 h, volume x2.9, elan 1 h",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "ARBUSDT",
+      "base": "ARB",
+      "montant": 71.75,
+      "prixEntreeUsdt": 0.1769048,
+      "prixSortieUsdt": 0.17244095,
+      "ouvertLe": "2026-11-09T10:42:51",
+      "fermeLe": "2026-11-10T03:44:41",
+      "pnl": -1.54,
+      "pnlPct": -2.15,
+      "motifEntree": "score 6 : tendance haussiere, volume x3.9, elan 1 h, RSI 63",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "RAYUSDT",
+      "base": "RAY",
+      "montant": 71.82,
+      "prixEntreeUsdt": 1.8091076,
+      "prixSortieUsdt": 1.7060484,
+      "ouvertLe": "2026-11-09T21:10:27",
+      "fermeLe": "2026-11-10T03:44:41",
+      "pnl": -4.22,
+      "pnlPct": -5.88,
+      "motifEntree": "score 6 : tendance haussiere, volume x2.0, elan 1 h, RSI 65",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "BMTUSDT",
+      "base": "BMT",
+      "montant": 71.16,
+      "prixEntreeUsdt": 0.02396548,
+      "prixSortieUsdt": 0.0231072,
+      "ouvertLe": "2026-11-10T19:09:53",
+      "fermeLe": "2026-11-11T00:22:12",
+      "pnl": -2.79,
+      "pnlPct": -3.93,
+      "motifEntree": "score 5 : tendance haussiere, volume x11.1, RSI 62",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "SOXLBUSDT",
+      "base": "SOXLB",
+      "montant": 71.2,
+      "prixEntreeUsdt": 69.373905,
+      "prixSortieUsdt": 62.835605,
+      "ouvertLe": "2026-11-11T18:54:41",
+      "fermeLe": "2026-11-12T01:06:03",
+      "pnl": -6.86,
+      "pnlPct": -9.63,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.2, elan 1 h",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "GRAMUSDT",
+      "base": "GRAM",
+      "montant": 71.06,
+      "prixEntreeUsdt": 1.19978,
+      "prixSortieUsdt": 1.1812255,
+      "ouvertLe": "2026-11-11T11:12:20",
+      "fermeLe": "2026-11-12T08:03:56",
+      "pnl": -0.88,
+      "pnlPct": -1.24,
+      "motifEntree": "score 6 : tendance haussiere, cassure du plus haut 12 h, volume x1.6, elan 1 h",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "0GUSDT",
+      "base": "0G",
+      "montant": 70.77,
+      "prixEntreeUsdt": 0.156624,
+      "prixSortieUsdt": 0.1495992,
+      "ouvertLe": "2026-11-12T08:03:56",
+      "fermeLe": "2026-11-12T16:56:12",
+      "pnl": -3.21,
+      "pnlPct": -4.53,
+      "motifEntree": "score 6 : tendance haussiere, volume x2.0, elan 1 h, RSI 64",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "ERAUSDT",
+      "base": "ERA",
+      "montant": 70.72,
+      "prixEntreeUsdt": 0.0822276,
+      "prixSortieUsdt": 0.0807756,
+      "ouvertLe": "2026-11-11T03:53:12",
+      "fermeLe": "2026-11-12T23:08:04",
+      "pnl": -0.67,
+      "pnlPct": -0.95,
+      "motifEntree": "score 6 : tendance haussiere, volume x2.5, elan 1 h, RSI 60",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "paire": "AMDBUSDT",
+      "base": "AMDB",
+      "montant": 71.2,
+      "prixEntreeUsdt": 562.65164,
+      "prixSortieUsdt": 579.56244,
+      "ouvertLe": "2026-11-11T18:54:41",
+      "fermeLe": "2026-11-12T23:08:04",
+      "pnl": 2.24,
+      "pnlPct": 3.14,
+      "motifEntree": "score 6 : tendance haussiere, cassure du plus haut 12 h, elan 1 h, RSI 64",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "GOOGLBUSDT",
+      "base": "GOOGLB",
+      "montant": 70.69,
+      "prixEntreeUsdt": 295.73824,
+      "prixSortieUsdt": 301.12763,
+      "ouvertLe": "2026-11-12T01:06:03",
+      "fermeLe": "2026-11-13T03:37:06",
+      "pnl": 1.38,
+      "pnlPct": 1.95,
+      "motifEntree": "score 5 : tendance haussiere, volume x5.8, RSI 53",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "TQQQBUSDT",
+      "base": "TQQQB",
+      "montant": 70.8,
+      "prixEntreeUsdt": 60.53116,
+      "prixSortieUsdt": 56.8716,
+      "ouvertLe": "2026-11-12T16:56:12",
+      "fermeLe": "2026-11-13T18:38:03",
+      "pnl": -4.17,
+      "pnlPct": -5.9,
+      "motifEntree": "score 6 : tendance haussiere, cassure du plus haut 12 h, elan 1 h, RSI 63",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "BARDUSDT",
+      "base": "BARD",
+      "montant": 69.93,
+      "prixEntreeUsdt": 0.1359416,
+      "prixSortieUsdt": 0.15127275,
+      "ouvertLe": "2026-11-13T03:37:06",
+      "fermeLe": "2026-11-13T18:38:03",
+      "pnl": 7.97,
+      "pnlPct": 11.4,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.5, RSI 64",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "paire": "PEPEUSDT",
+      "base": "PEPE",
+      "montant": 69.93,
+      "prixEntreeUsdt": 4.6069E-06,
+      "prixSortieUsdt": 4.4134E-06,
+      "ouvertLe": "2026-11-13T03:37:06",
+      "fermeLe": "2026-11-13T23:52:47",
+      "pnl": -2.82,
+      "pnlPct": -4.03,
+      "motifEntree": "score 6 : tendance haussiere, volume x2.3, elan 1 h, RSI 61",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "INITUSDT",
+      "base": "INIT",
+      "montant": 70.0,
+      "prixEntreeUsdt": 0.1231908,
+      "prixSortieUsdt": 0.11283684,
+      "ouvertLe": "2026-11-13T18:38:03",
+      "fermeLe": "2026-11-13T23:52:47",
+      "pnl": -5.96,
+      "pnlPct": -8.52,
+      "motifEntree": "score 5 : tendance haussiere, volume x3.6, RSI 61",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "BERAUSDT",
+      "base": "BERA",
+      "montant": 68.57,
+      "prixEntreeUsdt": 0.1328292,
+      "prixSortieUsdt": 0.1081656,
+      "ouvertLe": "2026-11-14T03:51:20",
+      "fermeLe": "2026-11-14T10:37:39",
+      "pnl": -12.86,
+      "pnlPct": -18.75,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.5, RSI 68",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "DODOUSDT",
+      "base": "DODO",
+      "montant": 70.57,
+      "prixEntreeUsdt": 0.02883488,
+      "prixSortieUsdt": 0.03161304,
+      "ouvertLe": "2026-11-13T10:58:38",
+      "fermeLe": "2026-11-14T17:06:14",
+      "pnl": 6.96,
+      "pnlPct": 9.86,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.3, RSI 69",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "paire": "NIGHTUSDT",
+      "base": "NIGHT",
+      "montant": 70.0,
+      "prixEntreeUsdt": 0.0461338,
+      "prixSortieUsdt": 0.04679208,
+      "ouvertLe": "2026-11-13T18:38:03",
+      "fermeLe": "2026-11-14T21:40:42",
+      "pnl": 0.96,
+      "pnlPct": 1.37,
+      "motifEntree": "score 6 : tendance haussiere, cassure du plus haut 12 h, elan 1 h, RSI 62",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "paire": "BANANAS31USDT",
+      "base": "BANANAS31",
+      "montant": 68.36,
+      "prixEntreeUsdt": 0.004424628,
+      "prixSortieUsdt": 0.004136388,
+      "ouvertLe": "2026-11-14T17:06:14",
+      "fermeLe": "2026-11-14T21:40:42",
+      "pnl": -4.57,
+      "pnlPct": -6.69,
+      "motifEntree": "score 6 : tendance haussiere, volume x3.4, elan 1 h, RSI 62",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "RLUSDUSDT",
+      "base": "RLUSD",
+      "montant": 68.63,
+      "prixEntreeUsdt": 1.00260165,
+      "prixSortieUsdt": 0.99879955,
+      "ouvertLe": "2026-11-13T23:52:47",
+      "fermeLe": "2026-11-15T01:20:30",
+      "pnl": -0.24,
+      "pnlPct": -0.35,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.5, RSI 60",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "SOXSBUSDT",
+      "base": "SOXSB",
+      "montant": 67.42,
+      "prixEntreeUsdt": 54.79832,
+      "prixSortieUsdt": 52.26012,
+      "ouvertLe": "2026-11-14T21:40:42",
+      "fermeLe": "2026-11-15T20:55:01",
+      "pnl": -3.21,
+      "pnlPct": -4.75,
+      "motifEntree": "score 6 : tendance haussiere, cassure du plus haut 12 h, elan 1 h, RSI 59",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "SPCXBUSDT",
+      "base": "SPCXB",
+      "montant": 67.28,
+      "prixEntreeUsdt": 137.92952,
+      "prixSortieUsdt": 140.419055,
+      "ouvertLe": "2026-11-15T07:52:03",
+      "fermeLe": "2026-11-16T12:42:32",
+      "pnl": 0.99,
+      "pnlPct": 1.47,
+      "motifEntree": "score 6 : tendance haussiere, cassure du plus haut 12 h, volume x2.6",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "MUBUSDT",
+      "base": "MUB",
+      "montant": 67.13,
+      "prixEntreeUsdt": 767.97968,
+      "prixSortieUsdt": 739.86853,
+      "ouvertLe": "2026-11-15T20:55:01",
+      "fermeLe": "2026-11-16T12:42:32",
+      "pnl": -2.61,
+      "pnlPct": -3.89,
+      "motifEntree": "score 8 : tendance haussiere, cassure du plus haut 12 h, volume x2.1, elan 1 h, RSI 58",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "NVDABUSDT",
+      "base": "NVDAB",
+      "montant": 67.13,
+      "prixEntreeUsdt": 164.276045,
+      "prixSortieUsdt": 158.60174,
+      "ouvertLe": "2026-11-15T20:55:01",
+      "fermeLe": "2026-11-16T12:42:32",
+      "pnl": -2.47,
+      "pnlPct": -3.68,
+      "motifEntree": "score 6 : tendance haussiere, volume x5.7, elan 1 h, RSI 68",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "PENGUUSDT",
+      "base": "PENGU",
+      "montant": 67.13,
+      "prixEntreeUsdt": 0.00498486,
+      "prixSortieUsdt": 0.004863468,
+      "ouvertLe": "2026-11-15T20:55:01",
+      "fermeLe": "2026-11-16T22:15:24",
+      "pnl": -1.71,
+      "pnlPct": -2.55,
+      "motifEntree": "score 6 : tendance haussiere, volume x3.0, elan 1 h, RSI 63",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "HYPEUSDT",
+      "base": "HYPE",
+      "montant": 66.54,
+      "prixEntreeUsdt": 66.890185,
+      "prixSortieUsdt": 68.77668,
+      "ouvertLe": "2026-11-16T12:42:32",
+      "fermeLe": "2026-11-17T22:44:29",
+      "pnl": 1.75,
+      "pnlPct": 2.64,
+      "motifEntree": "score 5 : tendance haussiere, volume x5.2, RSI 59",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "paire": "ASTERUSDT",
+      "base": "ASTER",
+      "montant": 66.21,
+      "prixEntreeUsdt": 0.5856772,
+      "prixSortieUsdt": 0.57283945,
+      "ouvertLe": "2026-11-17T04:58:46",
+      "fermeLe": "2026-11-17T22:44:29",
+      "pnl": -1.55,
+      "pnlPct": -2.35,
+      "motifEntree": "score 5 : tendance haussiere, cassure du plus haut 12 h, elan 1 h",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "UNIUSDT",
+      "base": "UNI",
+      "montant": 66.21,
+      "prixEntreeUsdt": 5.279908,
+      "prixSortieUsdt": 5.2271475,
+      "ouvertLe": "2026-11-17T04:58:46",
+      "fermeLe": "2026-11-17T22:44:29",
+      "pnl": -0.77,
+      "pnlPct": -1.16,
+      "motifEntree": "score 5 : tendance haussiere, cassure du plus haut 12 h, elan 1 h",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "FETUSDT",
+      "base": "FET",
+      "montant": 66.21,
+      "prixEntreeUsdt": 0.1333312,
+      "prixSortieUsdt": 0.1303764,
+      "ouvertLe": "2026-11-17T04:58:46",
+      "fermeLe": "2026-11-18T12:42:40",
+      "pnl": -1.38,
+      "pnlPct": -2.08,
+      "motifEntree": "score 5 : tendance haussiere, volume x1.6, elan 1 h, RSI 64",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "TLMUSDT",
+      "base": "TLM",
+      "montant": 65.71,
+      "prixEntreeUsdt": 0.001033116,
+      "prixSortieUsdt": 0.000954168,
+      "ouvertLe": "2026-11-17T22:44:29",
+      "fermeLe": "2026-11-18T12:42:40",
+      "pnl": -4.96,
+      "pnlPct": -7.54,
+      "motifEntree": "score 6 : tendance haussiere, volume x3.7, elan 1 h, RSI 58",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "ZKCUSDT",
+      "base": "ZKC",
+      "montant": 64.75,
+      "prixEntreeUsdt": 0.0329312,
+      "prixSortieUsdt": 0.030876,
+      "ouvertLe": "2026-11-18T12:42:40",
+      "fermeLe": "2026-11-18T20:38:04",
+      "pnl": -4.16,
+      "pnlPct": -6.42,
+      "motifEntree": "score 6 : tendance haussiere, volume x3.7, elan 1 h, RSI 68",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "SPCXBUSDT",
+      "base": "SPCXB",
+      "montant": 65.71,
+      "prixEntreeUsdt": 142.65366,
+      "prixSortieUsdt": 144.293235,
+      "ouvertLe": "2026-11-17T22:44:29",
+      "fermeLe": "2026-11-19T02:28:54",
+      "pnl": 0.79,
+      "pnlPct": 1.2,
+      "motifEntree": "score 5 : tendance haussiere, volume x1.6, elan 1 h, RSI 66",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "RWUSDUSDT",
+      "base": "RWUSD",
+      "montant": 64.75,
+      "prixEntreeUsdt": 1.00160015,
+      "prixSortieUsdt": 0.996,
+      "ouvertLe": "2026-11-18T12:42:40",
+      "fermeLe": "2026-11-19T19:30:46",
+      "pnl": -0.56,
+      "pnlPct": -0.86,
+      "motifEntree": "score 5 : tendance haussiere, volume x2.6, RSI 57",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "AVGOBUSDT",
+      "base": "AVGOB",
+      "montant": 64.4,
+      "prixEntreeUsdt": 357.59468,
+      "prixSortieUsdt": 348.0024,
+      "ouvertLe": "2026-11-18T20:38:04",
+      "fermeLe": "2026-11-19T19:30:46",
+      "pnl": -1.92,
+      "pnlPct": -2.98,
+      "motifEntree": "score 5 : tendance haussiere, volume x4.1, RSI 58",
+      "motifSortie": "tendance cassee",
+      "avis": "aucun"
+    },
+    {
+      "paire": "SENTUSDT",
+      "base": "SENT",
+      "montant": 64.38,
+      "prixEntreeUsdt": 0.0212848,
+      "prixSortieUsdt": 0.02117496,
+      "ouvertLe": "2026-11-19T02:28:54",
+      "fermeLe": "2026-11-19T19:30:46",
+      "pnl": -0.49,
+      "pnlPct": -0.77,
+      "motifEntree": "score 5 : tendance haussiere, volume x1.9, elan 1 h, RSI 65",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "paire": "TQQQBUSDT",
+      "base": "TQQQB",
+      "montant": 64.38,
+      "prixEntreeUsdt": 53.965,
+      "prixSortieUsdt": 50.38764,
+      "ouvertLe": "2026-11-19T02:28:54",
+      "fermeLe": "2026-11-19T19:30:46",
+      "pnl": -4.42,
+      "pnlPct": -6.86,
+      "motifEntree": "score 5 : tendance haussiere, volume x4.3, RSI 66",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "HYPEUSDT",
+      "base": "HYPE",
+      "montant": 63.68,
+      "prixEntreeUsdt": 69.874655,
+      "prixSortieUsdt": 66.24049,
+      "ouvertLe": "2026-11-19T19:30:46",
+      "fermeLe": "2026-11-20T01:52:15",
+      "pnl": -3.39,
+      "pnlPct": -5.33,
+      "motifEntree": "score 6 : tendance haussiere, volume x4.1, elan 1 h, RSI 59",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "BMTUSDT",
+      "base": "BMT",
+      "montant": 63.31,
+      "prixEntreeUsdt": 0.0203812,
+      "prixSortieUsdt": 0.02030844,
+      "ouvertLe": "2026-11-20T01:52:15",
+      "fermeLe": "2026-11-20T17:51:08",
+      "pnl": -0.4,
+      "pnlPct": -0.64,
+      "motifEntree": "score 5 : tendance haussiere, volume x1.8, elan 1 h, RSI 56",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "paire": "UUSDT",
+      "base": "U",
+      "montant": 63.68,
+      "prixEntreeUsdt": 1.0043012,
+      "prixSortieUsdt": 0.99939865,
+      "ouvertLe": "2026-11-19T19:30:46",
+      "fermeLe": "2026-11-20T23:51:19",
+      "pnl": -0.36,
+      "pnlPct": -0.56,
+      "motifEntree": "score 5 : tendance haussiere, volume x4.8, RSI 60",
+      "motifSortie": "duree maximale atteinte",
+      "avis": "aucun"
+    },
+    {
+      "paire": "SOXSBUSDT",
+      "base": "SOXSB",
+      "montant": 63.31,
+      "prixEntreeUsdt": 66.48488,
+      "prixSortieUsdt": 76.25376,
+      "ouvertLe": "2026-11-20T01:52:15",
+      "fermeLe": "2026-11-20T23:51:19",
+      "pnl": 9.2,
+      "pnlPct": 14.54,
+      "motifEntree": "score 6 : tendance haussiere, cassure du plus haut 12 h, elan 1 h, RSI 64",
+      "motifSortie": "stop suiveur, gain securise",
+      "avis": "aucun"
+    },
+    {
+      "paire": "HUMAUSDT",
+      "base": "HUMA",
+      "montant": 64.37,
+      "prixEntreeUsdt": 0.01006008,
+      "prixSortieUsdt": 0.00885444,
+      "ouvertLe": "2026-11-20T17:51:08",
+      "fermeLe": "2026-11-20T23:51:19",
+      "pnl": -7.75,
+      "pnlPct": -12.04,
+      "motifEntree": "score 5 : tendance haussiere, volume x1.6, elan 1 h, RSI 57",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    },
+    {
+      "paire": "HMSTRUSDT",
+      "base": "HMSTR",
+      "montant": 63.42,
+      "prixEntreeUsdt": 0.0001493952,
+      "prixSortieUsdt": 0.0001436232,
+      "ouvertLe": "2026-11-20T23:51:19",
+      "fermeLe": "2026-11-21T04:38:45",
+      "pnl": -2.53,
+      "pnlPct": -3.98,
+      "motifEntree": "score 6 : tendance haussiere, volume x3.6, elan 1 h, RSI 61",
+      "motifSortie": "stop-loss",
+      "avis": "aucun"
+    }
+  ],
+  "courbe": [
+    {
+      "t": "2026-10-15T17:31:16",
+      "valeur": 998.5,
+      "btcRef": 1000.0
+    },
+    {
+      "t": "2026-10-15T17:53:59",
+      "valeur": 999.54,
+      "btcRef": 1002.34
+    },
+    {
+      "t": "2026-10-15T21:21:38",
+      "valeur": 1003.27,
+      "btcRef": 1003.7
+    },
+    {
+      "t": "2026-10-16T00:32:09",
+      "valeur": 998.73,
+      "btcRef": 1001.45
+    },
+    {
+      "t": "2026-10-16T02:42:05",
+      "valeur": 997.75,
+      "btcRef": 1001.2
+    },
+    {
+      "t": "2026-10-16T07:06:54",
+      "valeur": 1001.08,
+      "btcRef": 999.3
+    },
+    {
+      "t": "2026-10-16T11:45:03",
+      "valeur": 999.41,
+      "btcRef": 994.31
+    },
+    {
+      "t": "2026-10-16T16:20:48",
+      "valeur": 1006.11,
+      "btcRef": 996.53
+    },
+    {
+      "t": "2026-10-16T20:12:59",
+      "valeur": 992.83,
+      "btcRef": 985.65
+    },
+    {
+      "t": "2026-10-16T23:16:11",
+      "valeur": 985.82,
+      "btcRef": 990.5
+    },
+    {
+      "t": "2026-10-17T01:40:53",
+      "valeur": 979.88,
+      "btcRef": 989.32
+    },
+    {
+      "t": "2026-10-17T03:34:36",
+      "valeur": 979.88,
+      "btcRef": 987.38
+    },
+    {
+      "t": "2026-10-17T08:08:41",
+      "valeur": 979.39,
+      "btcRef": 988.06
+    },
+    {
+      "t": "2026-10-17T12:41:49",
+      "valeur": 977.82,
+      "btcRef": 989.45
+    },
+    {
+      "t": "2026-10-17T15:57:16",
+      "valeur": 976.15,
+      "btcRef": 987.69
+    },
+    {
+      "t": "2026-10-17T18:56:30",
+      "valeur": 990.65,
+      "btcRef": 984.1
+    },
+    {
+      "t": "2026-10-17T21:06:51",
+      "valeur": 998.96,
+      "btcRef": 987.87
+    },
+    {
+      "t": "2026-10-17T23:26:03",
+      "valeur": 1000.24,
+      "btcRef": 985.9
+    },
+    {
+      "t": "2026-10-18T01:19:50",
+      "valeur": 985.44,
+      "btcRef": 986.33
+    },
+    {
+      "t": "2026-10-18T03:14:17",
+      "valeur": 986.03,
+      "btcRef": 988.62
+    },
+    {
+      "t": "2026-10-18T08:00:37",
+      "valeur": 985.12,
+      "btcRef": 990.71
+    },
+    {
+      "t": "2026-10-18T12:54:16",
+      "valeur": 983.78,
+      "btcRef": 995.62
+    },
+    {
+      "t": "2026-10-18T16:18:37",
+      "valeur": 974.5,
+      "btcRef": 985.52
+    },
+    {
+      "t": "2026-10-18T19:26:25",
+      "valeur": 968.05,
+      "btcRef": 984.56
+    },
+    {
+      "t": "2026-10-18T21:33:31",
+      "valeur": 967.57,
+      "btcRef": 981.9
+    },
+    {
+      "t": "2026-10-18T23:49:41",
+      "valeur": 966.21,
+      "btcRef": 986.87
+    },
+    {
+      "t": "2026-10-19T01:45:20",
+      "valeur": 967.26,
+      "btcRef": 996.35
+    },
+    {
+      "t": "2026-10-19T03:50:33",
+      "valeur": 985.1,
+      "btcRef": 1001.27
+    },
+    {
+      "t": "2026-10-19T09:03:09",
+      "valeur": 1005.78,
+      "btcRef": 1005.49
+    },
+    {
+      "t": "2026-10-19T16:37:21",
+      "valeur": 1003.58,
+      "btcRef": 994.91
+    },
+    {
+      "t": "2026-10-19T22:12:21",
+      "valeur": 994.61,
+      "btcRef": 995.53
+    },
+    {
+      "t": "2026-10-20T01:45:01",
+      "valeur": 997.0,
+      "btcRef": 996.67
+    },
+    {
+      "t": "2026-10-20T04:09:26",
+      "valeur": 986.26,
+      "btcRef": 990.19
+    },
+    {
+      "t": "2026-10-20T09:33:09",
+      "valeur": 984.69,
+      "btcRef": 988.42
+    },
+    {
+      "t": "2026-10-20T14:56:59",
+      "valeur": 986.17,
+      "btcRef": 990.22
+    },
+    {
+      "t": "2026-10-20T19:51:30",
+      "valeur": 996.35,
+      "btcRef": 1004.85
+    },
+    {
+      "t": "2026-10-20T23:00:29",
+      "valeur": 998.31,
+      "btcRef": 1003.79
+    },
+    {
+      "t": "2026-10-21T01:47:27",
+      "valeur": 996.08,
+      "btcRef": 1007.4
+    },
+    {
+      "t": "2026-10-21T04:04:51",
+      "valeur": 994.31,
+      "btcRef": 1006.72
+    },
+    {
+      "t": "2026-10-21T09:31:13",
+      "valeur": 995.85,
+      "btcRef": 1008.08
+    },
+    {
+      "t": "2026-10-21T15:10:32",
+      "valeur": 992.92,
+      "btcRef": 1015.79
+    },
+    {
+      "t": "2026-10-21T20:03:34",
+      "valeur": 992.32,
+      "btcRef": 1026.5
+    },
+    {
+      "t": "2026-10-21T23:36:05",
+      "valeur": 992.17,
+      "btcRef": 1028.58
+    },
+    {
+      "t": "2026-10-22T02:11:49",
+      "valeur": 982.48,
+      "btcRef": 1021.36
+    },
+    {
+      "t": "2026-10-22T06:52:39",
+      "valeur": 971.34,
+      "btcRef": 1003.53
+    },
+    {
+      "t": "2026-10-22T11:47:09",
+      "valeur": 962.25,
+      "btcRef": 992.4
+    },
+    {
+      "t": "2026-10-22T16:43:00",
+      "valeur": 950.28,
+      "btcRef": 995.91
+    },
+    {
+      "t": "2026-10-22T20:53:00",
+      "valeur": 954.91,
+      "btcRef": 987.99
+    },
+    {
+      "t": "2026-10-23T00:02:39",
+      "valeur": 947.75,
+      "btcRef": 990.01
+    },
+    {
+      "t": "2026-10-23T02:36:00",
+      "valeur": 956.12,
+      "btcRef": 987.04
+    },
+    {
+      "t": "2026-10-23T07:20:18",
+      "valeur": 953.78,
+      "btcRef": 993.5
+    },
+    {
+      "t": "2026-10-23T12:16:11",
+      "valeur": 949.42,
+      "btcRef": 994.31
+    },
+    {
+      "t": "2026-10-23T17:12:10",
+      "valeur": 949.45,
+      "btcRef": 991.7
+    },
+    {
+      "t": "2026-10-23T21:17:20",
+      "valeur": 944.09,
+      "btcRef": 989.01
+    },
+    {
+      "t": "2026-10-24T00:22:08",
+      "valeur": 945.63,
+      "btcRef": 988.55
+    },
+    {
+      "t": "2026-10-24T02:52:44",
+      "valeur": 944.94,
+      "btcRef": 981.87
+    },
+    {
+      "t": "2026-10-24T07:17:32",
+      "valeur": 944.95,
+      "btcRef": 983.67
+    },
+    {
+      "t": "2026-10-24T11:37:56",
+      "valeur": 925.09,
+      "btcRef": 979.27
+    },
+    {
+      "t": "2026-10-24T15:35:40",
+      "valeur": 910.99,
+      "btcRef": 981.9
+    },
+    {
+      "t": "2026-10-24T18:56:17",
+      "valeur": 904.43,
+      "btcRef": 976.14
+    },
+    {
+      "t": "2026-10-24T21:19:15",
+      "valeur": 893.63,
+      "btcRef": 979.25
+    },
+    {
+      "t": "2026-10-24T23:41:39",
+      "valeur": 888.94,
+      "btcRef": 978.35
+    },
+    {
+      "t": "2026-10-25T01:45:40",
+      "valeur": 883.34,
+      "btcRef": 983.39
+    },
+    {
+      "t": "2026-10-25T02:45:44",
+      "valeur": 883.31,
+      "btcRef": 983.49
+    },
+    {
+      "t": "2026-10-25T07:58:58",
+      "valeur": 874.91,
+      "btcRef": 978.79
+    },
+    {
+      "t": "2026-10-25T13:29:55",
+      "valeur": 873.3,
+      "btcRef": 976.59
+    },
+    {
+      "t": "2026-10-25T17:44:55",
+      "valeur": 870.49,
+      "btcRef": 979.92
+    },
+    {
+      "t": "2026-10-25T20:19:04",
+      "valeur": 870.14,
+      "btcRef": 979.73
+    },
+    {
+      "t": "2026-10-25T22:55:20",
+      "valeur": 864.43,
+      "btcRef": 974.93
+    },
+    {
+      "t": "2026-10-26T00:53:11",
+      "valeur": 863.99,
+      "btcRef": 971.48
+    },
+    {
+      "t": "2026-10-26T03:52:35",
+      "valeur": 852.68,
+      "btcRef": 964.3
+    },
+    {
+      "t": "2026-10-26T09:21:53",
+      "valeur": 847.67,
+      "btcRef": 970.5
+    },
+    {
+      "t": "2026-10-26T16:20:05",
+      "valeur": 849.97,
+      "btcRef": 981.33
+    },
+    {
+      "t": "2026-10-26T21:38:24",
+      "valeur": 844.77,
+      "btcRef": 973.0
+    },
+    {
+      "t": "2026-10-27T01:04:58",
+      "valeur": 844.62,
+      "btcRef": 976.49
+    },
+    {
+      "t": "2026-10-27T05:56:27",
+      "valeur": 838.39,
+      "btcRef": 970.96
+    },
+    {
+      "t": "2026-10-27T11:16:44",
+      "valeur": 830.81,
+      "btcRef": 971.83
+    },
+    {
+      "t": "2026-10-27T16:55:06",
+      "valeur": 827.95,
+      "btcRef": 984.79
+    },
+    {
+      "t": "2026-10-27T21:27:27",
+      "valeur": 830.85,
+      "btcRef": 986.81
+    },
+    {
+      "t": "2026-10-28T00:56:14",
+      "valeur": 834.0,
+      "btcRef": 989.77
+    },
+    {
+      "t": "2026-10-28T05:47:24",
+      "valeur": 835.45,
+      "btcRef": 991.32
+    },
+    {
+      "t": "2026-10-28T11:52:16",
+      "valeur": 834.53,
+      "btcRef": 998.11
+    },
+    {
+      "t": "2026-10-28T17:55:52",
+      "valeur": 829.02,
+      "btcRef": 985.49
+    },
+    {
+      "t": "2026-10-28T22:32:02",
+      "valeur": 821.59,
+      "btcRef": 991.2
+    },
+    {
+      "t": "2026-10-29T02:11:59",
+      "valeur": 816.73,
+      "btcRef": 989.1
+    },
+    {
+      "t": "2026-10-29T08:09:18",
+      "valeur": 814.4,
+      "btcRef": 977.19
+    },
+    {
+      "t": "2026-10-29T15:18:26",
+      "valeur": 805.47,
+      "btcRef": 983.87
+    },
+    {
+      "t": "2026-10-29T20:43:08",
+      "valeur": 811.71,
+      "btcRef": 986.03
+    },
+    {
+      "t": "2026-10-30T00:38:15",
+      "valeur": 782.72,
+      "btcRef": 954.54
+    },
+    {
+      "t": "2026-10-30T03:57:36",
+      "valeur": 780.08,
+      "btcRef": 931.34
+    },
+    {
+      "t": "2026-10-30T10:51:04",
+      "valeur": 774.37,
+      "btcRef": 932.27
+    },
+    {
+      "t": "2026-10-30T17:21:56",
+      "valeur": 774.65,
+      "btcRef": 939.57
+    },
+    {
+      "t": "2026-10-30T21:56:44",
+      "valeur": 779.42,
+      "btcRef": 929.22
+    },
+    {
+      "t": "2026-10-31T01:34:35",
+      "valeur": 776.67,
+      "btcRef": 916.02
+    },
+    {
+      "t": "2026-10-31T07:15:01",
+      "valeur": 775.56,
+      "btcRef": 922.24
+    },
+    {
+      "t": "2026-10-31T13:46:21",
+      "valeur": 771.87,
+      "btcRef": 936.19
+    },
+    {
+      "t": "2026-10-31T18:23:27",
+      "valeur": 768.25,
+      "btcRef": 935.52
+    },
+    {
+      "t": "2026-10-31T21:34:19",
+      "valeur": 768.4,
+      "btcRef": 935.68
+    },
+    {
+      "t": "2026-11-01T00:41:35",
+      "valeur": 765.12,
+      "btcRef": 933.75
+    },
+    {
+      "t": "2026-11-01T03:37:04",
+      "valeur": 763.96,
+      "btcRef": 936.52
+    },
+    {
+      "t": "2026-11-01T10:43:14",
+      "valeur": 755.93,
+      "btcRef": 947.93
+    },
+    {
+      "t": "2026-11-01T17:27:08",
+      "valeur": 749.33,
+      "btcRef": 946.34
+    },
+    {
+      "t": "2026-11-01T21:43:45",
+      "valeur": 749.43,
+      "btcRef": 945.1
+    },
+    {
+      "t": "2026-11-02T00:55:42",
+      "valeur": 750.67,
+      "btcRef": 956.75
+    },
+    {
+      "t": "2026-11-02T05:55:37",
+      "valeur": 747.16,
+      "btcRef": 956.45
+    },
+    {
+      "t": "2026-11-02T14:12:44",
+      "valeur": 741.89,
+      "btcRef": 943.03
+    },
+    {
+      "t": "2026-11-02T23:20:32",
+      "valeur": 731.41,
+      "btcRef": 936.59
+    },
+    {
+      "t": "2026-11-03T04:31:45",
+      "valeur": 731.41,
+      "btcRef": 934.44
+    },
+    {
+      "t": "2026-11-03T12:16:52",
+      "valeur": 731.05,
+      "btcRef": 940.78
+    },
+    {
+      "t": "2026-11-03T19:30:05",
+      "valeur": 730.17,
+      "btcRef": 944.68
+    },
+    {
+      "t": "2026-11-04T00:37:14",
+      "valeur": 729.97,
+      "btcRef": 946.82
+    },
+    {
+      "t": "2026-11-04T04:14:59",
+      "valeur": 722.87,
+      "btcRef": 918.44
+    },
+    {
+      "t": "2026-11-04T12:09:44",
+      "valeur": 721.43,
+      "btcRef": 952.19
+    },
+    {
+      "t": "2026-11-04T19:38:11",
+      "valeur": 720.23,
+      "btcRef": 976.26
+    },
+    {
+      "t": "2026-11-05T00:55:47",
+      "valeur": 723.56,
+      "btcRef": 976.48
+    },
+    {
+      "t": "2026-11-05T06:38:34",
+      "valeur": 721.66,
+      "btcRef": 974.59
+    },
+    {
+      "t": "2026-11-05T14:29:31",
+      "valeur": 711.72,
+      "btcRef": 967.35
+    },
+    {
+      "t": "2026-11-05T21:47:28",
+      "valeur": 711.65,
+      "btcRef": 926.28
+    },
+    {
+      "t": "2026-11-06T02:10:23",
+      "valeur": 708.54,
+      "btcRef": 926.46
+    },
+    {
+      "t": "2026-11-06T08:56:02",
+      "valeur": 718.35,
+      "btcRef": 921.45
+    },
+    {
+      "t": "2026-11-06T16:45:57",
+      "valeur": 715.42,
+      "btcRef": 916.67
+    },
+    {
+      "t": "2026-11-06T22:06:26",
+      "valeur": 715.72,
+      "btcRef": 927.37
+    },
+    {
+      "t": "2026-11-07T01:52:51",
+      "valeur": 726.11,
+      "btcRef": 927.37
+    },
+    {
+      "t": "2026-11-07T07:46:39",
+      "valeur": 724.41,
+      "btcRef": 929.16
+    },
+    {
+      "t": "2026-11-07T14:36:24",
+      "valeur": 722.54,
+      "btcRef": 927.84
+    },
+    {
+      "t": "2026-11-07T19:17:22",
+      "valeur": 721.54,
+      "btcRef": 927.48
+    },
+    {
+      "t": "2026-11-07T23:01:22",
+      "valeur": 725.35,
+      "btcRef": 926.2
+    },
+    {
+      "t": "2026-11-08T02:19:12",
+      "valeur": 721.99,
+      "btcRef": 926.46
+    },
+    {
+      "t": "2026-11-08T08:31:37",
+      "valeur": 722.4,
+      "btcRef": 927.22
+    },
+    {
+      "t": "2026-11-08T15:29:40",
+      "valeur": 719.87,
+      "btcRef": 927.95
+    },
+    {
+      "t": "2026-11-08T20:01:44",
+      "valeur": 713.59,
+      "btcRef": 911.35
+    },
+    {
+      "t": "2026-11-08T23:48:38",
+      "valeur": 712.24,
+      "btcRef": 907.09
+    },
+    {
+      "t": "2026-11-09T03:06:28",
+      "valeur": 717.3,
+      "btcRef": 916.98
+    },
+    {
+      "t": "2026-11-09T10:42:51",
+      "valeur": 717.14,
+      "btcRef": 896.93
+    },
+    {
+      "t": "2026-11-09T21:10:27",
+      "valeur": 717.83,
+      "btcRef": 909.06
+    },
+    {
+      "t": "2026-11-10T03:44:41",
+      "valeur": 712.31,
+      "btcRef": 908.37
+    },
+    {
+      "t": "2026-11-10T11:29:33",
+      "valeur": 711.64,
+      "btcRef": 901.8
+    },
+    {
+      "t": "2026-11-10T19:09:53",
+      "valeur": 711.27,
+      "btcRef": 895.13
+    },
+    {
+      "t": "2026-11-11T00:22:12",
+      "valeur": 707.26,
+      "btcRef": 899.24
+    },
+    {
+      "t": "2026-11-11T03:53:12",
+      "valeur": 706.85,
+      "btcRef": 897.33
+    },
+    {
+      "t": "2026-11-11T11:12:20",
+      "valeur": 710.26,
+      "btcRef": 901.69
+    },
+    {
+      "t": "2026-11-11T18:54:41",
+      "valeur": 711.46,
+      "btcRef": 915.3
+    },
+    {
+      "t": "2026-11-12T01:06:03",
+      "valeur": 706.53,
+      "btcRef": 908.49
+    },
+    {
+      "t": "2026-11-12T08:03:56",
+      "valeur": 707.39,
+      "btcRef": 905.36
+    },
+    {
+      "t": "2026-11-12T16:56:12",
+      "valeur": 707.62,
+      "btcRef": 878.72
+    },
+    {
+      "t": "2026-11-12T23:08:04",
+      "valeur": 696.31,
+      "btcRef": 881.2
+    },
+    {
+      "t": "2026-11-13T03:37:06",
+      "valeur": 698.77,
+      "btcRef": 867.25
+    },
+    {
+      "t": "2026-11-13T10:58:38",
+      "valeur": 705.39,
+      "btcRef": 851.58
+    },
+    {
+      "t": "2026-11-13T18:38:03",
+      "valeur": 699.33,
+      "btcRef": 851.38
+    },
+    {
+      "t": "2026-11-13T23:52:47",
+      "valeur": 686.16,
+      "btcRef": 846.06
+    },
+    {
+      "t": "2026-11-14T03:51:20",
+      "valeur": 685.37,
+      "btcRef": 837.76
+    },
+    {
+      "t": "2026-11-14T10:37:39",
+      "valeur": 681.66,
+      "btcRef": 830.46
+    },
+    {
+      "t": "2026-11-14T17:06:14",
+      "valeur": 683.31,
+      "btcRef": 809.66
+    },
+    {
+      "t": "2026-11-14T21:40:42",
+      "valeur": 673.86,
+      "btcRef": 811.16
+    },
+    {
+      "t": "2026-11-15T01:20:30",
+      "valeur": 673.24,
+      "btcRef": 796.43
+    },
+    {
+      "t": "2026-11-15T07:52:03",
+      "valeur": 672.51,
+      "btcRef": 798.4
+    },
+    {
+      "t": "2026-11-15T15:26:47",
+      "valeur": 673.8,
+      "btcRef": 809.07
+    },
+    {
+      "t": "2026-11-15T20:55:01",
+      "valeur": 670.41,
+      "btcRef": 804.63
+    },
+    {
+      "t": "2026-11-16T00:46:26",
+      "valeur": 673.09,
+      "btcRef": 808.24
+    },
+    {
+      "t": "2026-11-16T04:15:23",
+      "valeur": 670.22,
+      "btcRef": 805.5
+    },
+    {
+      "t": "2026-11-16T12:42:32",
+      "valeur": 665.2,
+      "btcRef": 799.32
+    },
+    {
+      "t": "2026-11-16T22:15:24",
+      "valeur": 666.32,
+      "btcRef": 805.85
+    },
+    {
+      "t": "2026-11-17T04:58:46",
+      "valeur": 661.4,
+      "btcRef": 804.96
+    },
+    {
+      "t": "2026-11-17T14:05:04",
+      "valeur": 663.93,
+      "btcRef": 806.3
+    },
+    {
+      "t": "2026-11-17T22:44:29",
+      "valeur": 656.64,
+      "btcRef": 797.13
+    },
+    {
+      "t": "2026-11-18T04:10:10",
+      "valeur": 653.49,
+      "btcRef": 798.47
+    },
+    {
+      "t": "2026-11-18T12:42:40",
+      "valeur": 647.01,
+      "btcRef": 797.46
+    },
+    {
+      "t": "2026-11-18T20:38:04",
+      "valeur": 643.71,
+      "btcRef": 779.39
+    },
+    {
+      "t": "2026-11-19T02:28:54",
+      "valeur": 643.11,
+      "btcRef": 777.78
+    },
+    {
+      "t": "2026-11-19T10:24:39",
+      "valeur": 651.6,
+      "btcRef": 790.33
+    },
+    {
+      "t": "2026-11-19T19:30:46",
+      "valeur": 636.28,
+      "btcRef": 784.84
+    },
+    {
+      "t": "2026-11-20T01:52:15",
+      "valeur": 632.47,
+      "btcRef": 771.21
+    },
+    {
+      "t": "2026-11-20T08:56:47",
+      "valeur": 638.3,
+      "btcRef": 766.9
+    },
+    {
+      "t": "2026-11-20T17:51:08",
+      "valeur": 643.35,
+      "btcRef": 739.69
+    },
+    {
+      "t": "2026-11-20T23:51:19",
+      "valeur": 633.85,
+      "btcRef": 733.58
+    },
+    {
+      "t": "2026-11-21T04:38:45",
+      "valeur": 633.33,
+      "btcRef": 709.02
+    },
+    {
+      "t": "2026-11-21T12:48:06",
+      "valeur": 633.01,
+      "btcRef": 724.29
+    },
+    {
+      "t": "2026-11-21T19:16:56",
+      "valeur": 631.38,
+      "btcRef": 747.84
+    }
+  ],
+  "journal": [
+    {
+      "t": "2026-10-20T14:56:59",
+      "texte": "Achat TSLAB pour 98.76 EUR (score 6 : tendance haussiere, volume x2.0, elan 1 h, RSI 55)"
+    },
+    {
+      "t": "2026-10-20T14:56:59",
+      "texte": "Achat BMT pour 98.76 EUR (score 5 : tendance haussiere, volume x5.0, RSI 69)"
+    },
+    {
+      "t": "2026-10-20T19:51:30",
+      "texte": "Objectif atteint sur WLD : stop suiveur active, gain securise a +6.4 %"
+    },
+    {
+      "t": "2026-10-20T19:51:30",
+      "texte": "Objectif atteint sur APT : stop suiveur active, gain securise a +3.4 %"
+    },
+    {
+      "t": "2026-10-20T19:51:30",
+      "texte": "Vente BMT (avis defavorable (agent Technique)) : -1.39 EUR (-1.4 %)"
+    },
+    {
+      "t": "2026-10-20T19:51:30",
+      "texte": "Achat RAY pour 99.68 EUR (score 6 : tendance haussiere, volume x2.6, elan 1 h, RSI 68)"
+    },
+    {
+      "t": "2026-10-21T04:04:51",
+      "texte": "Vente RAY (stop-loss) : -4.28 EUR (-4.3 %)"
+    },
+    {
+      "t": "2026-10-21T04:04:51",
+      "texte": "Achat ARB pour 99.46 EUR (score 6 : tendance haussiere, volume x2.1, elan 1 h, RSI 65)"
+    },
+    {
+      "t": "2026-10-21T15:10:32",
+      "texte": "Vente APT (stop suiveur, gain securise) : +4.31 EUR (+4.4 %)"
+    },
+    {
+      "t": "2026-10-21T15:10:32",
+      "texte": "Vente TSLAB (duree maximale atteinte) : +2.00 EUR (+2.0 %)"
+    },
+    {
+      "t": "2026-10-21T15:10:32",
+      "texte": "Achat DOT pour 99.39 EUR (score 7 : tendance haussiere, cassure du plus haut 12 h, volume x2.1, elan 1 h)"
+    },
+    {
+      "t": "2026-10-21T15:10:32",
+      "texte": "Achat ONDO pour 99.39 EUR (score 7 : tendance haussiere, cassure du plus haut 12 h, volume x2.3, elan 1 h)"
+    },
+    {
+      "t": "2026-10-21T20:03:34",
+      "texte": "Vente WLD (stop suiveur, gain securise) : +6.90 EUR (+7.0 %)"
+    },
+    {
+      "t": "2026-10-21T20:03:34",
+      "texte": "Achat TAO pour 99.26 EUR (score 6 : tendance haussiere, cassure du plus haut 12 h, volume x1.5, elan 1 h)"
+    },
+    {
+      "t": "2026-10-22T02:11:49",
+      "texte": "Vente DOT (tendance cassee) : -3.19 EUR (-3.2 %)"
+    },
+    {
+      "t": "2026-10-22T02:11:49",
+      "texte": "Achat PROM pour 98.30 EUR (score 6 : tendance haussiere, volume x5.1, elan 1 h, RSI 62)"
+    },
+    {
+      "t": "2026-10-22T06:52:39",
+      "texte": "Vente ARB (stop-loss) : -5.30 EUR (-5.3 %)"
+    },
+    {
+      "t": "2026-10-22T06:52:39",
+      "texte": "Vente ONDO (stop-loss) : -5.20 EUR (-5.2 %)"
+    },
+    {
+      "t": "2026-10-22T06:52:39",
+      "texte": "Vente TAO (stop-loss) : -5.38 EUR (-5.4 %)"
+    },
+    {
+      "t": "2026-10-22T06:52:39",
+      "texte": "Achat PHA pour 97.18 EUR (score 5 : tendance haussiere, volume x4.1, RSI 67)"
+    },
+    {
+      "t": "2026-10-22T11:47:09",
+      "texte": "Vente PHA (stop-loss) : -7.85 EUR (-8.1 %)"
+    },
+    {
+      "t": "2026-10-22T11:47:09",
+      "texte": "Achat RLUSD pour 96.30 EUR (score 5 : tendance haussiere, volume x4.0, RSI 67)"
+    },
+    {
+      "t": "2026-10-22T11:47:09",
+      "texte": "Achat ARKM pour 96.30 EUR (score 5 : tendance haussiere, volume x5.8, RSI 62)"
+    },
+    {
+      "t": "2026-10-22T16:43:00",
+      "texte": "Vente PROM (stop-loss) : -3.42 EUR (-3.5 %)"
+    },
+    {
+      "t": "2026-10-22T16:43:00",
+      "texte": "Vente ARKM (stop-loss) : -5.01 EUR (-5.2 %)"
+    },
+    {
+      "t": "2026-10-22T16:43:00",
+      "texte": "Achat GTC pour 95.08 EUR (score 5 : tendance haussiere, volume x2.3, RSI 59)"
+    },
+    {
+      "t": "2026-10-22T20:53:00",
+      "texte": "Achat BMT pour 95.54 EUR (score 6 : tendance haussiere, volume x2.3, elan 1 h, RSI 63)"
+    },
+    {
+      "t": "2026-10-22T20:55:15",
+      "texte": "Objectif atteint sur GTC : stop suiveur active, gain securise a +3.0 %"
+    },
+    {
+      "t": "2026-10-23T00:02:39",
+      "texte": "Vente BMT (stop-loss) : -7.73 EUR (-8.1 %)"
+    },
+    {
+      "t": "2026-10-23T00:02:39",
+      "texte": "Achat DASH pour 94.82 EUR (score 5 : tendance haussiere, cassure du plus haut 12 h, elan 1 h)"
+    },
+    {
+      "t": "2026-10-23T07:20:18",
+      "texte": "Vente GTC (stop suiveur, gain securise) : +8.72 EUR (+9.2 %)"
+    },
+    {
+      "t": "2026-10-23T07:20:18",
+      "texte": "Achat BCH pour 95.43 EUR (score 5 : tendance haussiere, volume x3.1, elan 1 h)"
+    },
+    {
+      "t": "2026-10-23T12:16:11",
+      "texte": "Vente RLUSD (duree maximale atteinte) : -0.26 EUR (-0.3 %)"
+    },
+    {
+      "t": "2026-10-23T12:16:11",
+      "texte": "Achat BNB pour 95.01 EUR (score 5 : tendance haussiere, volume x4.5, elan 1 h)"
+    },
+    {
+      "t": "2026-10-23T12:16:11",
+      "texte": "Achat INJ pour 95.01 EUR (score 5 : tendance haussiere, volume x2.7, elan 1 h)"
+    },
+    {
+      "t": "2026-10-23T17:12:10",
+      "texte": "Vente DASH (tendance cassee) : -0.04 EUR (-+0.0 %)"
+    },
+    {
+      "t": "2026-10-23T17:12:10",
+      "texte": "Vente INJ (tendance cassee) : -3.15 EUR (-3.3 %)"
+    },
+    {
+      "t": "2026-10-23T17:12:10",
+      "texte": "Achat ARK pour 95.04 EUR (score 6 : tendance haussiere, volume x2.1, elan 1 h, RSI 63)"
+    },
+    {
+      "t": "2026-10-23T17:12:10",
+      "texte": "Achat COTI pour 95.04 EUR (score 6 : tendance haussiere, volume x13.1, elan 1 h, RSI 57)"
+    },
+    {
+      "t": "2026-10-23T21:17:20",
+      "texte": "Vente COTI (stop-loss) : -6.37 EUR (-6.7 %)"
+    },
+    {
+      "t": "2026-10-24T00:22:08",
+      "texte": "Vente BCH (tendance cassee) : -2.25 EUR (-2.4 %)"
+    },
+    {
+      "t": "2026-10-24T00:22:08",
+      "texte": "Vente BNB (tendance cassee) : -1.43 EUR (-1.5 %)"
+    },
+    {
+      "t": "2026-10-24T02:52:44",
+      "texte": "Achat ERA pour 94.54 EUR (score 6 : tendance haussiere, cassure du plus haut 12 h, volume x4.3)"
+    },
+    {
+      "t": "2026-10-24T07:17:32",
+      "texte": "Vente ARK (tendance cassee) : -1.42 EUR (-1.5 %)"
+    },
+    {
+      "t": "2026-10-24T07:17:32",
+      "texte": "Achat KAT pour 94.54 EUR (score 5 : tendance haussiere, volume x4.0, RSI 62)"
+    },
+    {
+      "t": "2026-10-24T11:37:56",
+      "texte": "Vente ERA (stop-loss) : -8.23 EUR (-8.7 %)"
+    },
+    {
+      "t": "2026-10-24T11:37:56",
+      "texte": "Vente KAT (stop-loss) : -6.73 EUR (-7.1 %)"
+    },
+    {
+      "t": "2026-10-24T11:37:56",
+      "texte": "Achat TREE pour 92.69 EUR (score 5 : tendance haussiere, volume x5.0, RSI 67)"
+    },
+    {
+      "t": "2026-10-24T11:37:56",
+      "texte": "Achat LUMIA pour 92.69 EUR (score 5 : tendance haussiere, volume x2.9, RSI 65)"
+    },
+    {
+      "t": "2026-10-24T11:37:56",
+      "texte": "Achat NIL pour 92.69 EUR (score 5 : tendance haussiere, volume x1.7, elan 1 h, RSI 65)"
+    },
+    {
+      "t": "2026-10-24T11:37:56",
+      "texte": "Achat WCT pour 92.69 EUR (score 5 : tendance haussiere, volume x2.1, RSI 53)"
+    },
+    {
+      "t": "2026-10-24T11:41:16",
+      "texte": "Objectif atteint sur TREE : stop suiveur active, gain securise a +4.2 %"
+    },
+    {
+      "t": "2026-10-24T15:35:40",
+      "texte": "Vente TREE (stop suiveur, gain securise) : -7.65 EUR (-8.3 %)"
+    },
+    {
+      "t": "2026-10-24T15:35:40",
+      "texte": "Vente NIL (stop-loss) : -3.43 EUR (-3.7 %)"
+    },
+    {
+      "t": "2026-10-24T15:35:40",
+      "texte": "Achat ERA pour 91.12 EUR (score 5 : tendance haussiere, volume x2.8, RSI 66)"
+    },
+    {
+      "t": "2026-10-24T15:37:23",
+      "texte": "Vente ERA (stop-loss) : -4.48 EUR (-4.9 %)"
+    },
+    {
+      "t": "2026-10-24T15:39:57",
+      "texte": "Vente LUMIA (stop-loss) : -3.39 EUR (-3.7 %)"
+    },
+    {
+      "t": "2026-10-24T18:56:17",
+      "texte": "Achat U pour 90.56 EUR (score 5 : tendance haussiere, volume x2.4, RSI 67)"
+    },
+    {
+      "t": "2026-10-24T18:56:17",
+      "texte": "Achat RWUSD pour 90.56 EUR (score 5 : tendance haussiere, volume x2.6, RSI 67)"
+    },
+    {
+      "t": "2026-10-24T18:56:17",
+      "texte": "Achat F pour 90.56 EUR (score 5 : tendance haussiere, volume x2.6, RSI 56)"
+    },
+    {
+      "t": "2026-10-24T21:19:15",
+      "texte": "Vente WCT (stop-loss) : -4.07 EUR (-4.4 %)"
+    },
+    {
+      "t": "2026-10-24T21:19:15",
+      "texte": "Vente F (stop-loss) : -9.11 EUR (-10.1 %)"
+    },
+    {
+      "t": "2026-10-24T21:19:15",
+      "texte": "Achat REZ pour 89.41 EUR (score 6 : tendance haussiere, volume x3.2, elan 1 h, RSI 62)"
+    },
+    {
+      "t": "2026-10-24T23:41:39",
+      "texte": "Vente RWUSD (tendance cassee) : -0.94 EUR (-1.0 %)"
+    },
+    {
+      "t": "2026-10-24T23:41:39",
+      "texte": "Vente REZ (stop-loss) : -4.24 EUR (-4.7 %)"
+    },
+    {
+      "t": "2026-10-24T23:41:39",
+      "texte": "Achat ANIME pour 88.94 EUR (score 5 : tendance haussiere, volume x2.5, RSI 59)"
+    },
+    {
+      "t": "2026-10-25T01:45:40",
+      "texte": "Vente ANIME (stop-loss) : -5.35 EUR (-6.0 %)"
+    },
+    {
+      "t": "2026-10-25T01:45:40",
+      "texte": "Achat ASTER pour 88.40 EUR (score 6 : tendance haussiere, volume x2.0, elan 1 h, RSI 62)"
+    },
+    {
+      "t": "2026-10-25T01:45:40",
+      "texte": "Achat RLUSD pour 88.40 EUR (score 5 : tendance haussiere, volume x2.5, RSI 60)"
+    },
+    {
+      "t": "2026-10-25T02:45:44",
+      "texte": "Achat STEEM pour 88.38 EUR (score 5 : tendance haussiere, volume x7.5, RSI 59)"
+    },
+    {
+      "t": "2026-10-25T07:58:58",
+      "texte": "Vente STEEM (stop-loss) : -7.51 EUR (-8.5 %)"
+    },
+    {
+      "t": "2026-10-25T07:58:58",
+      "texte": "Achat LUMIA pour 87.53 EUR (score 5 : tendance haussiere, volume x5.0, RSI 56)"
+    },
+    {
+      "t": "2026-10-25T17:44:55",
+      "texte": "Vente ASTER (tendance cassee) : -1.86 EUR (-2.1 %)"
+    },
+    {
+      "t": "2026-10-25T17:44:55",
+      "texte": "Vente LUMIA (stop-loss) : -3.20 EUR (-3.7 %)"
+    },
+    {
+      "t": "2026-10-25T17:44:55",
+      "texte": "Achat NEAR pour 87.11 EUR (score 8 : tendance haussiere, cassure du plus haut 12 h, volume x2.1, elan 1 h, RSI 68)"
+    },
+    {
+      "t": "2026-10-25T17:44:55",
+      "texte": "Achat ICP pour 87.11 EUR (score 5 : tendance haussiere, volume x3.4, RSI 59)"
+    },
+    {
+      "t": "2026-10-25T20:19:04",
+      "texte": "Vente U (duree maximale atteinte) : -0.75 EUR (-0.8 %)"
+    },
+    {
+      "t": "2026-10-25T20:19:04",
+      "texte": "Achat QNT pour 87.06 EUR (score 5 : tendance haussiere, volume x2.0, elan 1 h)"
+    },
+    {
+      "t": "2026-10-25T22:55:20",
+      "texte": "Vente QNT (stop-loss) : -3.46 EUR (-4.0 %)"
+    },
+    {
+      "t": "2026-10-26T00:53:11",
+      "texte": "Vente ICP (tendance cassee) : -1.48 EUR (-1.7 %)"
+    },
+    {
+      "t": "2026-10-26T00:53:11",
+      "texte": "Achat DODO pour 86.49 EUR (score 6 : tendance haussiere, volume x2.8, elan 1 h, RSI 66)"
+    },
+    {
+      "t": "2026-10-26T00:53:11",
+      "texte": "Achat PYTH pour 86.49 EUR (score 5 : tendance haussiere, volume x2.0, RSI 55)"
+    },
+    {
+      "t": "2026-10-26T03:52:35",
+      "texte": "Vente RLUSD (duree maximale atteinte) : -0.67 EUR (-0.8 %)"
+    },
+    {
+      "t": "2026-10-26T03:52:35",
+      "texte": "Vente NEAR (tendance cassee) : -3.04 EUR (-3.5 %)"
+    },
+    {
+      "t": "2026-10-26T03:52:35",
+      "texte": "Vente DODO (stop-loss) : -6.50 EUR (-7.5 %)"
+    },
+    {
+      "t": "2026-10-26T03:52:35",
+      "texte": "Achat ERA pour 85.35 EUR (score 5 : tendance haussiere, volume x2.5, RSI 60)"
+    },
+    {
+      "t": "2026-10-26T03:52:35",
+      "texte": "Achat BMT pour 85.35 EUR (score 5 : tendance haussiere, volume x5.0, RSI 65)"
+    },
+    {
+      "t": "2026-10-26T03:54:03",
+      "texte": "Vente BMT (stop-loss) : -3.98 EUR (-4.7 %)"
+    },
+    {
+      "t": "2026-10-26T09:21:53",
+      "texte": "Vente PYTH (stop-loss) : -3.27 EUR (-3.8 %)"
+    },
+    {
+      "t": "2026-10-26T09:21:53",
+      "texte": "Achat NIL pour 84.89 EUR (score 5 : tendance haussiere, volume x2.1, RSI 54)"
+    },
+    {
+      "t": "2026-10-26T09:21:53",
+      "texte": "Achat BEAMX pour 84.89 EUR (score 5 : tendance haussiere, volume x5.2, RSI 62)"
+    },
+    {
+      "t": "2026-10-26T09:21:53",
+      "texte": "Achat ASTER pour 84.89 EUR (score 5 : tendance haussiere, volume x3.0, RSI 66)"
+    },
+    {
+      "t": "2026-10-26T16:20:05",
+      "texte": "Vente NIL (stop-loss) : -3.84 EUR (-4.5 %)"
+    },
+    {
+      "t": "2026-10-26T16:20:05",
+      "texte": "Achat BTC pour 85.01 EUR (score 8 : tendance haussiere, cassure du plus haut 12 h, volume x2.3, elan 1 h, RSI 56)"
+    },
+    {
+      "t": "2026-10-26T21:38:24",
+      "texte": "Vente ERA (stop-loss) : -3.33 EUR (-3.9 %)"
+    },
+    {
+      "t": "2026-10-26T21:38:24",
+      "texte": "Vente BTC (tendance cassee) : -0.97 EUR (-1.1 %)"
+    },
+    {
+      "t": "2026-10-27T01:04:58",
+      "texte": "Achat SOXLB pour 84.48 EUR (score 6 : tendance haussiere, cassure du plus haut 12 h, elan 1 h, RSI 69)"
+    },
+    {
+      "t": "2026-10-27T05:56:27",
+      "texte": "Vente ASTER (tendance cassee) : -1.08 EUR (-1.3 %)"
+    },
+    {
+      "t": "2026-10-27T05:56:27",
+      "texte": "Vente SOXLB (stop-loss) : -3.27 EUR (-3.9 %)"
+    },
+    {
+      "t": "2026-10-27T05:56:27",
+      "texte": "Achat SYN pour 83.88 EUR (score 6 : tendance haussiere, volume x4.9, elan 1 h, RSI 69)"
+    },
+    {
+      "t": "2026-10-27T11:16:44",
+      "texte": "Vente BEAMX (duree maximale atteinte) : -0.82 EUR (-1.0 %)"
+    },
+    {
+      "t": "2026-10-27T11:16:44",
+      "texte": "Vente SYN (stop-loss) : -4.84 EUR (-5.8 %)"
+    },
+    {
+      "t": "2026-10-27T11:16:44",
+      "texte": "Achat REZ pour 83.12 EUR (score 5 : tendance haussiere, volume x2.5, RSI 65)"
+    },
+    {
+      "t": "2026-10-27T16:55:06",
+      "texte": "Achat SOXLB pour 82.90 EUR (score 8 : tendance haussiere, cassure du plus haut 12 h, volume x3.3, elan 1 h, RSI 67)"
+    },
+    {
+      "t": "2026-10-27T16:55:06",
+      "texte": "Achat NVDAB pour 82.90 EUR (score 8 : tendance haussiere, cassure du plus haut 12 h, volume x2.2, elan 1 h, RSI 56)"
+    },
+    {
+      "t": "2026-10-27T16:55:06",
+      "texte": "Achat MUB pour 82.90 EUR (score 7 : tendance haussiere, cassure du plus haut 12 h, volume x2.0, RSI 53)"
+    },
+    {
+      "t": "2026-10-28T11:52:16",
+      "texte": "Vente REZ (stop-loss) : -3.14 EUR (-3.8 %)"
+    },
+    {
+      "t": "2026-10-28T11:52:16",
+      "texte": "Objectif atteint sur SOXLB : stop suiveur active, gain securise a +3.0 %"
+    },
+    {
+      "t": "2026-10-28T11:52:16",
+      "texte": "Achat NBISB pour 83.49 EUR (score 6 : tendance haussiere, cassure du plus haut 12 h, elan 1 h, RSI 65)"
+    },
+    {
+      "t": "2026-10-28T17:55:52",
+      "texte": "Vente NVDAB (duree maximale atteinte) : -1.42 EUR (-1.7 %)"
+    },
+    {
+      "t": "2026-10-28T17:55:52",
+      "texte": "Vente MUB (duree maximale atteinte) : +2.74 EUR (+3.3 %)"
+    },
+    {
+      "t": "2026-10-28T17:55:52",
+      "texte": "Vente NBISB (tendance cassee) : -2.64 EUR (-3.2 %)"
+    },
+    {
+      "t": "2026-10-28T17:55:52",
+      "texte": "Achat AMDB pour 83.01 EUR (score 5 : tendance haussiere, volume x2.3, elan 1 h)"
+    },
+    {
+      "t": "2026-10-28T17:55:52",
+      "texte": "Achat XPL pour 83.01 EUR (score 5 : tendance haussiere, volume x2.2, RSI 52)"
+    },
+    {
+      "t": "2026-10-28T17:55:52",
+      "texte": "Achat SNDKB pour 83.01 EUR (score 5 : tendance haussiere, volume x2.2, RSI 65)"
+    },
+    {
+      "t": "2026-10-28T22:32:02",
+      "texte": "Vente SOXLB (stop suiveur, gain securise) : +0.50 EUR (+0.6 %)"
+    },
+    {
+      "t": "2026-10-28T22:32:02",
+      "texte": "Achat ZRO pour 82.20 EUR (score 5 : tendance haussiere, volume x1.6, elan 1 h, RSI 60)"
+    },
+    {
+      "t": "2026-10-29T02:11:59",
+      "texte": "Vente AMDB (tendance cassee) : -1.52 EUR (-1.8 %)"
+    },
+    {
+      "t": "2026-10-29T02:11:59",
+      "texte": "Vente ZRO (stop-loss) : -3.10 EUR (-3.8 %)"
+    },
+    {
+      "t": "2026-10-29T02:11:59",
+      "texte": "Achat AI pour 81.75 EUR (score 6 : tendance haussiere, volume x13.7, elan 1 h, RSI 57)"
+    },
+    {
+      "t": "2026-10-29T02:11:59",
+      "texte": "Achat KAT pour 81.75 EUR (score 5 : tendance haussiere, volume x2.9, elan 1 h)"
+    },
+    {
+      "t": "2026-10-29T08:09:18",
+      "texte": "Vente XPL (stop-loss) : -3.14 EUR (-3.8 %)"
+    },
+    {
+      "t": "2026-10-29T08:09:18",
+      "texte": "Vente SNDKB (tendance cassee) : -1.96 EUR (-2.4 %)"
+    },
+    {
+      "t": "2026-10-29T08:09:18",
+      "texte": "Achat BNB pour 81.45 EUR (score 5 : tendance haussiere, volume x2.2, RSI 63)"
+    },
+    {
+      "t": "2026-10-29T15:18:26",
+      "texte": "Vente AI (stop-loss) : -5.06 EUR (-6.2 %)"
+    },
+    {
+      "t": "2026-10-29T15:18:26",
+      "texte": "Achat INJ pour 80.61 EUR (score 6 : tendance haussiere, volume x2.1, elan 1 h, RSI 55)"
+    },
+    {
+      "t": "2026-10-29T15:18:26",
+      "texte": "Achat SOXLB pour 80.61 EUR (score 6 : tendance haussiere, cassure du plus haut 12 h, elan 1 h, RSI 60)"
+    },
+    {
+      "t": "2026-10-30T00:38:15",
+      "texte": "Vente KAT (stop-loss) : -8.17 EUR (-10.0 %)"
+    },
+    {
+      "t": "2026-10-30T00:38:15",
+      "texte": "Vente BNB (stop-loss) : -5.94 EUR (-7.3 %)"
+    },
+    {
+      "t": "2026-10-30T00:38:15",
+      "texte": "Vente INJ (stop-loss) : -8.45 EUR (-10.5 %)"
+    },
+    {
+      "t": "2026-10-30T00:38:15",
+      "texte": "Vente SOXLB (stop-loss) : -11.60 EUR (-14.4 %)"
+    },
+    {
+      "t": "2026-10-30T00:38:15",
+      "texte": "Achat SKY pour 78.36 EUR (score 6 : tendance haussiere, volume x5.8, elan 1 h, RSI 54)"
+    },
+    {
+      "t": "2026-10-30T00:38:15",
+      "texte": "Achat TRX pour 78.36 EUR (score 5 : tendance haussiere, volume x3.3, RSI 62)"
+    },
+    {
+      "t": "2026-10-30T00:38:15",
+      "texte": "Achat RUNE pour 78.36 EUR (score 5 : tendance haussiere, volume x4.0, RSI 61)"
+    },
+    {
+      "t": "2026-10-30T03:57:36",
+      "texte": "Vente SKY (stop-loss) : -6.09 EUR (-7.8 %)"
+    },
+    {
+      "t": "2026-10-30T04:00:42",
+      "texte": "Objectif atteint sur RUNE : stop suiveur active, gain securise a +3.2 %"
+    },
+    {
+      "t": "2026-10-30T10:51:04",
+      "texte": "Vente TRX (stop-loss) : -5.07 EUR (-6.5 %)"
+    },
+    {
+      "t": "2026-10-30T10:51:04",
+      "texte": "Achat SAND pour 77.55 EUR (score 8 : tendance haussiere, cassure du plus haut 12 h, volume x3.6, elan 1 h, RSI 70)"
+    },
+    {
+      "t": "2026-10-30T10:51:04",
+      "texte": "Achat NIGHT pour 77.55 EUR (score 6 : tendance haussiere, cassure du plus haut 12 h, elan 1 h, RSI 63)"
+    },
+    {
+      "t": "2026-10-30T10:51:04",
+      "texte": "Achat BLUR pour 77.55 EUR (score 5 : tendance haussiere, volume x2.6, RSI 67)"
+    },
+    {
+      "t": "2026-10-30T17:21:56",
+      "texte": "Vente RUNE (stop suiveur, gain securise) : +1.53 EUR (+2.0 %)"
+    },
+    {
+      "t": "2026-10-30T17:21:56",
+      "texte": "Achat TSLAB pour 77.50 EUR (score 5 : tendance haussiere, volume x3.2, RSI 62)"
+    },
+    {
+      "t": "2026-10-31T13:46:21",
+      "texte": "Vente SAND (duree maximale atteinte) : -0.59 EUR (-0.8 %)"
+    },
+    {
+      "t": "2026-10-31T13:46:21",
+      "texte": "Vente NIGHT (duree maximale atteinte) : +1.32 EUR (+1.7 %)"
+    },
+    {
+      "t": "2026-10-31T13:46:21",
+      "texte": "Vente BLUR (stop-loss) : -4.43 EUR (-5.7 %)"
+    },
+    {
+      "t": "2026-10-31T13:46:21",
+      "texte": "Achat LSK pour 77.23 EUR (score 5 : tendance haussiere, volume x2.2, elan 1 h)"
+    },
+    {
+      "t": "2026-10-31T13:50:39",
+      "texte": "Vente LSK (stop-loss) : -3.15 EUR (-4.1 %)"
+    },
+    {
+      "t": "2026-10-31T18:23:27",
+      "texte": "Vente TSLAB (duree maximale atteinte) : -1.43 EUR (-1.8 %)"
+    },
+    {
+      "t": "2026-10-31T18:23:27",
+      "texte": "Achat STX pour 76.86 EUR (score 6 : tendance haussiere, volume x2.4, elan 1 h, RSI 64)"
+    },
+    {
+      "t": "2026-10-31T21:34:19",
+      "texte": "Achat XPL pour 76.92 EUR (score 6 : tendance haussiere, volume x2.8, elan 1 h, RSI 60)"
+    },
+    {
+      "t": "2026-10-31T21:34:19",
+      "texte": "Achat AMP pour 76.92 EUR (score 5 : tendance haussiere, volume x5.7, RSI 66)"
+    },
+    {
+      "t": "2026-11-01T00:44:59",
+      "texte": "Vente AMP (stop-loss) : -3.02 EUR (-3.9 %)"
+    },
+    {
+      "t": "2026-11-01T03:37:04",
+      "texte": "Achat RWUSD pour 76.43 EUR (score 5 : tendance haussiere, volume x4.8, RSI 60)"
+    },
+    {
+      "t": "2026-11-01T10:43:14",
+      "texte": "Vente STX (tendance cassee) : -1.00 EUR (-1.3 %)"
+    },
+    {
+      "t": "2026-11-01T10:43:14",
+      "texte": "Vente XPL (stop-loss) : -7.91 EUR (-10.3 %)"
+    },
+    {
+      "t": "2026-11-01T10:43:14",
+      "texte": "Achat BNB pour 75.69 EUR (score 5 : tendance haussiere, volume x3.6, RSI 63)"
+    },
+    {
+      "t": "2026-11-01T10:43:14",
+      "texte": "Achat PROM pour 75.69 EUR (score 5 : tendance haussiere, volume x15.9, RSI 57)"
+    },
+    {
+      "t": "2026-11-01T10:43:14",
+      "texte": "Achat G pour 75.69 EUR (score 5 : tendance haussiere, volume x3.6, RSI 58)"
+    },
+    {
+      "t": "2026-11-01T17:27:08",
+      "texte": "Vente G (stop-loss) : -5.06 EUR (-6.7 %)"
+    },
+    {
+      "t": "2026-11-01T17:27:08",
+      "texte": "Achat ARB pour 74.97 EUR (score 6 : tendance haussiere, volume x10.7, elan 1 h, RSI 66)"
+    },
+    {
+      "t": "2026-11-02T05:55:37",
+      "texte": "Vente RWUSD (duree maximale atteinte) : +0.09 EUR (+0.1 %)"
+    },
+    {
+      "t": "2026-11-02T05:55:37",
+      "texte": "Vente PROM (stop-loss) : -3.05 EUR (-4.0 %)"
+    },
+    {
+      "t": "2026-11-02T05:55:37",
+      "texte": "Achat TQQQB pour 74.79 EUR (score 5 : tendance haussiere, volume x2.1, RSI 59)"
+    },
+    {
+      "t": "2026-11-02T05:55:37",
+      "texte": "Achat 牛来 pour 74.79 EUR (score 5 : tendance haussiere, volume x2.1, RSI 55)"
+    },
+    {
+      "t": "2026-11-02T14:12:44",
+      "texte": "Vente BNB (duree maximale atteinte) : -1.18 EUR (-1.6 %)"
+    },
+    {
+      "t": "2026-11-02T14:12:44",
+      "texte": "Vente ARB (stop-loss) : -3.80 EUR (-5.1 %)"
+    },
+    {
+      "t": "2026-11-02T14:12:44",
+      "texte": "Vente TQQQB (tendance cassee) : -1.70 EUR (-2.3 %)"
+    },
+    {
+      "t": "2026-11-02T23:20:32",
+      "texte": "Vente 牛来 (stop-loss) : -10.71 EUR (-14.3 %)"
+    },
+    {
+      "t": "2026-11-03T12:16:52",
+      "texte": "Achat HBAR pour 73.14 EUR (score 5 : tendance haussiere, cassure du plus haut 12 h, RSI 70)"
+    },
+    {
+      "t": "2026-11-03T19:30:05",
+      "texte": "Achat SAGA pour 73.05 EUR (score 5 : tendance haussiere, volume x3.2, RSI 59)"
+    },
+    {
+      "t": "2026-11-04T04:14:59",
+      "texte": "Vente HBAR (stop-loss) : -3.14 EUR (-4.3 %)"
+    },
+    {
+      "t": "2026-11-04T04:14:59",
+      "texte": "Vente SAGA (stop-loss) : -5.40 EUR (-7.4 %)"
+    },
+    {
+      "t": "2026-11-04T12:09:44",
+      "texte": "Achat QNT pour 72.29 EUR (score 7 : tendance haussiere, cassure du plus haut 12 h, volume x2.2, elan 1 h)"
+    },
+    {
+      "t": "2026-11-04T12:09:44",
+      "texte": "Achat LSK pour 72.29 EUR (score 6 : tendance haussiere, volume x2.6, elan 1 h, RSI 61)"
+    },
+    {
+      "t": "2026-11-04T12:09:44",
+      "texte": "Achat HAEDAL pour 72.29 EUR (score 5 : tendance haussiere, volume x2.1, RSI 55)"
+    },
+    {
+      "t": "2026-11-04T12:09:44",
+      "texte": "Achat ONDO pour 72.29 EUR (score 5 : tendance haussiere, cassure du plus haut 12 h, RSI 67)"
+    },
+    {
+      "t": "2026-11-04T19:40:55",
+      "texte": "Vente LSK (stop-loss) : -2.44 EUR (-3.4 %)"
+    },
+    {
+      "t": "2026-11-05T06:38:34",
+      "texte": "Achat RLUSD pour 72.18 EUR (score 5 : tendance haussiere, volume x2.5, RSI 60)"
+    },
+    {
+      "t": "2026-11-05T14:29:31",
+      "texte": "Vente QNT (duree maximale atteinte) : -0.31 EUR (-0.4 %)"
+    },
+    {
+      "t": "2026-11-05T14:29:31",
+      "texte": "Vente HAEDAL (stop-loss) : -7.37 EUR (-10.2 %)"
+    },
+    {
+      "t": "2026-11-05T14:29:31",
+      "texte": "Vente ONDO (duree maximale atteinte) : -1.74 EUR (-2.4 %)"
+    },
+    {
+      "t": "2026-11-05T21:47:28",
+      "texte": "Achat SOXSB pour 71.20 EUR (score 6 : tendance haussiere, volume x2.7, elan 1 h, RSI 55)"
+    },
+    {
+      "t": "2026-11-06T02:10:23",
+      "texte": "Vente SOXSB (stop-loss) : -2.54 EUR (-3.6 %)"
+    },
+    {
+      "t": "2026-11-06T02:10:23",
+      "texte": "Achat CYBER pour 70.93 EUR (score 6 : tendance haussiere, volume x3.6, elan 1 h, RSI 68)"
+    },
+    {
+      "t": "2026-11-06T02:10:23",
+      "texte": "Achat ARB pour 70.93 EUR (score 6 : tendance haussiere, volume x2.3, elan 1 h, RSI 61)"
+    },
+    {
+      "t": "2026-11-06T02:10:23",
+      "texte": "Achat ZEC pour 70.93 EUR (score 5 : tendance haussiere, volume x2.1, elan 1 h)"
+    },
+    {
+      "t": "2026-11-06T08:56:02",
+      "texte": "Vente RLUSD (duree maximale atteinte) : +0.24 EUR (+0.3 %)"
+    },
+    {
+      "t": "2026-11-06T08:56:02",
+      "texte": "Objectif atteint sur CYBER : stop suiveur active, gain securise a +12.9 %"
+    },
+    {
+      "t": "2026-11-06T08:56:02",
+      "texte": "Vente ZEC (stop-loss) : -2.95 EUR (-4.2 %)"
+    },
+    {
+      "t": "2026-11-06T08:56:02",
+      "texte": "Achat U pour 71.85 EUR (score 5 : tendance haussiere, cassure du plus haut 12 h, RSI 60)"
+    },
+    {
+      "t": "2026-11-06T16:45:57",
+      "texte": "Vente U (tendance cassee) : -0.80 EUR (-1.1 %)"
+    },
+    {
+      "t": "2026-11-06T16:45:57",
+      "texte": "Achat MARSCOIN pour 71.61 EUR (score 6 : tendance haussiere, volume x2.4, elan 1 h, RSI 63)"
+    },
+    {
+      "t": "2026-11-06T16:45:57",
+      "texte": "Achat ONE pour 71.61 EUR (score 5 : tendance haussiere, volume x2.9, RSI 57)"
+    },
+    {
+      "t": "2026-11-06T22:06:26",
+      "texte": "Vente CYBER (stop suiveur, gain securise) : +8.79 EUR (+12.4 %)"
+    },
+    {
+      "t": "2026-11-06T22:06:26",
+      "texte": "Vente ARB (tendance cassee) : +1.27 EUR (+1.8 %)"
+    },
+    {
+      "t": "2026-11-07T01:52:51",
+      "texte": "Objectif atteint sur ONE : stop suiveur active, gain securise a +15.2 %"
+    },
+    {
+      "t": "2026-11-07T07:48:14",
+      "texte": "Vente ONE (stop suiveur, gain securise) : +11.27 EUR (+15.7 %)"
+    },
+    {
+      "t": "2026-11-07T14:36:24",
+      "texte": "Achat ARB pour 72.29 EUR (score 6 : tendance haussiere, cassure du plus haut 12 h, elan 1 h, RSI 67)"
+    },
+    {
+      "t": "2026-11-07T14:37:52",
+      "texte": "Vente MARSCOIN (stop-loss) : -2.06 EUR (-2.9 %)"
+    },
+    {
+      "t": "2026-11-07T19:17:22",
+      "texte": "Achat MET pour 72.19 EUR (score 6 : tendance haussiere, volume x2.9, elan 1 h, RSI 68)"
+    },
+    {
+      "t": "2026-11-07T23:01:22",
+      "texte": "Objectif atteint sur MET : stop suiveur active, gain securise a +3.0 %"
+    },
+    {
+      "t": "2026-11-08T02:19:12",
+      "texte": "Vente MET (stop suiveur, gain securise) : -0.14 EUR (-0.2 %)"
+    },
+    {
+      "t": "2026-11-08T08:31:37",
+      "texte": "Achat BMT pour 72.28 EUR (score 5 : tendance haussiere, volume x6.7, RSI 57)"
+    },
+    {
+      "t": "2026-11-08T15:29:40",
+      "texte": "Vente ARB (duree maximale atteinte) : -0.34 EUR (-0.5 %)"
+    },
+    {
+      "t": "2026-11-08T15:29:40",
+      "texte": "Achat RSR pour 72.02 EUR (score 5 : tendance haussiere, volume x2.0, elan 1 h, RSI 61)"
+    },
+    {
+      "t": "2026-11-08T20:01:44",
+      "texte": "Vente BMT (stop-loss) : -7.53 EUR (-10.4 %)"
+    },
+    {
+      "t": "2026-11-08T23:48:38",
+      "texte": "Achat PEPE pour 71.24 EUR (score 5 : tendance haussiere, volume x3.1, elan 1 h)"
+    },
+    {
+      "t": "2026-11-09T03:06:28",
+      "texte": "Achat GOOGLB pour 71.77 EUR (score 7 : tendance haussiere, cassure du plus haut 12 h, volume x2.9, elan 1 h)"
+    },
+    {
+      "t": "2026-11-09T10:42:51",
+      "texte": "Achat ARB pour 71.75 EUR (score 6 : tendance haussiere, volume x3.9, elan 1 h, RSI 63)"
+    },
+    {
+      "t": "2026-11-09T21:10:27",
+      "texte": "Vente RSR (duree maximale atteinte) : +1.81 EUR (+2.5 %)"
+    },
+    {
+      "t": "2026-11-09T21:10:27",
+      "texte": "Achat RAY pour 71.82 EUR (score 6 : tendance haussiere, volume x2.0, elan 1 h, RSI 65)"
+    },
+    {
+      "t": "2026-11-10T03:44:41",
+      "texte": "Vente PEPE (duree maximale atteinte) : +1.83 EUR (+2.6 %)"
+    },
+    {
+      "t": "2026-11-10T03:44:41",
+      "texte": "Vente GOOGLB (duree maximale atteinte) : -0.15 EUR (-0.2 %)"
+    },
+    {
+      "t": "2026-11-10T03:44:41",
+      "texte": "Vente ARB (tendance cassee) : -1.54 EUR (-2.1 %)"
+    },
+    {
+      "t": "2026-11-10T03:44:41",
+      "texte": "Vente RAY (stop-loss) : -4.22 EUR (-5.9 %)"
+    },
+    {
+      "t": "2026-11-10T19:09:53",
+      "texte": "Achat BMT pour 71.16 EUR (score 5 : tendance haussiere, volume x11.1, RSI 62)"
+    },
+    {
+      "t": "2026-11-11T00:22:12",
+      "texte": "Vente BMT (stop-loss) : -2.79 EUR (-3.9 %)"
+    },
+    {
+      "t": "2026-11-11T03:53:12",
+      "texte": "Achat ERA pour 70.72 EUR (score 6 : tendance haussiere, volume x2.5, elan 1 h, RSI 60)"
+    },
+    {
+      "t": "2026-11-11T11:12:20",
+      "texte": "Achat GRAM pour 71.06 EUR (score 6 : tendance haussiere, cassure du plus haut 12 h, volume x1.6, elan 1 h)"
+    },
+    {
+      "t": "2026-11-11T18:54:41",
+      "texte": "Achat AMDB pour 71.20 EUR (score 6 : tendance haussiere, cassure du plus haut 12 h, elan 1 h, RSI 64)"
+    },
+    {
+      "t": "2026-11-11T18:54:41",
+      "texte": "Achat SOXLB pour 71.20 EUR (score 5 : tendance haussiere, volume x2.2, elan 1 h)"
+    },
+    {
+      "t": "2026-11-12T01:06:03",
+      "texte": "Objectif atteint sur ERA : stop suiveur active, gain securise a +5.4 %"
+    },
+    {
+      "t": "2026-11-12T01:06:03",
+      "texte": "Vente SOXLB (stop-loss) : -6.86 EUR (-9.6 %)"
+    },
+    {
+      "t": "2026-11-12T01:06:03",
+      "texte": "Achat GOOGLB pour 70.69 EUR (score 5 : tendance haussiere, volume x5.8, RSI 53)"
+    },
+    {
+      "t": "2026-11-12T08:03:56",
+      "texte": "Vente GRAM (tendance cassee) : -0.88 EUR (-1.2 %)"
+    },
+    {
+      "t": "2026-11-12T08:03:56",
+      "texte": "Achat 0G pour 70.77 EUR (score 6 : tendance haussiere, volume x2.0, elan 1 h, RSI 64)"
+    },
+    {
+      "t": "2026-11-12T16:56:12",
+      "texte": "Vente 0G (stop-loss) : -3.21 EUR (-4.5 %)"
+    },
+    {
+      "t": "2026-11-12T16:56:12",
+      "texte": "Achat TQQQB pour 70.80 EUR (score 6 : tendance haussiere, cassure du plus haut 12 h, elan 1 h, RSI 63)"
+    },
+    {
+      "t": "2026-11-12T23:08:04",
+      "texte": "Vente ERA (stop suiveur, gain securise) : -0.67 EUR (-1.0 %)"
+    },
+    {
+      "t": "2026-11-12T23:08:04",
+      "texte": "Vente AMDB (duree maximale atteinte) : +2.24 EUR (+3.1 %)"
+    },
+    {
+      "t": "2026-11-13T03:37:06",
+      "texte": "Vente GOOGLB (duree maximale atteinte) : +1.38 EUR (+1.9 %)"
+    },
+    {
+      "t": "2026-11-13T03:37:06",
+      "texte": "Achat PEPE pour 69.93 EUR (score 6 : tendance haussiere, volume x2.3, elan 1 h, RSI 61)"
+    },
+    {
+      "t": "2026-11-13T03:37:06",
+      "texte": "Achat BARD pour 69.93 EUR (score 5 : tendance haussiere, volume x2.5, RSI 64)"
+    },
+    {
+      "t": "2026-11-13T10:58:38",
+      "texte": "Objectif atteint sur BARD : stop suiveur active, gain securise a +11.7 %"
+    },
+    {
+      "t": "2026-11-13T10:58:38",
+      "texte": "Achat DODO pour 70.57 EUR (score 5 : tendance haussiere, volume x2.3, RSI 69)"
+    },
+    {
+      "t": "2026-11-13T18:38:03",
+      "texte": "Vente TQQQB (stop-loss) : -4.17 EUR (-5.9 %)"
+    },
+    {
+      "t": "2026-11-13T18:38:03",
+      "texte": "Vente BARD (stop suiveur, gain securise) : +7.97 EUR (+11.4 %)"
+    },
+    {
+      "t": "2026-11-13T18:38:03",
+      "texte": "Achat NIGHT pour 70.00 EUR (score 6 : tendance haussiere, cassure du plus haut 12 h, elan 1 h, RSI 62)"
+    },
+    {
+      "t": "2026-11-13T18:38:03",
+      "texte": "Achat INIT pour 70.00 EUR (score 5 : tendance haussiere, volume x3.6, RSI 61)"
+    },
+    {
+      "t": "2026-11-13T23:52:47",
+      "texte": "Vente PEPE (stop-loss) : -2.82 EUR (-4.0 %)"
+    },
+    {
+      "t": "2026-11-13T23:52:47",
+      "texte": "Vente INIT (stop-loss) : -5.96 EUR (-8.5 %)"
+    },
+    {
+      "t": "2026-11-13T23:52:47",
+      "texte": "Achat RLUSD pour 68.63 EUR (score 5 : tendance haussiere, volume x2.5, RSI 60)"
+    },
+    {
+      "t": "2026-11-14T03:51:20",
+      "texte": "Achat BERA pour 68.57 EUR (score 5 : tendance haussiere, volume x2.5, RSI 68)"
+    },
+    {
+      "t": "2026-11-14T10:37:39",
+      "texte": "Objectif atteint sur DODO : stop suiveur active, gain securise a +10.3 %"
+    },
+    {
+      "t": "2026-11-14T10:37:39",
+      "texte": "Vente BERA (stop-loss) : -12.86 EUR (-18.8 %)"
+    },
+    {
+      "t": "2026-11-14T17:06:14",
+      "texte": "Vente DODO (stop suiveur, gain securise) : +6.96 EUR (+9.9 %)"
+    },
+    {
+      "t": "2026-11-14T17:06:14",
+      "texte": "Objectif atteint sur NIGHT : stop suiveur active, gain securise a +6.1 %"
+    },
+    {
+      "t": "2026-11-14T17:06:14",
+      "texte": "Achat BANANAS31 pour 68.36 EUR (score 6 : tendance haussiere, volume x3.4, elan 1 h, RSI 62)"
+    },
+    {
+      "t": "2026-11-14T21:40:42",
+      "texte": "Vente NIGHT (stop suiveur, gain securise) : +0.96 EUR (+1.4 %)"
+    },
+    {
+      "t": "2026-11-14T21:40:42",
+      "texte": "Vente BANANAS31 (stop-loss) : -4.57 EUR (-6.7 %)"
+    },
+    {
+      "t": "2026-11-14T21:40:42",
+      "texte": "Achat SOXSB pour 67.42 EUR (score 6 : tendance haussiere, cassure du plus haut 12 h, elan 1 h, RSI 59)"
+    },
+    {
+      "t": "2026-11-15T01:20:30",
+      "texte": "Vente RLUSD (duree maximale atteinte) : -0.24 EUR (-0.3 %)"
+    },
+    {
+      "t": "2026-11-15T07:52:03",
+      "texte": "Achat SPCXB pour 67.28 EUR (score 6 : tendance haussiere, cassure du plus haut 12 h, volume x2.6)"
+    },
+    {
+      "t": "2026-11-15T20:55:01",
+      "texte": "Vente SOXSB (stop-loss) : -3.21 EUR (-4.8 %)"
+    },
+    {
+      "t": "2026-11-15T20:55:01",
+      "texte": "Achat MUB pour 67.13 EUR (score 8 : tendance haussiere, cassure du plus haut 12 h, volume x2.1, elan 1 h, RSI 58)"
+    },
+    {
+      "t": "2026-11-15T20:55:01",
+      "texte": "Achat PENGU pour 67.13 EUR (score 6 : tendance haussiere, volume x3.0, elan 1 h, RSI 63)"
+    },
+    {
+      "t": "2026-11-15T20:55:01",
+      "texte": "Achat NVDAB pour 67.13 EUR (score 6 : tendance haussiere, volume x5.7, elan 1 h, RSI 68)"
+    },
+    {
+      "t": "2026-11-16T12:42:32",
+      "texte": "Vente SPCXB (duree maximale atteinte) : +0.99 EUR (+1.5 %)"
+    },
+    {
+      "t": "2026-11-16T12:42:32",
+      "texte": "Vente MUB (stop-loss) : -2.61 EUR (-3.9 %)"
+    },
+    {
+      "t": "2026-11-16T12:42:32",
+      "texte": "Vente NVDAB (stop-loss) : -2.47 EUR (-3.7 %)"
+    },
+    {
+      "t": "2026-11-16T12:42:32",
+      "texte": "Achat HYPE pour 66.54 EUR (score 5 : tendance haussiere, volume x5.2, RSI 59)"
+    },
+    {
+      "t": "2026-11-16T22:15:24",
+      "texte": "Vente PENGU (duree maximale atteinte) : -1.71 EUR (-2.5 %)"
+    },
+    {
+      "t": "2026-11-17T04:58:46",
+      "texte": "Objectif atteint sur HYPE : stop suiveur active, gain securise a +3.2 %"
+    },
+    {
+      "t": "2026-11-17T04:58:46",
+      "texte": "Achat ASTER pour 66.21 EUR (score 5 : tendance haussiere, cassure du plus haut 12 h, elan 1 h)"
+    },
+    {
+      "t": "2026-11-17T04:58:46",
+      "texte": "Achat FET pour 66.21 EUR (score 5 : tendance haussiere, volume x1.6, elan 1 h, RSI 64)"
+    },
+    {
+      "t": "2026-11-17T04:58:46",
+      "texte": "Achat UNI pour 66.21 EUR (score 5 : tendance haussiere, cassure du plus haut 12 h, elan 1 h)"
+    },
+    {
+      "t": "2026-11-17T22:44:29",
+      "texte": "Vente HYPE (stop suiveur, gain securise) : +1.75 EUR (+2.6 %)"
+    },
+    {
+      "t": "2026-11-17T22:44:29",
+      "texte": "Vente ASTER (tendance cassee) : -1.55 EUR (-2.3 %)"
+    },
+    {
+      "t": "2026-11-17T22:44:29",
+      "texte": "Vente UNI (tendance cassee) : -0.77 EUR (-1.2 %)"
+    },
+    {
+      "t": "2026-11-17T22:44:29",
+      "texte": "Achat TLM pour 65.71 EUR (score 6 : tendance haussiere, volume x3.7, elan 1 h, RSI 58)"
+    },
+    {
+      "t": "2026-11-17T22:44:29",
+      "texte": "Achat SPCXB pour 65.71 EUR (score 5 : tendance haussiere, volume x1.6, elan 1 h, RSI 66)"
+    },
+    {
+      "t": "2026-11-18T12:42:40",
+      "texte": "Vente FET (duree maximale atteinte) : -1.38 EUR (-2.1 %)"
+    },
+    {
+      "t": "2026-11-18T12:42:40",
+      "texte": "Vente TLM (stop-loss) : -4.96 EUR (-7.5 %)"
+    },
+    {
+      "t": "2026-11-18T12:42:40",
+      "texte": "Achat ZKC pour 64.75 EUR (score 6 : tendance haussiere, volume x3.7, elan 1 h, RSI 68)"
+    },
+    {
+      "t": "2026-11-18T12:42:40",
+      "texte": "Achat RWUSD pour 64.75 EUR (score 5 : tendance haussiere, volume x2.6, RSI 57)"
+    },
+    {
+      "t": "2026-11-18T20:38:04",
+      "texte": "Vente ZKC (stop-loss) : -4.16 EUR (-6.4 %)"
+    },
+    {
+      "t": "2026-11-18T20:38:04",
+      "texte": "Achat AVGOB pour 64.40 EUR (score 5 : tendance haussiere, volume x4.1, RSI 58)"
+    },
+    {
+      "t": "2026-11-19T02:28:54",
+      "texte": "Vente SPCXB (duree maximale atteinte) : +0.79 EUR (+1.2 %)"
+    },
+    {
+      "t": "2026-11-19T02:28:54",
+      "texte": "Achat SENT pour 64.38 EUR (score 5 : tendance haussiere, volume x1.9, elan 1 h, RSI 65)"
+    },
+    {
+      "t": "2026-11-19T02:28:54",
+      "texte": "Achat TQQQB pour 64.38 EUR (score 5 : tendance haussiere, volume x4.3, RSI 66)"
+    },
+    {
+      "t": "2026-11-19T10:24:39",
+      "texte": "Objectif atteint sur SENT : stop suiveur active, gain securise a +6.8 %"
+    },
+    {
+      "t": "2026-11-19T19:30:46",
+      "texte": "Vente RWUSD (duree maximale atteinte) : -0.56 EUR (-0.9 %)"
+    },
+    {
+      "t": "2026-11-19T19:30:46",
+      "texte": "Vente AVGOB (tendance cassee) : -1.92 EUR (-3.0 %)"
+    },
+    {
+      "t": "2026-11-19T19:30:46",
+      "texte": "Vente SENT (stop suiveur, gain securise) : -0.49 EUR (-0.8 %)"
+    },
+    {
+      "t": "2026-11-19T19:30:46",
+      "texte": "Vente TQQQB (stop-loss) : -4.42 EUR (-6.9 %)"
+    },
+    {
+      "t": "2026-11-19T19:30:46",
+      "texte": "Achat HYPE pour 63.68 EUR (score 6 : tendance haussiere, volume x4.1, elan 1 h, RSI 59)"
+    },
+    {
+      "t": "2026-11-19T19:30:46",
+      "texte": "Achat U pour 63.68 EUR (score 5 : tendance haussiere, volume x4.8, RSI 60)"
+    },
+    {
+      "t": "2026-11-20T01:52:15",
+      "texte": "Vente HYPE (stop-loss) : -3.39 EUR (-5.3 %)"
+    },
+    {
+      "t": "2026-11-20T01:52:15",
+      "texte": "Achat SOXSB pour 63.31 EUR (score 6 : tendance haussiere, cassure du plus haut 12 h, elan 1 h, RSI 64)"
+    },
+    {
+      "t": "2026-11-20T01:52:15",
+      "texte": "Achat BMT pour 63.31 EUR (score 5 : tendance haussiere, volume x1.8, elan 1 h, RSI 56)"
+    },
+    {
+      "t": "2026-11-20T08:56:47",
+      "texte": "Objectif atteint sur BMT : stop suiveur active, gain securise a +6.1 %"
+    },
+    {
+      "t": "2026-11-20T17:51:08",
+      "texte": "Objectif atteint sur SOXSB : stop suiveur active, gain securise a +15.3 %"
+    },
+    {
+      "t": "2026-11-20T17:51:08",
+      "texte": "Vente BMT (stop suiveur, gain securise) : -0.40 EUR (-0.6 %)"
+    },
+    {
+      "t": "2026-11-20T17:51:08",
+      "texte": "Achat HUMA pour 64.37 EUR (score 5 : tendance haussiere, volume x1.6, elan 1 h, RSI 57)"
+    },
+    {
+      "t": "2026-11-20T23:51:19",
+      "texte": "Vente U (duree maximale atteinte) : -0.36 EUR (-0.6 %)"
+    },
+    {
+      "t": "2026-11-20T23:51:19",
+      "texte": "Vente SOXSB (stop suiveur, gain securise) : +9.20 EUR (+14.5 %)"
+    },
+    {
+      "t": "2026-11-20T23:51:19",
+      "texte": "Vente HUMA (stop-loss) : -7.75 EUR (-12.0 %)"
+    },
+    {
+      "t": "2026-11-20T23:51:19",
+      "texte": "Achat HMSTR pour 63.42 EUR (score 6 : tendance haussiere, volume x3.6, elan 1 h, RSI 61)"
+    },
+    {
+      "t": "2026-11-21T04:38:45",
+      "texte": "Vente HMSTR (stop-loss) : -2.53 EUR (-4.0 %)"
+    },
+    {
+      "t": "2026-11-21T12:48:06",
+      "texte": "Achat RARE pour 63.33 EUR (score 5 : tendance haussiere, volume x2.4, RSI 63)"
+    }
+  ],
+  "signaux": [
+    {
+      "paire": "TRUMPUSDT",
+      "base": "TRUMP",
+      "prixUsdt": 0.877,
+      "r1h": 0.69,
+      "r4h": 1.15,
+      "r24h": 4.03,
+      "rsi": 55.8,
+      "volRatio": 0.63,
+      "cassure": false,
+      "tendance": true,
+      "score": 4,
+      "raisons": "tendance haussiere, elan 1 h, RSI 56",
+      "volume24hUsdt": 8605851.0,
+      "avis": "",
+      "spark": [
+        0.833,
+        0.836,
+        0.829,
+        0.835,
+        0.829,
+        0.833,
+        0.847,
+        0.841,
+        0.841,
+        0.84,
+        0.851,
+        0.852,
+        0.852,
+        0.855,
+        0.868,
+        0.866,
+        0.872,
+        0.872,
+        0.877,
+        0.868,
+        0.867,
+        0.866,
+        0.874,
+        0.877,
+        0.877
+      ]
+    },
+    {
+      "paire": "QNTUSDT",
+      "base": "QNT",
+      "prixUsdt": 143.68,
+      "r1h": 1.26,
+      "r4h": 2.7,
+      "r24h": 5.12,
+      "rsi": 75.0,
+      "volRatio": 1.9,
+      "cassure": false,
+      "tendance": true,
+      "score": 4,
+      "raisons": "tendance haussiere, volume x1.9, elan 1 h",
+      "volume24hUsdt": 9406711.0,
+      "avis": "",
+      "spark": [
+        130.58,
+        131.92,
+        130.9,
+        131.15,
+        130.23,
+        131.18,
+        132.98,
+        132.45,
+        132.51,
+        132.97,
+        134.94,
+        134.48,
+        135.34,
+        136.71,
+        139.62,
+        139.68,
+        139.03,
+        140.87,
+        140.03,
+        140.12,
+        140.21,
+        141.45,
+        142.1,
+        143.92,
+        143.68
+      ]
+    },
+    {
+      "paire": "BARDUSDT",
+      "base": "BARD",
+      "prixUsdt": 0.0975,
+      "r1h": 0.72,
+      "r4h": 2.42,
+      "r24h": 12.83,
+      "rsi": 56.4,
+      "volRatio": 1.3,
+      "cassure": false,
+      "tendance": true,
+      "score": 4,
+      "raisons": "tendance haussiere, elan 1 h, RSI 56",
+      "volume24hUsdt": 7540853.0,
+      "avis": "",
+      "spark": [
+        0.0929,
+        0.0933,
+        0.0926,
+        0.0926,
+        0.0917,
+        0.0913,
+        0.0908,
+        0.0904,
+        0.0906,
+        0.0903,
+        0.0917,
+        0.0922,
+        0.0939,
+        0.0945,
+        0.0937,
+        0.0952,
+        0.0946,
+        0.0927,
+        0.0927,
+        0.098,
+        0.0962,
+        0.0971,
+        0.0996,
+        0.0981,
+        0.0975
+      ]
+    },
+    {
+      "paire": "STRKUSDT",
+      "base": "STRK",
+      "prixUsdt": 0.03083,
+      "r1h": 0.75,
+      "r4h": 0.95,
+      "r24h": 2.87,
+      "rsi": 52.1,
+      "volRatio": 0.32,
+      "cassure": false,
+      "tendance": true,
+      "score": 4,
+      "raisons": "tendance haussiere, elan 1 h, RSI 52",
+      "volume24hUsdt": 3782511.0,
+      "avis": "",
+      "spark": [
+        0.02896,
+        0.02895,
+        0.02857,
+        0.02858,
+        0.02825,
+        0.02844,
+        0.02888,
+        0.02896,
+        0.02893,
+        0.02901,
+        0.02937,
+        0.02931,
+        0.02938,
+        0.02962,
+        0.0302,
+        0.03064,
+        0.0307,
+        0.03091,
+        0.03098,
+        0.03079,
+        0.03068,
+        0.03055,
+        0.03048,
+        0.03088,
+        0.03083
+      ]
+    },
+    {
+      "paire": "NIGHTUSDT",
+      "base": "NIGHT",
+      "prixUsdt": 0.04563,
+      "r1h": 0.88,
+      "r4h": 8.2,
+      "r24h": 7.43,
+      "rsi": 76.4,
+      "volRatio": 1.75,
+      "cassure": false,
+      "tendance": true,
+      "score": 4,
+      "raisons": "tendance haussiere, volume x1.8, elan 1 h",
+      "volume24hUsdt": 3851434.0,
+      "avis": "",
+      "spark": [
+        0.04005,
+        0.04017,
+        0.03971,
+        0.04002,
+        0.03988,
+        0.03998,
+        0.0402,
+        0.04,
+        0.04009,
+        0.03999,
+        0.03993,
+        0.04013,
+        0.04137,
+        0.0416,
+        0.04226,
+        0.04241,
+        0.04234,
+        0.0431,
+        0.04312,
+        0.04301,
+        0.04365,
+        0.04476,
+        0.0454,
+        0.0458,
+        0.04563
+      ]
+    },
+    {
+      "paire": "SOXLBUSDT",
+      "base": "SOXLB",
+      "prixUsdt": 33.04,
+      "r1h": 1.26,
+      "r4h": 1.19,
+      "r24h": -1.75,
+      "rsi": 66.7,
+      "volRatio": 0.06,
+      "cassure": false,
+      "tendance": true,
+      "score": 4,
+      "raisons": "tendance haussiere, elan 1 h, RSI 67",
+      "volume24hUsdt": 117148926.0,
+      "avis": "",
+      "spark": [
+        32.11,
+        32.32,
+        32.16,
+        32.11,
+        32.09,
+        31.46,
+        31.69,
+        31.52,
+        31.32,
+        31.61,
+        31.57,
+        31.46,
+        31.68,
+        32.11,
+        32.93,
+        32.65,
+        32.57,
+        32.51,
+        32.67,
+        32.79,
+        32.75,
+        32.78,
+        32.75,
+        33.06,
+        33.04
+      ]
+    },
+    {
+      "paire": "SNXXBUSDT",
+      "base": "SNXXB",
+      "prixUsdt": 1.8,
+      "r1h": 0.56,
+      "r4h": 0.0,
+      "r24h": 0.0,
+      "rsi": 53.8,
+      "volRatio": 0.15,
+      "cassure": false,
+      "tendance": true,
+      "score": 4,
+      "raisons": "tendance haussiere, elan 1 h, RSI 54",
+      "volume24hUsdt": 3466631.0,
+      "avis": "",
+      "spark": [
+        1.76,
+        1.77,
+        1.78,
+        1.76,
+        1.75,
+        1.73,
+        1.76,
+        1.75,
+        1.72,
+        1.74,
+        1.76,
+        1.76,
+        1.77,
+        1.78,
+        1.82,
+        1.8,
+        1.8,
+        1.79,
+        1.8,
+        1.79,
+        1.79,
+        1.8,
+        1.8,
+        1.81,
+        1.8
+      ]
+    },
+    {
+      "paire": "KORUBUSDT",
+      "base": "KORUB",
+      "prixUsdt": 5.07,
+      "r1h": 0.2,
+      "r4h": 0.0,
+      "r24h": -1.74,
+      "rsi": 55.6,
+      "volRatio": 0.03,
+      "cassure": false,
+      "tendance": true,
+      "score": 3,
+      "raisons": "tendance haussiere, RSI 56",
+      "volume24hUsdt": 10663092.0,
+      "avis": "",
+      "spark": [
+        4.91,
+        4.95,
+        4.95,
+        4.93,
+        4.89,
+        4.87,
+        4.94,
+        4.93,
+        4.91,
+        4.96,
+        4.96,
+        4.94,
+        4.95,
+        4.99,
+        5.1,
+        5.08,
+        5.06,
+        5.05,
+        5.05,
+        5.06,
+        5.04,
+        5.07,
+        5.05,
+        5.07,
+        5.07
+      ]
+    },
+    {
+      "paire": "NVDABUSDT",
+      "base": "NVDAB",
+      "prixUsdt": 130.68,
+      "r1h": 0.31,
+      "r4h": 0.56,
+      "r24h": -3.68,
+      "rsi": 60.6,
+      "volRatio": 0.02,
+      "cassure": false,
+      "tendance": true,
+      "score": 3,
+      "raisons": "tendance haussiere, RSI 61",
+      "volume24hUsdt": 75078961.0,
+      "avis": "",
+      "spark": [
+        129.45,
+        129.09,
+        128.75,
+        128.52,
+        128.64,
+        128.29,
+        128.81,
+        128.63,
+        128.46,
+        128.79,
+        129.19,
+        128.52,
+        128.51,
+        128.54,
+        129.89,
+        129.96,
+        130.08,
+        130.31,
+        130.04,
+        130.33,
+        130.3,
+        130.5,
+        130.31,
+        130.65,
+        130.68
+      ]
+    },
+    {
+      "paire": "ETHFIUSDT",
+      "base": "ETHFI",
+      "prixUsdt": 0.4716,
+      "r1h": 0.49,
+      "r4h": 1.55,
+      "r24h": 7.12,
+      "rsi": 62.7,
+      "volRatio": 0.78,
+      "cassure": false,
+      "tendance": true,
+      "score": 3,
+      "raisons": "tendance haussiere, RSI 63",
+      "volume24hUsdt": 3367465.0,
+      "avis": "",
+      "spark": [
+        0.4359,
+        0.4358,
+        0.4289,
+        0.4249,
+        0.4252,
+        0.4262,
+        0.4326,
+        0.4284,
+        0.4298,
+        0.435,
+        0.4335,
+        0.4373,
+        0.4442,
+        0.4514,
+        0.4646,
+        0.4651,
+        0.4623,
+        0.464,
+        0.4697,
+        0.471,
+        0.471,
+        0.4703,
+        0.4694,
+        0.4719,
+        0.4716
+      ]
+    },
+    {
+      "paire": "SKHYBUSDT",
+      "base": "SKHYB",
+      "prixUsdt": 107.42,
+      "r1h": 0.28,
+      "r4h": 0.31,
+      "r24h": 0.81,
+      "rsi": 68.0,
+      "volRatio": 0.07,
+      "cassure": false,
+      "tendance": true,
+      "score": 3,
+      "raisons": "tendance haussiere, RSI 68",
+      "volume24hUsdt": 8093312.0,
+      "avis": "",
+      "spark": [
+        105.1,
+        105.9,
+        105.61,
+        105.5,
+        105.43,
+        105.02,
+        105.61,
+        105.52,
+        104.97,
+        105.41,
+        105.79,
+        105.77,
+        106.07,
+        106.33,
+        107.29,
+        107.06,
+        106.9,
+        106.9,
+        106.95,
+        107.23,
+        107.08,
+        107.2,
+        107.08,
+        107.44,
+        107.42
+      ]
+    },
+    {
+      "paire": "HUMAUSDT",
+      "base": "HUMA",
+      "prixUsdt": 0.00898,
+      "r1h": 3.7,
+      "r4h": 0.11,
+      "r24h": -4.39,
+      "rsi": 44.9,
+      "volRatio": 0.92,
+      "cassure": false,
+      "tendance": true,
+      "score": 3,
+      "raisons": "tendance haussiere, elan 1 h",
+      "volume24hUsdt": 3365701.0,
+      "avis": "",
+      "spark": [
+        0.0087,
+        0.00858,
+        0.00848,
+        0.0085,
+        0.00835,
+        0.00835,
+        0.0084,
+        0.00841,
+        0.00848,
+        0.0086,
+        0.00841,
+        0.0085,
+        0.00881,
+        0.0089,
+        0.00912,
+        0.00897,
+        0.00887,
+        0.00901,
+        0.00879,
+        0.00881,
+        0.00867,
+        0.00867,
+        0.00876,
+        0.00889,
+        0.00898
+      ]
+    },
+    {
+      "paire": "ARBUSDT",
+      "base": "ARB",
+      "prixUsdt": 0.1132,
+      "r1h": 0.62,
+      "r4h": 0.44,
+      "r24h": -0.53,
+      "rsi": 48.1,
+      "volRatio": 0.42,
+      "cassure": false,
+      "tendance": true,
+      "score": 3,
+      "raisons": "tendance haussiere, elan 1 h",
+      "volume24hUsdt": 10164857.0,
+      "avis": "",
+      "spark": [
+        0.1077,
+        0.1081,
+        0.1071,
+        0.1067,
+        0.1059,
+        0.1073,
+        0.1079,
+        0.1068,
+        0.1079,
+        0.1091,
+        0.1099,
+        0.1097,
+        0.1107,
+        0.1111,
+        0.1134,
+        0.113,
+        0.113,
+        0.1137,
+        0.1132,
+        0.112,
+        0.1116,
+        0.112,
+        0.1123,
+        0.113,
+        0.1132
+      ]
+    },
+    {
+      "paire": "BNBUSDT",
+      "base": "BNB",
+      "prixUsdt": 548.75,
+      "r1h": -0.04,
+      "r4h": 0.17,
+      "r24h": 1.08,
+      "rsi": 55.5,
+      "volRatio": 0.21,
+      "cassure": false,
+      "tendance": true,
+      "score": 3,
+      "raisons": "tendance haussiere, RSI 56",
+      "volume24hUsdt": 146550695.0,
+      "avis": "",
+      "spark": [
+        519.85,
+        527.04,
+        525.91,
+        523.18,
+        522.03,
+        523.6,
+        526.31,
+        523.46,
+        525.27,
+        525.92,
+        529.64,
+        531.52,
+        536.29,
+        538.06,
+        546.64,
+        546.66,
+        547.97,
+        547.51,
+        547.95,
+        546.14,
+        546.69,
+        548.38,
+        548.43,
+        548.34,
+        548.75
+      ]
+    },
+    {
+      "paire": "FETUSDT",
+      "base": "FET",
+      "prixUsdt": 0.1113,
+      "r1h": 0.36,
+      "r4h": 0.18,
+      "r24h": -2.71,
+      "rsi": 52.1,
+      "volRatio": 0.31,
+      "cassure": false,
+      "tendance": true,
+      "score": 3,
+      "raisons": "tendance haussiere, RSI 52",
+      "volume24hUsdt": 11293714.0,
+      "avis": "",
+      "spark": [
+        0.1081,
+        0.1089,
+        0.1082,
+        0.1078,
+        0.1071,
+        0.1081,
+        0.1097,
+        0.109,
+        0.1088,
+        0.1086,
+        0.1095,
+        0.109,
+        0.1099,
+        0.11,
+        0.1116,
+        0.1108,
+        0.1111,
+        0.1116,
+        0.1112,
+        0.1101,
+        0.11,
+        0.1104,
+        0.1108,
+        0.111,
+        0.1113
+      ]
+    },
+    {
+      "paire": "CRVUSDT",
+      "base": "CRV",
+      "prixUsdt": 0.1787,
+      "r1h": 0.0,
+      "r4h": 0.45,
+      "r24h": 0.62,
+      "rsi": 52.2,
+      "volRatio": 0.4,
+      "cassure": false,
+      "tendance": true,
+      "score": 3,
+      "raisons": "tendance haussiere, RSI 52",
+      "volume24hUsdt": 4096899.0,
+      "avis": "",
+      "spark": [
+        0.1699,
+        0.1717,
+        0.1707,
+        0.1682,
+        0.1667,
+        0.1689,
+        0.1715,
+        0.1704,
+        0.1689,
+        0.1686,
+        0.169,
+        0.1699,
+        0.1739,
+        0.1715,
+        0.1744,
+        0.1759,
+        0.1791,
+        0.1803,
+        0.1808,
+        0.1783,
+        0.179,
+        0.1783,
+        0.1791,
+        0.1781,
+        0.1787
+      ]
+    },
+    {
+      "paire": "USUALUSDT",
+      "base": "USUAL",
+      "prixUsdt": 0.01154,
+      "r1h": 0.52,
+      "r4h": -0.77,
+      "r24h": 11.6,
+      "rsi": 44.3,
+      "volRatio": 0.86,
+      "cassure": false,
+      "tendance": true,
+      "score": 3,
+      "raisons": "tendance haussiere, elan 1 h",
+      "volume24hUsdt": 3792875.0,
+      "avis": "",
+      "spark": [
+        0.0108,
+        0.01073,
+        0.01064,
+        0.01051,
+        0.0108,
+        0.01072,
+        0.01059,
+        0.01077,
+        0.01095,
+        0.0111,
+        0.01104,
+        0.01108,
+        0.01102,
+        0.01106,
+        0.01126,
+        0.01153,
+        0.01184,
+        0.01203,
+        0.01154,
+        0.01174,
+        0.01148,
+        0.01146,
+        0.01154,
+        0.01148,
+        0.01154
+      ]
+    },
+    {
+      "paire": "TIAUSDT",
+      "base": "TIA",
+      "prixUsdt": 0.3259,
+      "r1h": -0.43,
+      "r4h": 0.56,
+      "r24h": 1.21,
+      "rsi": 57.1,
+      "volRatio": 0.45,
+      "cassure": false,
+      "tendance": true,
+      "score": 3,
+      "raisons": "tendance haussiere, RSI 57",
+      "volume24hUsdt": 3569473.0,
+      "avis": "",
+      "spark": [
+        0.3135,
+        0.3135,
+        0.3106,
+        0.3088,
+        0.3064,
+        0.3088,
+        0.3128,
+        0.3091,
+        0.3102,
+        0.3099,
+        0.3116,
+        0.3116,
+        0.3135,
+        0.3156,
+        0.3216,
+        0.3231,
+        0.3256,
+        0.3254,
+        0.3257,
+        0.3251,
+        0.3234,
+        0.3221,
+        0.3276,
+        0.3259,
+        0.3259
+      ]
+    },
+    {
+      "paire": "ADAUSDT",
+      "base": "ADA",
+      "prixUsdt": 0.145,
+      "r1h": -0.48,
+      "r4h": 1.12,
+      "r24h": 3.27,
+      "rsi": 52.7,
+      "volRatio": 0.41,
+      "cassure": false,
+      "tendance": true,
+      "score": 3,
+      "raisons": "tendance haussiere, RSI 53",
+      "volume24hUsdt": 34121297.0,
+      "avis": "",
+      "spark": [
+        0.1388,
+        0.1397,
+        0.1391,
+        0.1386,
+        0.1376,
+        0.1386,
+        0.1398,
+        0.1392,
+        0.1396,
+        0.1396,
+        0.1402,
+        0.1407,
+        0.1416,
+        0.1413,
+        0.1438,
+        0.1433,
+        0.1447,
+        0.1452,
+        0.1448,
+        0.1443,
+        0.1444,
+        0.145,
+        0.1454,
+        0.1451,
+        0.145
+      ]
+    },
+    {
+      "paire": "ANTBUSDT",
+      "base": "ANTB",
+      "prixUsdt": 89.85,
+      "r1h": -0.21,
+      "r4h": 0.35,
+      "r24h": 5.69,
+      "rsi": 56.2,
+      "volRatio": 0.19,
+      "cassure": false,
+      "tendance": true,
+      "score": 3,
+      "raisons": "tendance haussiere, RSI 56",
+      "volume24hUsdt": 6195900.0,
+      "avis": "",
+      "spark": [
+        87.11,
+        87.32,
+        87.44,
+        86.56,
+        86.83,
+        86.6,
+        87.17,
+        87.79,
+        87.19,
+        87.34,
+        87.81,
+        87.65,
+        88.25,
+        88.92,
+        89.29,
+        89.97,
+        89.47,
+        89.83,
+        89.45,
+        89.45,
+        89.45,
+        89.79,
+        90.17,
+        89.82,
+        89.85
+      ]
+    },
+    {
+      "paire": "牛来USDT",
+      "base": "牛来",
+      "prixUsdt": 0.03676,
+      "r1h": 0.66,
+      "r4h": -2.08,
+      "r24h": 8.97,
+      "rsi": 42.5,
+      "volRatio": 0.1,
+      "cassure": false,
+      "tendance": true,
+      "score": 3,
+      "raisons": "tendance haussiere, elan 1 h",
+      "volume24hUsdt": 5528170.0,
+      "avis": "",
+      "spark": [
+        0.03375,
+        0.03533,
+        0.03489,
+        0.03499,
+        0.03453,
+        0.03458,
+        0.03492,
+        0.03519,
+        0.03463,
+        0.03479,
+        0.03582,
+        0.0355,
+        0.03587,
+        0.03585,
+        0.03664,
+        0.03703,
+        0.0372,
+        0.03725,
+        0.03712,
+        0.03719,
+        0.03705,
+        0.0366,
+        0.03685,
+        0.0367,
+        0.03676
+      ]
+    },
+    {
+      "paire": "SNDKBUSDT",
+      "base": "SNDKB",
+      "prixUsdt": 80.75,
+      "r1h": 0.4,
+      "r4h": 0.17,
+      "r24h": 0.24,
+      "rsi": 55.9,
+      "volRatio": 0.5,
+      "cassure": false,
+      "tendance": true,
+      "score": 3,
+      "raisons": "tendance haussiere, RSI 56",
+      "volume24hUsdt": 8502820.0,
+      "avis": "",
+      "spark": [
+        79.68,
+        80.0,
+        80.0,
+        79.72,
+        79.54,
+        79.11,
+        79.65,
+        79.34,
+        78.76,
+        79.3,
+        79.71,
+        79.64,
+        79.77,
+        80.14,
+        80.8,
+        80.62,
+        80.49,
+        80.53,
+        80.48,
+        80.55,
+        80.55,
+        80.56,
+        80.45,
+        80.71,
+        80.75
+      ]
+    },
+    {
+      "paire": "FILUSDT",
+      "base": "FIL",
+      "prixUsdt": 0.5205,
+      "r1h": 0.64,
+      "r4h": -0.48,
+      "r24h": -0.99,
+      "rsi": 41.2,
+      "volRatio": 0.2,
+      "cassure": false,
+      "tendance": true,
+      "score": 3,
+      "raisons": "tendance haussiere, elan 1 h",
+      "volume24hUsdt": 9002911.0,
+      "avis": "",
+      "spark": [
+        0.5054,
+        0.5084,
+        0.5074,
+        0.5041,
+        0.5026,
+        0.5055,
+        0.5045,
+        0.5028,
+        0.5021,
+        0.5004,
+        0.5058,
+        0.5022,
+        0.5069,
+        0.5105,
+        0.5204,
+        0.521,
+        0.5258,
+        0.5263,
+        0.5226,
+        0.5187,
+        0.5172,
+        0.5176,
+        0.5188,
+        0.52,
+        0.5205
+      ]
+    },
+    {
+      "paire": "NEARUSDT",
+      "base": "NEAR",
+      "prixUsdt": 2.852,
+      "r1h": -0.97,
+      "r4h": -1.76,
+      "r24h": 0.92,
+      "rsi": 33.1,
+      "volRatio": 1.93,
+      "cassure": false,
+      "tendance": true,
+      "score": 3,
+      "raisons": "tendance haussiere, volume x1.9",
+      "volume24hUsdt": 148453726.0,
+      "avis": "",
+      "spark": [
+        2.664,
+        2.691,
+        2.68,
+        2.685,
+        2.669,
+        2.719,
+        2.719,
+        2.73,
+        2.755,
+        2.761,
+        2.78,
+        2.783,
+        2.813,
+        2.837,
+        2.904,
+        2.912,
+        2.908,
+        2.909,
+        2.871,
+        2.863,
+        2.85,
+        2.881,
+        2.839,
+        2.847,
+        2.852
+      ]
+    },
+    {
+      "paire": "ONDOUSDT",
+      "base": "ONDO",
+      "prixUsdt": 0.2815,
+      "r1h": 0.18,
+      "r4h": 0.68,
+      "r24h": 1.48,
+      "rsi": 56.4,
+      "volRatio": 0.28,
+      "cassure": false,
+      "tendance": true,
+      "score": 3,
+      "raisons": "tendance haussiere, RSI 56",
+      "volume24hUsdt": 9320202.0,
+      "avis": "",
+      "spark": [
+        0.2653,
+        0.268,
+        0.2658,
+        0.2648,
+        0.2633,
+        0.2651,
+        0.2685,
+        0.2669,
+        0.2675,
+        0.2681,
+        0.27,
+        0.2703,
+        0.2725,
+        0.2738,
+        0.2788,
+        0.2787,
+        0.2805,
+        0.2813,
+        0.2814,
+        0.279,
+        0.279,
+        0.2803,
+        0.281,
+        0.2812,
+        0.2815
+      ]
+    }
+  ],
+  "stats": {
+    "nbTrades": 165,
+    "gagnants": 31,
+    "frais": 26.826221830892408,
+    "pnl": -352.9101548070074
+  },
+  "marche": {
+    "eurusdt": 1.0965,
+    "btcUsdt": 60153.7,
+    "btc1h": -0.25,
+    "univers": 97,
+    "analyses": 97,
+    "achatsBloques": null
+  },
+  "regime": "normal",
+  "derniereExecution": "2026-11-21T19:16:56",
+  "derniereVerif": "2026-11-21T19:21:12"
+};
