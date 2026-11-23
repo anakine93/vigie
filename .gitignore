@@ -7,3 +7,6 @@ crypto-dashboard/portefeuille.js
 crypto-dashboard/*.tmp
 donnees/
 .claude/
+
+robots/historique/
+__pycache__/

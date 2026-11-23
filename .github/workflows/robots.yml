@@ -1,16 +1,19 @@
-# Fait tourner les robots Vigie 24 h/24 sur les serveurs de GitHub (argent fictif, aucun ordre reel).
-# Lancement toutes les 5 minutes (GitHub peut retarder certains lancements de quelques minutes).
-# L'etat des robots est stocke sur la branche "donnees", reecrite a chaque passage (sans historique,
+# Fait tourner les robots Vigie en continu sur les serveurs de GitHub (argent fictif, aucun ordre reel).
+# Chaque passage dure environ 5 h 40 (stops verifies toutes les 30 s, etat publie toutes les 2 min),
+# puis relance aussitot le passage suivant. La tache horaire est un filet de securite si la chaine s'arrete :
+# un seul passage tourne a la fois, les autres attendent leur tour.
+# L'etat des robots est stocke sur la branche "donnees", reecrite a chaque publication (sans historique,
 # pour que le depot ne grossisse pas). Les avis des agents (branche "claude/avis") y sont recopies.
 name: Robots Vigie
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "17 * * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: robots-vigie
@@ -19,7 +22,7 @@ concurrency:
 jobs:
   robots:
     runs-on: ubuntu-latest
-    timeout-minutes: 9
+    timeout-minutes: 355
     env:
       TZ: Europe/Paris
       BINANCE_API: https://data-api.binance.vision/api/v3
@@ -28,39 +31,25 @@ jobs:
       - name: Recuperer les scripts
         uses: actions/checkout@v4
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
       - name: Recuperer l'etat des robots (branche donnees)
         run: |
           if git ls-remote --exit-code --heads "$DEPOT" donnees > /dev/null; then
-            git clone --depth 1 --branch donnees "$DEPOT" donnees
+            git clone -q --depth 1 --branch donnees "$DEPOT" donnees
           else
             mkdir donnees
           fi
-          # Avis des agents Technique et Marches, publies par les agents cloud sur la branche "claude/avis".
-          if git ls-remote --exit-code --heads "$DEPOT" claude/avis > /dev/null; then
-            git clone -q --depth 1 --branch claude/avis "$DEPOT" avis
-            cp -f avis/orientations*.json donnees/ 2>/dev/null || true
-            rm -rf avis
-          fi
 
-      - name: Faire tourner les robots
-        shell: pwsh
-        run: ./cloud.ps1 -Donnees ./donnees
+      - name: Faire tourner les robots (environ 5 h 40)
+        run: python robots/cloud.py --donnees ./donnees --duree 20400
 
-      - name: Enregistrer l'etat des robots
-        run: |
-          cd donnees
-          rm -rf .git
-          git init -q -b donnees
-          git config user.name "Robots Vigie"
-          git config user.email "robots-vigie@users.noreply.github.com"
-          git remote add origin "$DEPOT"
-          # Recupere les derniers avis publies par les agents pendant ce passage.
-          if git fetch -q --depth 1 origin claude/avis; then
-            for f in orientations.json orientations-marches.json; do
-              git show FETCH_HEAD:"$f" > "$f.tmp" 2>/dev/null && mv "$f.tmp" "$f" || rm -f "$f.tmp"
-            done
-          fi
-          rm -f *.tmp
-          git add -A
-          git commit -q -m "Etat des robots au $(date '+%d/%m/%Y %H:%M')"
-          git push -q --force origin donnees
+      - name: Relancer le passage suivant
+        # Pas de relance si le passage a ete annule a la main. Pour arreter les robots durablement :
+        # onglet Actions > Robots Vigie > "..." > Disable workflow.
+        if: success() || failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run robots.yml --ref "${{ github.ref_name }}" || echo "Relance impossible, la tache horaire prendra le relais."
