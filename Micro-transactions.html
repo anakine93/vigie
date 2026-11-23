@@ -55,6 +55,9 @@ th{font:600 11px var(--f-body);text-transform:uppercase;letter-spacing:.05em;col
 .chart-t{font-size:12px;font-weight:600;margin:4px 0}
 .chipbtn{font:inherit;font-size:12px;color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:3px 12px;cursor:pointer}
 .chipbtn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.reel-form{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:12px}
+.reel-form label{font-size:12px;color:var(--muted);display:flex;gap:6px;align-items:center}
+.reel-form input{font:13px var(--f-mono);width:120px;padding:4px 8px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--fg)}
 .rules{font-size:12px;color:var(--muted);margin:0;max-width:120ch}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 </style>
@@ -71,6 +74,16 @@ th{font:600 11px var(--f-body);text-transform:uppercase;letter-spacing:.05em;col
     <h2 id="pos-title">Positions en cours</h2>
     <div class="filters" id="filters" role="group" aria-label="Filtrer par marché"></div>
     <div class="scroll" id="pos"></div>
+  </section>
+  <section class="panel" aria-label="Mon portefeuille Revolut X">
+    <h2>Mon portefeuille Revolut X <span style="text-transform:none;letter-spacing:0;font-weight:400">· argent réel, suivi seulement</span></h2>
+    <div id="reel"></div>
+    <form id="reel-form" class="reel-form">
+      <label>BTC <input name="BTC" inputmode="decimal" autocomplete="off" placeholder="ex. 0.05"></label>
+      <label>ETH <input name="ETH" inputmode="decimal" autocomplete="off" placeholder="ex. 1.2"></label>
+      <button type="submit" class="chipbtn">Enregistrer</button>
+    </form>
+    <p class="rules" style="margin-top:8px">Les quantités saisies restent uniquement dans ce navigateur : elles ne sont jamais envoyées ni publiées (le dépôt et la page sont publics). Valeur calculée avec les cours Binance en direct, proche de celle affichée par Revolut X.</p>
   </section>
   <div class="grid2">
     <section class="panel" aria-label="Courbes"><h2>Évolution des deux robots</h2><div id="charts"></div></section>
@@ -95,11 +108,11 @@ const MK={crypto:"Crypto",actions:"Actions",indices:"Indices",matieres:"Matière
 let filtre="tout";
 try{filtre=localStorage.getItem("mt-filtre")||"tout"}catch{}
 
-// Cours en direct des positions crypto, lus sur Binance toutes les 5 secondes (affichage seulement).
+// Cours en direct des positions crypto et du portefeuille Revolut X, lus sur Binance toutes les 5 secondes (affichage seulement).
 let live={},liveAt=null,liveErr=false;
 async function majLive(){
-  const pos=window.ROBOT?.positions||[];if(!pos.length){live={};liveAt=null;return}
-  const syms=[...new Set([...pos.map(p=>p.paire),"EURUSDT"])];
+  const pos=window.ROBOT?.positions||[];
+  const syms=[...new Set([...pos.map(p=>p.paire),"BTCUSDT","ETHUSDT","EURUSDT"])];
   const q="/api/v3/ticker/price?symbols="+encodeURIComponent(JSON.stringify(syms));
   try{let r=await fetch("https://api.binance.com"+q).catch(()=>null);
     if(!r||!r.ok)r=await fetch("https://data-api.binance.vision"+q);
@@ -127,18 +140,18 @@ function positionsMarches(M){
       sl:p.slPct,tp:p.tpPct,suiveur:p.stopSuiveur?p.stopSuiveur/p.prixEntree-1:null,ouvertLe:p.ouvertLe,motif:p.motif,avis:p.avis}})
 }
 
-function chart(pts,cap,nom,ref,col){
+function chart(pts,cap,nom,ref,col,ref2){
   if(!pts.length)return'<p class="empty">Aucun point pour l\'instant.</p>';
-  const W=640,H=170,L=58,R=12,T=10,B=24,vals=pts.flatMap(p=>[p.valeur,p.ref]);
+  const W=640,H=170,L=58,R=12,T=10,B=24,vals=pts.flatMap(p=>[p.valeur,p.ref,p.ref2]).filter(v=>v!=null);
   let mn=Math.min(cap,...vals),mx=Math.max(cap,...vals);const pad=(mx-mn)*0.15||cap*0.01;mn-=pad;mx+=pad;
   const x=i=>pts.length===1?(L+W-R)/2:L+i*(W-L-R)/(pts.length-1),y=v=>T+(mx-v)*(H-T-B)/(mx-mn);
-  const line=(k,c)=>pts.length>1?`<polyline fill="none" stroke="var(${c})" stroke-width="2" points="${pts.map((p,i)=>x(i)+","+y(p[k])).join(" ")}"/>`:"";
-  const dot=(k,c)=>`<circle cx="${x(pts.length-1)}" cy="${y(pts[pts.length-1][k])}" r="4" fill="var(${c})"/>`;
+  const line=(k,c)=>{const q=pts.map((p,i)=>p[k]!=null?x(i)+","+y(p[k]):null).filter(Boolean);return q.length>1?`<polyline fill="none" stroke="var(${c})" stroke-width="2" points="${q.join(" ")}"/>`:""};
+  const dot=(k,c)=>pts[pts.length-1][k]==null?"":`<circle cx="${x(pts.length-1)}" cy="${y(pts[pts.length-1][k])}" r="4" fill="var(${c})"/>`;
   const ticks=[mx-pad,cap,mn+pad].filter((v,i,a)=>a.findIndex(w=>Math.abs(w-v)<(mx-mn)*0.1)===i);
   const grid=ticks.map(v=>`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)" ${v===cap?'stroke-dasharray="4 4"':""}/><text x="${L-6}" y="${y(v)+4}" text-anchor="end" font-size="11" fill="var(--muted)" font-family="var(--f-mono)">${nf(v,0)} €</text>`).join("");
   const lbl=[0,pts.length-1].filter((v,i,a)=>a.indexOf(v)===i).map(i=>`<text x="${x(i)}" y="${H-5}" text-anchor="${pts.length>1?(i?"end":"start"):"middle"}" font-size="11" fill="var(--muted)">${fdate(pts[i].t)}</text>`).join("");
-  return`<div class="chart-t">${nom}</div><svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="${nom}">${grid}${line("ref","--muted")}${line("valeur",col)}${dot("ref","--muted")}${dot("valeur",col)}${lbl}</svg>
-  <div class="legend"><span><i style="background:var(${col})"></i>Valeur totale (caisse commune)</span><span><i style="background:var(--muted)"></i>${ref}</span></div>`;
+  return`<div class="chart-t">${nom}</div><svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="${nom}">${grid}${line("ref","--muted")}${ref2?line("ref2","--warn"):""}${line("valeur",col)}${dot("ref","--muted")}${ref2?dot("ref2","--warn"):""}${dot("valeur",col)}${lbl}</svg>
+  <div class="legend"><span><i style="background:var(${col})"></i>Valeur totale (caisse commune)</span><span><i style="background:var(--muted)"></i>${ref}</span>${ref2?`<span><i style="background:var(--warn)"></i>${ref2}</span>`:""}</div>`;
 }
 // Position du cours entre le stop-loss et la prise de gain.
 function barre(v,sl,tp){const p=Math.max(0,Math.min(1,(v+sl)/(sl+tp))),z=sl/(sl+tp);
@@ -172,7 +185,7 @@ function render(){
    <div class="kpi"><div class="lbl">Si tout atteint l'objectif / touche le stop</div><div class="val" style="font-size:18px">${euro(tous.reduce((s,p)=>s+p.gainMax,0))} / ${euro(tous.reduce((s,p)=>s+p.perteMax,0))}</div><div class="sub">frais payés ${eur(stC.frais+stM.frais)}</div></div>`;
   const lc=R?.courbe?.slice(-1)[0],lm=M?.courbe?.slice(-1)[0];
   $("#robots").innerHTML=`
-   <div><b>Crypto</b> · ${eur(valC)} investis sur ${pc.length} position${pc.length>1?"s":""} · gains réalisés ${euro(stC.pnl)} (${stC.nbTrades} clôturée${stC.nbTrades>1?"s":""})<br><span style="color:var(--muted)">Si les ${eur(cap)} étaient restés en Bitcoin : ${eur(lc?.btcRef)} ${lc?pct(100*(lc.btcRef-cap)/cap):""}</span></div>
+   <div><b>Crypto</b> · ${eur(valC)} investis sur ${pc.length} position${pc.length>1?"s":""} · gains réalisés ${euro(stC.pnl)} (${stC.nbTrades} clôturée${stC.nbTrades>1?"s":""})<br><span style="color:var(--muted)">Si les ${eur(cap)} étaient restés en Bitcoin : ${eur(lc?.btcRef)} ${lc?pct(100*(lc.btcRef-cap)/cap):""}${reel&&histo&&R?(v=>v==null?"":`<br>Répartis comme ton portefeuille Revolut X et gardés : ${eur(v)} ${pct(100*(v-cap)/cap)}`)(refReelle(null,R.debut,cap)):""}</span></div>
    <div><b>Actions, indices, matières, devises</b> · ${eur(valM)} investis sur ${pm.length} position${pm.length>1?"s":""} · gains réalisés ${euro(stM.pnl)} (${stM.nbTrades} clôturée${stM.nbTrades>1?"s":""})<br><span style="color:var(--muted)">Si les ${eur(cap)} étaient restés dans le S&amp;P 500 : ${eur(lm?.ref)} ${lm?pct(100*(lm.ref-cap)/cap):""}</span></div>`;
   const al=[R?.marche?.achatsBloques&&`<b>Crypto, achats suspendus :</b> ${esc(R.marche.achatsBloques)}`,M?.marche?.achatsBloques&&`<b>Marchés, achats suspendus :</b> ${esc(M.marche.achatsBloques)}`].filter(Boolean);
   $("#alert").innerHTML=al.length?`<div class="alert">${al.join("<br>")}</div>`:"";
@@ -187,14 +200,16 @@ function render(){
       return`<tr><td><b>${esc(p.nom)}</b></td><td><span class="mk">${MK[p.marche]}</span></td><td class="r num">${eur(p.montant)}</td><td class="r num">${prix(p.entree,p.devise)}</td><td class="r num">${prix(p.cours,p.devise)}</td><td class="r num">${pct(100*v)}<br><span style="font-size:12px">${euro(p.valeur-p.montant)}</span></td><td>${p.suiveur!=null?`<span class="up" style="font-size:12px">▲ Objectif dépassé<br>stop suiveur à +${nf(100*p.suiveur,1)} %</span>`:`${barre(v,p.sl,p.tp)}<span style="font-size:11px;color:var(--muted)">−${nf(100*p.sl,1)} % / +${nf(100*p.tp,1)} %</span>`}</td><td class="r num">${euro(p.gainMax)}</td><td class="r num">${euro(p.perteMax)}</td><td class="num">${depuis(p.ouvertLe)}</td><td class="why">${esc(p.motif)}${p.avis&&p.avis!=="aucun"?" · avis "+esc(p.avis):""}</td></tr>`}).join("")}</tbody></table>`
     :`<p class="empty">Aucune position en cours${filtre!=="tout"?" sur ce marché":""}.</p>`;
 
-  const sous=(c,k)=>{const st=Math.max(1,Math.ceil(c.length/300));return c.filter((_,i)=>i%st===0||i===c.length-1).map(p=>({t:p.t,valeur:p.valeur,ref:p[k]}))};
-  $("#charts").innerHTML=(R?chart(sous(R.courbe||[],"btcRef"),cap,"Valeur totale comparée au Bitcoin","1 000 € gardés en Bitcoin","--accent"):"")+(M?`<div style="height:12px"></div>`+chart(sous(M.courbe||[],"ref"),cap,"Valeur totale comparée au S&amp;P 500","1 000 € gardés dans le S&amp;P 500","--accent2"):"");
+  const sous=(c,k,f2)=>{const st=Math.max(1,Math.ceil(c.length/300));return c.filter((_,i)=>i%st===0||i===c.length-1).map(p=>({t:p.t,valeur:p.valeur,ref:p[k],ref2:f2?f2(p.t):null}))};
+  const avecReel=!!(R&&reel&&histo);
+  $("#charts").innerHTML=(R?chart(sous(R.courbe||[],"btcRef",avecReel?t=>refReelle(t,R.debut,cap):null),cap,avecReel?"Valeur totale comparée au Bitcoin et à ton portefeuille Revolut X":"Valeur totale comparée au Bitcoin","1 000 € gardés en Bitcoin","--accent",avecReel?"1 000 € répartis comme ton portefeuille Revolut X et gardés (calculé dans ce navigateur)":null):"")+(M?`<div style="height:12px"></div>`+chart(sous(M.courbe||[],"ref"),cap,"Valeur totale comparée au S&amp;P 500","1 000 € gardés dans le S&amp;P 500","--accent2"):"");
   const j=[...(R?.journal||[]).map(x=>({...x,m:"Crypto"})),...(M?.journal||[]).map(x=>({...x,m:"Marchés"}))].sort((a,b)=>new Date(b.t)-new Date(a.t)).slice(0,100);
   $("#journal").innerHTML=j.length?`<table><tbody>${j.map(x=>`<tr><td class="num" style="width:1%">${fdate(x.t)}</td><td style="width:1%"><span class="mk">${x.m}</span></td><td style="white-space:normal" class="${/^Vente.*: -/.test(x.texte)?"down":/^Vente/.test(x.texte)?"up":""}">${esc(x.texte)}</td></tr>`).join("")}</tbody></table>`:'<p class="empty">Aucune transaction pour l\'instant.</p>';
   const tr=[...(R?.trades||[]).map(t=>({...t,nom:t.base,marche:"crypto"})),...(M?.trades||[]).map(t=>({...t,marche:t.classe}))].sort((a,b)=>new Date(b.fermeLe)-new Date(a.fermeLe)).slice(0,60);
   $("#trades").innerHTML=tr.length?`<table><thead><tr><th>Actif</th><th>Marché</th><th class="r">Montant</th><th class="r">Résultat</th><th>Ouvert</th><th>Fermé</th><th>Durée</th><th>Raison de la vente</th></tr></thead><tbody>${tr.map(t=>`<tr><td><b>${esc(t.nom)}</b></td><td><span class="mk">${MK[t.marche]}</span></td><td class="r num">${eur(t.montant)}</td><td class="r num">${euro(t.pnl)} ${pct(t.pnlPct)}</td><td class="num">${fdate(t.ouvertLe)}</td><td class="num">${fdate(t.fermeLe)}</td><td class="num">${duree(Math.round((new Date(t.fermeLe)-new Date(t.ouvertLe))/60000))}</td><td>${esc(t.motifSortie)}</td></tr>`).join("")}</tbody></table>`:'<p class="empty">Aucune transaction clôturée pour l\'instant.</p>';
   $("#rules").textContent="Une seule caisse de 1 000 € fictifs, partagée par deux robots (crypto et autres marchés), qui tournent en continu sur les serveurs de GitHub. Crypto : seulement 28 cryptos liquides et établies (pas d'actions tokenisées ni d'ETF à levier) ; achats uniquement quand le Bitcoin est au-dessus de ses moyennes 50 h et 200 h, sur un repli vers la moyenne dans une tendance haussière (RSI entre 40 et 55) ; 10 % de la valeur totale par achat, 15 % avec un avis favorable de l'agent Technique ; stop-loss adapté à la volatilité (entre −1,5 % et −5 %), objectif deux fois plus loin que le stop. Autres marchés : achat si le score technique atteint 5/8, stop et objectif (deux fois le stop) adaptés à la volatilité, achats seulement quand la bourse est ouverte, effet de change ignoré. Les stops sont vérifiés bougie d'une minute par bougie d'une minute : s'ils sont touchés, la vente se fait au prix du stop, comme un vrai ordre stop. Une fois l'objectif atteint, un stop suiveur sécurise au moins 60 % de l'objectif. Frais et écarts de prix simulés. Simulation : rien ici n'est un conseil en investissement.";
   $("#state-l").innerHTML=etatDonnees();
+  $("#reel").innerHTML=portefeuilleReel();
 }
 $("#filters").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;filtre=b.dataset.f;try{localStorage.setItem("mt-filtre",filtre)}catch{};render()});
 // Données des robots, publiées toutes les 2 minutes sur la branche « donnees » du dépôt GitHub.
@@ -214,6 +229,7 @@ async function chargerEnLigne(){
     alerter(r,m);
     if(r)window.ROBOT=r;if(m)window.ROBOT_MARCHES=m;if(k)window.CAISSE=k;if(v)window.VERSION=v;
     if(ref!=="donnees")sha=ref;chargeAt=Date.now();chargeErr=false;
+    if(reel&&window.ROBOT?.debut&&histoPour!==window.ROBOT.debut)majHisto();
   }catch{chargeErr=true}
   render();
 }
@@ -224,6 +240,46 @@ function etatDonnees(){
   const ageTxt=age==null?"—":age<90?`il y a ${age} s`:`il y a ${duree(Math.round(age/60))}`;
   return`<span class="dot ${age!=null&&age<600?"":"off"}"></span>Suivi en direct : état des robots publié ${ageTxt} (toutes les 2 min), cours crypto actualisés toutes les 5 s, page relue toutes les minutes${chargeErr?" · lecture des données impossible pour l'instant, nouvel essai dans 1 min":""}${v?.depuis?` · simulation repartie de 1 000 € le ${fdate(v.depuis)} avec les nouvelles règles (ancienne simulation archivée)`:""}`;
 }
+
+// Portefeuille réel Revolut X : quantités et valeur de départ enregistrées dans ce navigateur uniquement.
+let reel=null;try{reel=JSON.parse(localStorage.getItem("mt-reel")||"null")}catch{}
+const valeurReelle=q=>live.EURUSDT&&live.BTCUSDT&&live.ETHUSDT?((+q.BTC||0)*live.BTCUSDT+(+q.ETH||0)*live.ETHUSDT)/live.EURUSDT:null;
+function portefeuilleReel(){
+  if(!reel)return'<p class="empty" style="padding:0">Saisis tes quantités de BTC et d\'ETH (visibles dans Revolut X) pour suivre leur valeur ici en direct.</p>';
+  const v=valeurReelle(reel);if(v==null)return'<p class="empty" style="padding:0">Cours en direct indisponibles pour l\'instant…</p>';
+  if(reel.depart==null){reel.depart=v;reel.le=new Date().toISOString();try{localStorage.setItem("mt-reel",JSON.stringify(reel))}catch{}}
+  const ligne=b=>{const px=live[b+"USDT"]/live.EURUSDT,val=(+reel[b]||0)*px;return`<td><b>${b}</b></td><td class="r num">${nf(+reel[b]||0,8).replace(/0+$/,"").replace(/,$/,"")}</td><td class="r num">${eur(px)}</td><td class="r num">${eur(val)}</td><td class="r num">${nf(100*val/v,0)} %</td>`};
+  return`<div class="kpis"><div class="kpi"><div class="lbl">Valeur en direct</div><div class="val">${eur(v)}</div><div class="sub">${pct(100*(v-reel.depart)/reel.depart)} (${euro(v-reel.depart)}) depuis le ${fdate(reel.le)}</div></div></div>
+  <div class="scroll" style="margin-top:10px"><table><thead><tr><th>Crypto</th><th class="r">Quantité</th><th class="r">Cours</th><th class="r">Valeur</th><th class="r">Part</th></tr></thead><tbody><tr>${ligne("BTC")}</tr><tr>${ligne("ETH")}</tr></tbody></table></div>`;
+}
+// Historique 15 min BTC, ETH et EUR depuis le départ de la simulation (Binance), pour la courbe de comparaison.
+// Tout est calculé ici : les quantités ne quittent jamais le navigateur.
+let histo=null,histoPour=null;
+async function majHisto(){
+  const R=window.ROBOT;if(!R?.debut||!reel)return;
+  const P=900e3,t0=Math.floor(new Date(R.debut)/P)*P,h={};
+  try{
+    for(const s of["BTCUSDT","ETHUSDT","EURUSDT"]){h[s]=new Map();let t=t0;
+      for(let n=0;n<20;n++){const u=`/api/v3/klines?symbol=${s}&interval=15m&startTime=${t}&limit=1000`;
+        let r=await fetch("https://api.binance.com"+u).catch(()=>null);if(!r||!r.ok)r=await fetch("https://data-api.binance.vision"+u);
+        const k=await r.json();k.forEach(x=>h[s].set(x[0],+x[4]));if(k.length<1000)break;t=k[k.length-1][0]+P}}
+    histo=h;histoPour=R.debut;render();
+  }catch{}
+}
+// Valeur du portefeuille réel à la date t (null = maintenant), ramenée à 1 000 € au départ de la simulation.
+function refReelle(t,debut,cap){
+  const val=(b,e,x)=>((+reel.BTC||0)*b+(+reel.ETH||0)*e)/x;
+  const px=(s,d)=>histo[s].get(Math.floor(d/900e3)*900e3)??null;
+  const d0=new Date(debut),a=[px("BTCUSDT",d0),px("ETHUSDT",d0),px("EURUSDT",d0)];
+  if(a.includes(null))return null;
+  let b;if(t==null)b=[live.BTCUSDT,live.ETHUSDT,live.EURUSDT];else{const d=new Date(t);b=[px("BTCUSDT",d),px("ETHUSDT",d),px("EURUSDT",d)]}
+  if(b.some(x=>!x))return null;
+  return cap*val(...b)/val(...a);
+}
+setInterval(majHisto,600000);
+
+$("#reel-form").addEventListener("submit",e=>{e.preventDefault();const f=new FormData(e.target),n=k=>+String(f.get(k)||"0").replace(",",".")||0;
+  if(!n("BTC")&&!n("ETH"))return;reel={BTC:n("BTC"),ETH:n("ETH"),depart:null,le:null};try{localStorage.setItem("mt-reel",JSON.stringify(reel))}catch{};e.target.reset();render();majHisto()});
 
 // Alertes du navigateur à chaque achat ou vente, tant que la page est ouverte (dans un onglet, même en arrière-plan).
 let alertes=false;try{alertes=localStorage.getItem("mt-alertes")==="1"&&"Notification"in window&&Notification.permission==="granted"}catch{}
