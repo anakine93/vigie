@@ -1,0 +1,6 @@
+// Genere par les robots Vigie - ne pas modifier a la main.
+window.CAISSE = {
+  "capitalInitial": 1000,
+  "liquidites": 375.34,
+  "maj": "2026-11-23T06:09:38"
+};
